@@ -3,12 +3,12 @@
 # 📺 Live TV
 
 ### Next-Generation Live Streaming for macOS & Android
-**2,986+ Live Channels • Real-Time Sports Telemetry • Multi-View Studio • 1-Hour DVR**
+**2,989+ Live Channels • Real-Time Sports Telemetry • Multi-View Studio • 1-Hour DVR**
 
 [![Platform: macOS](https://img.shields.io/badge/Platform-macOS%20(Apple%20Silicon%20arm64)-000000?style=for-the-badge&logo=apple)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 [![Platform: Android](https://img.shields.io/badge/Platform-Android%208.0+-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
-[![Version: 3.2](https://img.shields.io/badge/Version-3.2%20(Build%2018)-E50914?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
-[![Live Channels](https://img.shields.io/badge/Channels-2%2C986%20Active-blue?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
+[![Version: 3.3](https://img.shields.io/badge/Version-3.3%20(Build%2019)-E50914?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
+[![Live Channels](https://img.shields.io/badge/Channels-2%2C989%20Active-blue?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 
 ---
 
@@ -16,8 +16,8 @@
 
 | Platform | Installer Package | Architecture / OS | Direct Download Link |
 | :--- | :--- | :--- | :--- |
-| **🍎 macOS** | `LiveTV-v3.2.dmg` | Apple Silicon (M1/M2/M3/M4) • macOS 11+ | [⬇️ **Download for macOS (.dmg)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v3.2/LiveTV-v3.2.dmg) |
-| **🤖 Android** | `LiveTV-v3.2.apk` | Universal APK • Android 8.0+ (Phone, Tablet, TV) | [⬇️ **Download for Android (.apk)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v3.2/LiveTV-v3.2.apk) |
+| **🍎 macOS** | `LiveTV-v3.3.dmg` | Apple Silicon (M1/M2/M3/M4) • macOS 11+ | [⬇️ **Download for macOS (.dmg)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v3.3/LiveTV-v3.3.dmg) |
+| **🤖 Android** | `LiveTV-v3.3.apk` | Universal APK • Android 8.0+ (Phone, Tablet, TV) | [⬇️ **Download for Android (.apk)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v3.3/LiveTV-v3.3.apk) |
 
 *All releases are pre-compiled and ready to install immediately.*
 
@@ -27,9 +27,10 @@
 
 ## 🌟 Feature Highlights
 
-### 1. 📺 Massive Catalog of 2,986+ HD Live Channels
+### 1. 📺 Massive Catalog of 2,989+ HD Live Channels
 - Extensive selection of Bangladeshi, Indian, USA, UK, and international broadcasts.
-- Categories include: **Sports, News, Entertainment, Movies, Music, Kids, Documentary, and Religious**.
+- **Includes Discovery Bangla, Discovery Kids Bangla, Discovery Science HD, Discovery Turbo HD** with multi-server failover.
+- Categories include: **Bangladesh, Sports, News, Entertainment, Movies, Music, Kids, Documentary, and Religious**.
 - Native HLS/DASH streaming with automatic quality switching up to **1080p HD & 4K UHD**.
 
 ### 2. 🔥 Real-Time Live Sports Telemetry Engine
