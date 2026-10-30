@@ -7,7 +7,7 @@
 
 [![Platform: macOS](https://img.shields.io/badge/Platform-macOS%20(Apple%20Silicon%20arm64)-000000?style=for-the-badge&logo=apple)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 [![Platform: Android](https://img.shields.io/badge/Platform-Android%208.0+-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
-[![Version: 3.3](https://img.shields.io/badge/Version-3.3%20(Build%2019)-E50914?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
+[![Version: 3.4](https://img.shields.io/badge/Version-3.4%20(Build%2020)-E50914?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 [![Live Channels](https://img.shields.io/badge/Channels-2%2C989%20Active-blue?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 
 ---
@@ -16,8 +16,8 @@
 
 | Platform | Installer Package | Architecture / OS | Direct Download Link |
 | :--- | :--- | :--- | :--- |
-| **🍎 macOS** | `LiveTV-v3.3.dmg` | Apple Silicon (M1/M2/M3/M4) • macOS 11+ | [⬇️ **Download for macOS (.dmg)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v3.3/LiveTV-v3.3.dmg) |
-| **🤖 Android** | `LiveTV-v3.3.apk` | Universal APK • Android 8.0+ (Phone, Tablet, TV) | [⬇️ **Download for Android (.apk)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v3.3/LiveTV-v3.3.apk) |
+| **🍎 macOS** | `LiveTV-v3.4.dmg` | Apple Silicon (M1/M2/M3/M4) • macOS 11+ | [⬇️ **Download for macOS (.dmg)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v3.4/LiveTV-v3.4.dmg) |
+| **🤖 Android** | `LiveTV-v3.4.apk` | Universal APK • Android 8.0+ (Phone, Tablet, TV) | [⬇️ **Download for Android (.apk)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v3.4/LiveTV-v3.4.apk) |
 
 *All releases are pre-compiled and ready to install immediately.*
 
@@ -27,7 +27,43 @@
 
 ## 🌟 Feature Highlights
 
-### 1. 📺 Massive Catalog of 2,989+ HD Live Channels
+### 1. 📱 Wireless Phone as TV Remote Control
+- Connect from your couch or bed without touching your Mac.
+- Click **"Phone Remote"** or press **`O`** on your Mac to show a QR code.
+- Scan with your phone's camera on the same Wi-Fi to open a dark-mode mobile remote control:
+  - D-pad channel navigation (▲/▼) and live DVR scrub (◀/▶)
+  - Play/Pause toggle and volume / mute controls
+  - One-tap quick tuning into active live channels with real-time search
+  - Quick action buttons for PiP, Fullscreen, Always on Top, Multi-View, and Sleep Timer
+
+### 2. 🪟 True System Picture-in-Picture (PiP)
+- Press **`P`** or click the PiP button in the player bar.
+- Pops the live video out into macOS's native floating corner overlay that stays on screen across all desktop Spaces and full-screen apps.
+
+### 3. 📊 Broadcast Diagnostics & Telemetry HUD ("Stats for Nerds")
+- Press **`I`** or click the Stats button to toggle a live broadcast telemetry HUD.
+- Shows real-time video resolution, framerate, current bitrate (kbps), buffer health (seconds), dropped frame counter, active CDN host, and audio format.
+
+### 4. 🎚️ Pro Audio Equalizer & Sound Profiles
+- 🎧 **Normal (Flat):** Authentic original broadcast sound.
+- 🏟️ **Stadium Atmosphere (Sports):** Boosts crowd ambient rumble and brings commentary speech forward for cricket and football.
+- 🎙️ **Dialogue Clarity (News):** Enhances vocal frequencies while trimming room boom and bass muddiness.
+- 🌙 **Night Mode:** Smart dynamic range compression so loud commercials or cheers don't wake people up.
+- 🎵 **Music Mode:** Deep bass resonance and sparkling treble brilliance.
+
+### 5. ⏱️ Bedtime Sleep Timer with Gentle Audio Fade-Out
+- Set **15m, 30m, 45m, 60m, 90m, or 120m** timer.
+- During the final 2 minutes, audio volume gently ramps down to zero before stopping playback, allowing you to fall asleep comfortably.
+
+### 6. ➕ Custom Stream & M3U8 Playlist Importer
+- Add single custom `.m3u8` stream URLs with custom names, categories, and logos.
+- Batch import `.m3u` / `.m3u8` playlist files or URLs with persistent local storage.
+
+### 7. ⚡ One-Click Native In-App Auto-Updater
+- Detects new GitHub releases in real time.
+- Download, verify, install, and relaunch directly within the app without ever touching a browser.
+
+### 8. 📺 Massive Catalog of 2,989+ HD Live Channels
 - Extensive selection of Bangladeshi, Indian, USA, UK, and international broadcasts.
 - **Includes Discovery Bangla, Discovery Kids Bangla, Discovery Science HD, Discovery Turbo HD** with multi-server failover.
 - Categories include: **Bangladesh, Sports, News, Entertainment, Movies, Music, Kids, Documentary, and Religious**.
