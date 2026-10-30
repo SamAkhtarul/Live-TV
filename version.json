@@ -1,0 +1,24 @@
+{
+  "version": "3.2",
+  "build": 18,
+  "release_name": "Live TV v3.2 — Official Production Release",
+  "release_date": "2026-10-31",
+  "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
+  "min_os_android": "Android 8.0 Oreo or later",
+  "changelog": [
+    "Real-Time Sports Telemetry Engine (FanCode & ESPN live scorepanels)",
+    "Multi-View Studio (Dual & Quad Screen simultaneous multi-stream)",
+    "Recently Watched Jump Back In Carousel",
+    "Native macOS Always-on-Top Floating Mode (Cmd+T / T)",
+    "200% Audio Booster with Web Audio API Dynamics Normalizer",
+    "Live Clip / Stream Recorder (.mp4/.webm highlights)",
+    "Cable TV Numeric Channel Dialing with on-screen OSD",
+    "Live EPG Now & Next Schedule Strip",
+    "Multilingual Audio & Subtitle Track Selector",
+    "Multi-Server Instant Auto-Healing Failover",
+    "1-Hour DVR Timeshift Catch-Up Scrubber"
+  ],
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.2/LiveTV-v3.2.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.2/LiveTV-v3.2.apk",
+  "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
+}
