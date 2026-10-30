@@ -8,7 +8,7 @@
   "changelog": [
     "Added Discovery Bangla HD (Grameenphone BDIX + International HD + Asharq Discovery)",
     "Added Discovery Kids Bangla, Discovery Science HD, Discovery Turbo HD",
-    "Enhanced In-App Software Updater with one-click direct DMG & APK downloads",
+    "Native In-App Auto-Updater (One-Click background download, atomic verification, and instant restart)",
     "macOS Window Repositioning & Traffic Lights clearance fixes",
     "Multi-Server Instant Failover for all 2,989 live channels",
     "Real-Time Sports Telemetry Engine (FanCode & ESPN live scorepanels)",
