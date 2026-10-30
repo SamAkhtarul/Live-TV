@@ -1,19 +1,18 @@
 {
-  "version": "3.9",
-  "build": 25,
-  "release_name": "Live TV v3.9 — Genuine SPOTV 2 HD Stream Fix & Pure Multi-Server Failover",
+  "version": "3.9.1",
+  "build": 26,
+  "release_name": "Live TV v3.9.1 — Continuous SPOTV 2 HD Playback & Software CENC Decryptor",
   "release_date": "2026-10-31",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
-    "🏍️ Fixed SPOTV 2 HD Stream: Removed erroneous Speed Sport 1 override so SPOTV 2 HD plays authentic SPOTV 2 live sports & racing",
-    "📺 High-Definition Akamai Feed: Server 1 connects directly to authentic 1080p SPOTV 2 broadcast stream with native Shaka ClearKey decoding",
-    "⚡ Pure Multi-Server Failover: Server 2 connects to verified Red Bull TV / MotoGP World Feed, Server 3 to Eurosport 4K (completely eliminating Speed Sport 1 / SS1 stock car fallback)",
-    "🏍️ Fixed SPOTV HD (MotoGP Asia) & ServusTV feeds with verified MotoGP multi-server stream backups",
-    "🛡️ Retains all v3.8 features: Permanent Bonjour auto-reconnect, zero-config Wi-Fi subnet scanner, drag-to-resize PiP, mobile remote quality switcher & Mac favorites sync",
-    "2,989 total live channels with 3-server instant auto-failover"
+    "🏍️ Continuous SPOTV 2 HD Playback: Integrated WebCrypto in-memory CENC decryptor, permanently resolving macOS WebKit 30-second black screen / decode error",
+    "⚡ Pure 1080p Stream Stability: Intercepts and decrypts DASH fMP4 segments cleanly without EME, allowing uninterrupted 1080p 60fps streaming",
+    "🛡️ Intelligent Health Watchdog: Removed false-positive freeze triggers and prevents auto-switching to Red Bull TV when SPOTV 2 is streaming smoothly",
+    "🔊 Fixed Audio Volume Clamping: Resolved WebKit volume > 100% IndexSizeError crash",
+    "✨ Retains all v3.9 features: Multi-View Studio, Phone Remote with auto-reconnect, Drag-to-resize PiP, and full catalog of 2,989 channels"
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.9/LiveTV-v3.9.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.9/LiveTV-v3.9.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.9.1/LiveTV-v3.9.1.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.9.1/LiveTV-v3.9.1.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }
