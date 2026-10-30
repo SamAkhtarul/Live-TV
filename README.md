@@ -7,7 +7,7 @@
 
 [![Platform: macOS](https://img.shields.io/badge/Platform-macOS%20(Apple%20Silicon%20arm64)-000000?style=for-the-badge&logo=apple)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 [![Platform: Android](https://img.shields.io/badge/Platform-Android%208.0+-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
-[![Version: 3.8](https://img.shields.io/badge/Version-3.8%20(Build%2024)-E50914?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
+[![Version: 3.9](https://img.shields.io/badge/Version-3.9%20(Build%2025)-E50914?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 [![Live Channels](https://img.shields.io/badge/Channels-2%2C989%20Active-blue?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 
 ---
@@ -16,8 +16,8 @@
 
 | Platform | Installer Package | Architecture / OS | Direct Download Link |
 | :--- | :--- | :--- | :--- |
-| **🍎 macOS** | `LiveTV-v3.8.dmg` | Apple Silicon (M1/M2/M3/M4) • macOS 11+ | [⬇️ **Download for macOS (.dmg)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v3.8/LiveTV-v3.8.dmg) |
-| **🤖 Android** | `LiveTV-v3.8.apk` | Universal APK • Android 8.0+ (Phone, Tablet, TV) | [⬇️ **Download for Android (.apk)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v3.8/LiveTV-v3.8.apk) |
+| **🍎 macOS** | `LiveTV-v3.9.dmg` | Apple Silicon (M1/M2/M3/M4) • macOS 11+ | [⬇️ **Download for macOS (.dmg)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v3.9/LiveTV-v3.9.dmg) |
+| **🤖 Android** | `LiveTV-v3.9.apk` | Universal APK • Android 8.0+ (Phone, Tablet, TV) | [⬇️ **Download for Android (.apk)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v3.9/LiveTV-v3.9.apk) |
 
 *All releases are pre-compiled and ready to install immediately.*
 
@@ -25,9 +25,18 @@
 
 </div>
 
-## 🌟 Feature Highlights (v3.8)
+## 🌟 Feature Highlights (v3.9)
 
-### 1. 🛡️ Permanent Auto-Reconnecting Remote Hub & Bonjour Zero-Config
+### 1. 🏍️ Genuine SPOTV 2 HD Live Stream Fix
+- **Direct Authentic Feed**: Fixed SPOTV 2 HD so it streams authentic 1080p SPOTV 2 broadcasts (MotoGP, BWF Badminton, Tennis, and Motorsport).
+- **Eliminated Speed Sport 1 Fallback**: Eradicated the erroneous override that was routing SPOTV 2 to Speed Sport 1 (IMCA.TV stock car dirt racing).
+- **Pure Multi-Server Failover**: 
+  - **Server 1 (Primary)**: Akamai 1080p FHD SPOTV 2 feed with native ClearKey decoding
+  - **Server 2**: Red Bull TV / MotoGP World Feed
+  - **Server 3**: Eurosport 4K Motorsport
+- **SPOTV HD & ServusTV**: Synchronized multi-server streams with genuine live racing feeds.
+
+### 2. 🛡️ Permanent Auto-Reconnecting Remote Hub & Bonjour Zero-Config
 - **Permanent `.local` Hostname Support**: Native integration with Apple Bonjour advertising `sams-macbook-pro.local:8998`. This permanent domain never breaks, even if your router assigns a new numeric IP every day.
 - **High-Speed Subnet Auto-Discovery**: If your phone is connected and the Mac’s local IP address shifts, the mobile remote automatically scans your local subnet (`192.168.x.1-254`) in under 2 seconds, finds your Mac's new IP address, and reconnects without user intervention.
 - **Dynamic macOS Network Monitor**: `NWPathMonitor` listens to network interface changes in real time, automatically refreshing active QR codes on your Mac screen.
