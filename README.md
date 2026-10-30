@@ -7,7 +7,7 @@
 
 [![Platform: macOS](https://img.shields.io/badge/Platform-macOS%20(Apple%20Silicon%20arm64)-000000?style=for-the-badge&logo=apple)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 [![Platform: Android](https://img.shields.io/badge/Platform-Android%208.0+-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
-[![Version: 3.4](https://img.shields.io/badge/Version-3.4%20(Build%2020)-E50914?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
+[![Version: 3.5](https://img.shields.io/badge/Version-3.5%20(Build%2021)-E50914?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 [![Live Channels](https://img.shields.io/badge/Channels-2%2C989%20Active-blue?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 
 ---
@@ -16,8 +16,8 @@
 
 | Platform | Installer Package | Architecture / OS | Direct Download Link |
 | :--- | :--- | :--- | :--- |
-| **🍎 macOS** | `LiveTV-v3.4.dmg` | Apple Silicon (M1/M2/M3/M4) • macOS 11+ | [⬇️ **Download for macOS (.dmg)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v3.4/LiveTV-v3.4.dmg) |
-| **🤖 Android** | `LiveTV-v3.4.apk` | Universal APK • Android 8.0+ (Phone, Tablet, TV) | [⬇️ **Download for Android (.apk)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v3.4/LiveTV-v3.4.apk) |
+| **🍎 macOS** | `LiveTV-v3.5.dmg` | Apple Silicon (M1/M2/M3/M4) • macOS 11+ | [⬇️ **Download for macOS (.dmg)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v3.5/LiveTV-v3.5.dmg) |
+| **🤖 Android** | `LiveTV-v3.5.apk` | Universal APK • Android 8.0+ (Phone, Tablet, TV) | [⬇️ **Download for Android (.apk)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v3.5/LiveTV-v3.5.apk) |
 
 *All releases are pre-compiled and ready to install immediately.*
 
