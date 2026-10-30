@@ -1,21 +1,23 @@
 {
-  "version": "3.7",
-  "build": 23,
-  "release_name": "Live TV v3.7 — Drag-to-Resize PiP, Remote Quality Selector & Mac Favorites Sync",
+  "version": "3.8",
+  "build": 24,
+  "release_name": "Live TV v3.8 — Permanent Auto-Reconnecting Remote Hub & Zero-Config Bonjour",
   "release_date": "2026-10-31",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
+    "🛡️ Permanent Remote Auto-Reconnect: Remote now permanently survives router IP changes, DHCP renewals and Wi-Fi reconnections",
+    "🌐 Zero-Config Apple Bonjour (.local): Direct support for permanent 'SAMs-MacBook-Pro.local' domain that never breaks",
+    "🔍 High-Speed Wi-Fi Subnet Scanner: Mobile remote automatically sweeps your local Wi-Fi subnet in <2 seconds if the Mac's IP ever shifts",
+    "⚡ Live macOS Network Monitor: Real-time NWPathMonitor dynamically updates remote QR codes on screen whenever your Wi-Fi interface changes",
     "🪟 Interactive Drag-to-Resize PiP: Resize PiP screen height and width by dragging the bottom-right handle or window edges with fixed 16:9 aspect ratio",
     "🎬 Remote Video Quality Switcher: Change video resolution from the mobile remote (Auto, 1080p FHD, 720p HD, 480p SD, 360p Low)",
     "⭐ Bidirectional Mac Favorites Sync: Your Mac's favorited channels are instantly visible and synchronized on the phone remote under 'Favorites'",
     "⏮⏭ Remote Next & Previous Channel: Rapid channel navigation via dedicated CH + / CH - stepper rockers and Now Playing quick controls",
-    "📱 Mobile Remote Home Page: Complete channel guide with live search, category pills & 2-column channel cards",
-    "⚡ Remote Software Updates: Check for Live TV updates from mobile remote and trigger one-click Mac updates with progress indicator",
     "Added Discovery Bangla, Discovery Kids Bangla, Discovery Science HD, Discovery Turbo HD with multi-server failover",
     "2,989 total live channels with 3-server instant auto-failover"
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.7/LiveTV-v3.7.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.7/LiveTV-v3.7.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.8/LiveTV-v3.8.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.8/LiveTV-v3.8.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }
