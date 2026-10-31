@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#090a0f" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Live TV" />
+  <link rel="apple-touch-icon" href="icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <title>Live TV</title>
+  <link rel="icon" type="image/png" href="icon.png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div id="app">
+    <!-- macOS App Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="brand-badge">
+          <div class="brand-icon">
+            <img src="icon.png" class="brand-icon-img" alt="Live TV" />
+          </div>
+          <span class="brand-title">Live TV</span>
+          <span class="live-badge">LIVE</span>
+          <span class="app-version">v5.1.8</span>
+          <!-- Prominent Header Update Pill (Always visible on left!) -->
+          <button id="btn-header-update-badge" class="header-update-pill" title="Check for Updates & System Status">
+            <span class="update-pill-dot">⚡</span>
+            <span id="header-update-text">Up to Date</span>
+          </button>
+          <a class="author-link" id="brand-author-link" href="https://github.com/SamAkhtarul/Live-TV/releases"
+            target="_blank"
+            onclick="event.preventDefault(); openExternalUrl('https://github.com/SamAkhtarul/Live-TV/releases');"
+            title="Live TV Releases on GitHub by SamAkhtarul">by SamAkhtarul</a>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <button id="btn-header-sportshud" class="header-btn" title="Toggle Floating Sports Scoreboard HUD">
+          <span>🏆</span>
+          <span class="btn-lbl">HUD</span>
+        </button>
+        <button id="btn-header-alerts" class="header-btn" title="Sports Team Alerts & Notifications">
+          <span>🔔</span>
+          <span class="btn-lbl">Alerts</span>
+        </button>
+        <button id="btn-header-ticker" class="header-btn" title="Toggle Live Sports Score Ticker">
+          <span>📊</span>
+          <span class="btn-lbl">Scores</span>
+        </button>
+        <button id="btn-header-epg" class="header-btn" title="Full Electronic Program Guide (EPG Timeline)">
+          <span>📅</span>
+          <span class="btn-lbl">EPG</span>
+        </button>
+        <button id="btn-header-voice" class="header-btn" title="Voice Control Assistant">
+          <span>🎙️</span>
+          <span class="btn-lbl">Voice</span>
+        </button>
+        <button id="btn-header-alarm" class="header-btn" title="Morning TV Wake-Up Alarm">
+          <span>⏰</span>
+          <span class="btn-lbl">Alarm</span>
+        </button>
+        <button id="btn-header-channels" class="header-btn" title="Manage Channels & Custom Bouquets">
+          <span>📑</span>
+          <span class="btn-lbl">Bouquets</span>
+        </button>
+        <button id="btn-header-schedule" class="header-btn" title="Scheduled Background DVR Recording">
+          <span>⏱️</span>
+          <span class="btn-lbl">Rec</span>
+        </button>
+        <button id="btn-header-kids" class="header-btn" title="Kids Safe Mode & Parental PIN">
+          <span>🔒</span>
+          <span class="btn-lbl">Kids</span>
+        </button>
+        <button id="btn-header-backup" class="header-btn" title="Cloud Sync, Backup & Restore">
+          <span>💾</span>
+          <span class="btn-lbl">Backup</span>
+        </button>
+        <button id="btn-header-multiview" class="header-btn" title="Multi-View Studio (Dual/Quad Screen) (V)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 0h8v8h-8z" />
+          </svg>
+          <span class="btn-lbl">Multi</span>
+        </button>
+        <button id="btn-header-remote" class="header-btn" title="Phone TV Remote (R)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z" />
+          </svg>
+          <span class="btn-lbl">Remote</span>
+        </button>
+        <button id="btn-header-pin" class="header-btn header-icon-btn" title="Toggle Always On Top (T)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 9V4l1 0V2H7v2l1 0v5c0 1.66-1.34 3-3 3v2h5.97v7l1 1 1-1v-7H19v-2c-1.66 0-3-1.34-3-3z" />
+          </svg>
+        </button>
+        <button id="btn-import-m3u" class="header-btn" title="Add Custom M3U Playlist">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+          </svg>
+          <span class="btn-lbl">M3U</span>
+        </button>
+        <button id="btn-header-updater" class="header-btn header-icon-btn btn-update-sparkle"
+          title="Check for Live TV Updates">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z" />
+          </svg>
+        </button>
+        <button id="btn-shortcuts" class="header-btn header-icon-btn" title="Keyboard Shortcuts">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z" />
+          </svg>
+        </button>
+        <button id="btn-info" class="header-btn header-icon-btn" title="About Live TV & Updates">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Floating Live Sports Score Ticker -->
+    <div class="sports-score-ticker" id="sports-score-ticker" style="display:none;">
+      <div class="ticker-badge"><span>⚡</span> LIVE SCORES</div>
+      <div class="ticker-items" id="ticker-items-container">
+        <!-- Rendered dynamically -->
+      </div>
+      <button class="ticker-close-btn" id="ticker-close-btn" title="Hide Live Ticker">✕</button>
+    </div>
+
+    <!-- Channel Browser View -->
+    <main class="browser-view" id="browser-view">
+      <!-- Search Field -->
+      <div class="search-container">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+        </svg>
+        <input type="text" id="search-input" class="search-input"
+          placeholder="Search across 2,985 live channels, sports, news, countries..." />
+        <button id="search-clear" class="search-clear" style="display:none;">✕</button>
+      </div>
+
+      <!-- Cinematic Hero Broadcast Spotlight Billboard -->
+      <section class="hero-spotlight" id="hero-spotlight">
+        <button class="hero-close-btn" id="hero-close-btn" title="Dismiss Featured Billboard">✕</button>
+        <div class="hero-backdrop" id="hero-backdrop"></div>
+        <div class="hero-content">
+          <div class="hero-badge-row">
+            <span class="hero-live-badge"><span class="hero-pulse-dot"></span>LIVE BROADCAST</span>
+            <span class="hero-quality-badge">4K ULTRA HD</span>
+            <span class="hero-sport-badge" id="hero-sport-badge">🏏 CRICKET TEST</span>
+          </div>
+          <h1 class="hero-title" id="hero-title">Bangladesh vs West Indies — 2nd Test Live</h1>
+          <p class="hero-subtitle" id="hero-subtitle">BAN: 272 & 142/3 (44.0 ov) • Live from Mirpur National Stadium •
+            Shanto & Mominul lead by 169 runs</p>
+          <div class="hero-actions">
+            <button class="hero-btn-play" id="hero-btn-play">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              <span>Watch in 4K HDR</span>
+            </button>
+            <button class="hero-btn-hud" id="hero-btn-hud">
+              <span>🏆</span>
+              <span>Sports HUD</span>
+            </button>
+            <button class="hero-btn-fav" id="hero-btn-fav" title="Add to Favorites">
+              <span>★</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modern Browser Tools & Filter Row -->
+      <div class="browser-tools-bar">
+        <div class="sort-filter-group">
+          <span class="tools-label">Sort:</span>
+          <select id="select-channel-sort" class="modern-select">
+            <option value="default">Default Catalog</option>
+            <option value="number">Channel Number (#1 - #3000)</option>
+            <option value="name">Alphabetical (A - Z)</option>
+            <option value="favorites">Top Favorites First</option>
+            <option value="sports">Live Sports Priority</option>
+          </select>
+        </div>
+        <div class="quick-filter-pills">
+          <button class="filter-pill active" data-filter="all">All</button>
+          <button class="filter-pill" data-filter="hd">⚡ HD / 4K</button>
+          <button class="filter-pill" data-filter="sports">🏆 Sports</button>
+          <button class="filter-pill" data-filter="news">📰 News</button>
+        </div>
+        <div class="tools-right">
+          <button id="btn-toggle-hero" class="tool-toggle-btn" title="Toggle Featured Broadcast Billboard">
+            <span>🎬</span>
+            <span id="hero-toggle-label">Billboard</span>
+          </button>
+          <button id="btn-toggle-sports-bar" class="tool-toggle-btn" title="Toggle Live Sports Events Section">
+            <span>🔥</span>
+            <span id="sports-toggle-label">Sports</span>
+          </button>
+          <button id="btn-turbo-mode" class="tool-toggle-btn"
+            title="Low-RAM Super-Optimizer: Minimizes CPU & RAM Usage">
+            <span>🚀</span>
+            <span id="turbo-label">Turbo Mode</span>
+          </button>
+          <button id="btn-view-density" class="tool-toggle-btn" title="Toggle Grid Density (Comfortable / Compact)">
+            <span>⊞</span>
+            <span id="density-label">Grid</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Featured Real-Time Live Sports Events Segment (Cricket, Tennis, MotoGP, Football) -->
+      <div class="live-events-container" id="live-events-container">
+        <div class="live-events-header">
+          <div class="live-events-title">
+            <span>🔥</span>
+            <span>LIVE SPORTS EVENTS</span>
+            <span class="realtime-status-pill"><span class="realtime-status-dot"></span>REAL-TIME</span>
+          </div>
+          <div class="live-events-actions">
+            <div class="live-events-tabs" id="live-events-tabs">
+              <button class="event-tab active" data-sport="All">All</button>
+              <button class="event-tab" data-sport="Cricket">🏏 Cricket</button>
+              <button class="event-tab" data-sport="Tennis">🎾 Tennis</button>
+              <button class="event-tab" data-sport="MotoGP">🏍️ MotoGP</button>
+              <button class="event-tab" data-sport="Football">⚽ Football</button>
+            </div>
+            <!-- Show / Hide Match Information Toggle -->
+            <button id="btn-toggle-event-info" class="event-info-toggle-btn" title="Show or hide detailed match information">
+              <span id="event-info-icon">👁️</span>
+              <span id="event-info-label">Hide Info</span>
+            </button>
+            <!-- Dismiss Entire Sports Section -->
+            <button id="btn-close-sports-section" class="events-close-btn" title="Dismiss Live Sports Events">✕</button>
+          </div>
+        </div>
+        <div class="live-events-carousel" id="live-events-carousel">
+          <!-- Rendered dynamically with live real-time scores and streams -->
+        </div>
+      </div>
+
+      <!-- Recently Watched Channels Carousel (Quick Jump Back In) -->
+      <div class="recently-watched-container" id="recently-watched-container" style="display: none;">
+        <div class="recently-watched-header">
+          <div class="recently-watched-title">
+            <span>🕒</span>
+            <span>RECENTLY WATCHED</span>
+          </div>
+          <button id="btn-clear-recents" class="btn-clear-recents" title="Clear Recently Watched History">Clear
+            History</button>
+        </div>
+        <div class="recently-watched-carousel" id="recently-watched-carousel">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+      <!-- Sticky Category & Catalog Header -->
+      <div class="sticky-catalog-header">
+        <!-- Categories Bar -->
+        <div class="categories-bar" id="categories-bar">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <!-- Sub Bar: Count + Rank Favorites -->
+        <div class="sub-bar">
+          <div class="channel-count-area" id="channel-count-text">
+            Loading channels...
+          </div>
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <button id="btn-rank-favorites" class="rank-favorites-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+              </svg>
+              <span>Rank Favorites</span>
+            </button>
+            <button id="btn-reorder-categories" class="category-reorder-btn" title="Rearrange Category Tabs">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+              </svg>
+              <span>Rearrange Tabs</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Channels Grid -->
+      <div class="channels-grid" id="channels-grid">
+        <!-- Cards rendered dynamically -->
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="empty-state" style="display: none;">
+        <div class="empty-state-icon">📡</div>
+        <div style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">No Channels Found</div>
+        <div style="font-size: 12px; color: var(--text-secondary);">Try clearing search filters or selecting another
+          category.</div>
+      </div>
+    </main>
+
+    <!-- Mini-Player Bar (shown when player is minimized) -->
+    <div class="mini-player-bar" id="mini-player-bar" style="display: none;">
+      <div class="mini-player-left" id="mini-player-clickable">
+        <div class="mini-player-thumb">
+          <div
+            style="width: 100%; height: 100%; background: #222; display: flex; align-items: center; justify-content: center; font-size: 16px;">
+            ▶</div>
+        </div>
+        <div>
+          <div class="mini-player-title" id="mini-channel-name">Channel Name</div>
+          <div class="mini-player-meta" id="mini-channel-meta">Live Stream • 1080p</div>
+        </div>
+      </div>
+      <div class="mini-player-right">
+        <button id="mini-btn-prev" class="action-icon-btn" title="Previous Channel">⏮</button>
+        <button id="mini-btn-play" class="action-icon-btn" title="Play/Pause">⏸</button>
+        <button id="mini-btn-next" class="action-icon-btn" title="Next Channel">⏭</button>
+        <button id="mini-btn-expand" class="action-icon-btn" title="Expand Full Player">⤢</button>
+        <button id="mini-btn-close" class="action-icon-btn" title="Close Player">✕</button>
+      </div>
+    </div>
+
+    <!-- Full Video Player Overlay -->
+    <div class="player-overlay" id="player-overlay" style="display: none;">
+      <div class="video-container" id="video-container">
+        <!-- Ambient Backlighting Canvas -->
+        <canvas id="ambient-canvas"></canvas>
+
+        <!-- Hardware-Accelerated Real-Time WebGL AI Super-Resolution Canvas -->
+        <canvas id="ai-upscale-canvas" class="ai-upscale-canvas" style="display: none;"></canvas>
+
+        <!-- Live Before/After Split-Screen Comparison Slider -->
+        <div id="ai-compare-slider-container" class="ai-compare-slider-container" style="display: none;">
+          <div class="ai-compare-line" id="ai-compare-line">
+            <div class="ai-compare-handle">
+              <span>◀</span><span>▶</span>
+            </div>
+          </div>
+          <div class="ai-compare-label left">Native 1080p</div>
+          <div class="ai-compare-label right">✨ AI 4K Upscaled</div>
+        </div>
+
+        <!-- Video Element -->
+        <video id="video-player" playsinline preload="auto"></video>
+
+        <!-- Real-Time Live Closed Captions / Subtitles Overlay -->
+        <div id="player-live-captions" style="display: none;"></div>
+
+        <!-- Audio-Only / Radio Mode Equalizer HUD -->
+        <div class="audio-only-hud" id="audio-only-hud" style="display: none;">
+          <div class="audio-only-logo-wrap">
+            <img id="audio-only-logo" src="" alt="Channel Logo" onerror="this.src='';">
+          </div>
+          <div style="font-size: 18px; font-weight: 800; color: #fff;" id="audio-only-title">Channel Name</div>
+          <div class="eq-bars-wrap">
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+            <div class="eq-bar"></div>
+          </div>
+          <div style="font-size: 12px; color: #38bdf8; font-weight: 600;">📻 Radio / Audio-Only Mode • Saving 85%
+            Battery & Data</div>
+          <button class="player-pill" onclick="window.toggleAudioOnlyMode && window.toggleAudioOnlyMode()"
+            style="background: rgba(229,9,20,0.3); border-color: var(--accent-red); margin-top: 6px;">
+            <span>🎬 Turn Video Back On</span>
+          </button>
+        </div>
+
+        <!-- Floating PiP Controls Overlay (Native macOS Floating Mini-Player) -->
+        <div id="pip-controls-overlay" class="pip-controls-overlay">
+          <div class="pip-top-bar" id="pip-drag-handle">
+            <div class="pip-channel-info">
+              <span class="pip-live-badge">● LIVE</span>
+              <span class="pip-channel-title" id="pip-channel-title">Live TV</span>
+            </div>
+            <div class="pip-actions">
+              <button id="pip-btn-restore" class="pip-icon-btn" title="Exit PiP / Restore Full App (P)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 12h-2v3h-3v2h5v-5zM7 9h3V7H5v5h2V9zm14-6H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16.01H3V4.99h18v14.02z" />
+                </svg>
+              </button>
+              <button id="pip-btn-close" class="pip-icon-btn close" title="Close PiP">✕</button>
+            </div>
+          </div>
+          <div class="pip-center-bar">
+            <button id="pip-btn-prev" class="pip-ctrl-btn" title="Previous Channel ([)">⏮</button>
+            <button id="pip-btn-play" class="pip-ctrl-btn play" title="Play / Pause (Space)">⏸</button>
+            <button id="pip-btn-next" class="pip-ctrl-btn" title="Next Channel (])">⏭</button>
+            <button id="pip-btn-mute" class="pip-ctrl-btn" title="Mute / Unmute (M)">🔊</button>
+          </div>
+          <!-- Drag-to-Resize Handle (Bottom-Right Corner) -->
+          <div class="pip-resize-handle" id="pip-resize-handle" title="Drag to Resize (16:9)">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M22 22h-2v-2h2v2zm0-4h-2v-2h2v2zm-4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm-4 4h-2v-2h2v2zm8-8h-2v-2h2v2z" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- Gesture Areas for brightness / volume -->
+        <div id="gesture-area-left" style="position: absolute; left: 0; top: 0; width: 45%; height: 100%; z-index: 2;">
+        </div>
+        <div id="gesture-area-right"
+          style="position: absolute; right: 0; top: 0; width: 45%; height: 100%; z-index: 2;"></div>
+
+        <!-- Double-Click / Tap 10s Seek Ripple Indicators -->
+        <div class="double-tap-indicator left" id="double-tap-left">
+          <div style="font-size: 26px;">⏪</div>
+          <div>-10s</div>
+        </div>
+        <div class="double-tap-indicator right" id="double-tap-right">
+          <div style="font-size: 26px;">⏩</div>
+          <div>+10s</div>
+        </div>
+
+        <!-- Floating Brightness & Volume HUDs -->
+        <div class="gesture-hud left" id="hud-brightness">
+          <span class="hud-icon">☀️</span>
+          <span class="hud-val" id="hud-brightness-val">100%</span>
+        </div>
+        <div class="gesture-hud right" id="hud-volume">
+          <span class="hud-icon">🔊</span>
+          <span class="hud-val" id="hud-volume-val">100%</span>
+        </div>
+
+        <!-- Stream Stats HUD Overlay -->
+        <div id="stats-hud"
+          style="display: none; position: absolute; top: 60px; left: 24px; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 12px 16px; font-family: monospace; font-size: 11px; color: #00ffcc; z-index: 25; pointer-events: none; line-height: 1.6;">
+          <div
+            style="font-weight: 700; color: #fff; margin-bottom: 4px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 2px;">
+            STREAM STATS</div>
+          <div>Resolution: <span id="stat-res" style="color: #fff;">1920x1080</span></div>
+          <div>Bitrate: <span id="stat-bitrate" style="color: #fff;">4500 kbps</span></div>
+          <div>Buffer Length: <span id="stat-buffer" style="color: #fff;">28.4s</span></div>
+          <div>Dropped Frames: <span id="stat-dropped" style="color: #fff;">0</span></div>
+          <div>Audio Track: <span id="stat-audio" style="color: #fff;">AAC Stereo</span></div>
+          <div>Catch-Up: <span id="stat-dvr" style="color: #fff;">1-Hour Timeshift Active</span></div>
+        </div>
+
+        <!-- Floating Screen Unlock Overlay (Android Parity) -->
+        <div id="player-lock-overlay" class="player-lock-overlay" style="display: none;">
+          <button id="player-btn-unlock" class="player-unlock-pill" title="Unlock Screen (L)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h1.9c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10z" />
+            </svg>
+            <span>Screen Locked • Tap to Unlock</span>
+          </button>
+        </div>
+
+        <!-- Keypad TV Number Dialing OSD Overlay -->
+        <div id="player-osd-dialer" class="player-osd-dialer" style="display: none;">
+          <div class="osd-dialer-label">TUNE CHANNEL</div>
+          <div class="osd-dialer-val">CH <span id="osd-dialer-num">--</span></div>
+          <div id="osd-dialer-name" class="osd-dialer-name"></div>
+        </div>
+
+        <!-- Slow-Mo Replay HUD Banner -->
+        <div id="player-slowmo-banner" class="player-slowmo-banner" style="display: none;">
+          <span class="slowmo-icon">⏱️</span>
+          <span class="slowmo-text">SLOW REPLAY (0.5×)</span>
+          <button id="btn-slowmo-live" class="slowmo-live-btn" title="Return to Live Stream Edge">Resume Live ▶</button>
+        </div>
+
+        <!-- In-Player Stream Notice Banner -->
+        <div id="player-stream-notice" class="player-stream-notice" style="display: none;">
+          <span id="player-stream-notice-icon">⚠️</span>
+          <span id="player-stream-notice-text">Stream Notice</span>
+        </div>
+
+        <!-- Player Controls (Overlay) -->
+        <div class="player-controls visible" id="player-controls">
+          <!-- Top Bar -->
+          <div class="player-top-bar">
+            <div class="player-top-left">
+              <button id="player-btn-back" class="player-icon-btn" title="Back / Minimize (Esc)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+                </svg>
+              </button>
+              <div class="player-title-info">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div class="player-channel-title" id="player-channel-title">Channel Title</div>
+                  <span class="player-channel-num-badge" id="player-channel-num">CH 01</span>
+                </div>
+                <div class="player-channel-meta" id="player-channel-meta">Category • Quality</div>
+                <!-- Live EPG Schedule Strip -->
+                <div class="player-epg-strip" id="player-epg-strip">
+                  <span class="epg-badge-now">NOW</span>
+                  <span class="epg-now-text" id="player-epg-now">Live Broadcast</span>
+                  <div class="epg-progress">
+                    <div class="epg-progress-bar" id="player-epg-bar" style="width: 50%;"></div>
+                  </div>
+                  <span class="epg-next-text" id="player-epg-next">Next: Programming</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="player-top-right">
+              <!-- Real-Time Hardware-Accelerated WebGL AI Super-Resolution 4K Upscaler -->
+              <button id="player-btn-ai-upscaler" class="player-pill"
+                title="Toggle Real-Time WebGL AI Super-Resolution 4K Upscaler">
+                <span>✨</span>
+                <span id="player-ai-upscale-label">AI 4K Upscaler</span>
+              </button>
+
+              <!-- Live Before/After Split Comparison Slider -->
+              <button id="player-btn-ai-compare" class="player-pill"
+                title="Compare Native Stream vs AI Upscaled Stream Side-by-Side">
+                <span>⚖️</span>
+                <span>Split Compare</span>
+              </button>
+
+              <!-- 10-Band Graphic Audio Equalizer -->
+              <button id="player-btn-10band-eq" class="player-pill" title="Open 10-Band Pro Graphic Audio Equalizer">
+                <span>🎚️</span>
+                <span>10-Band EQ</span>
+              </button>
+
+              <!-- Live Data Consumption Meter -->
+              <div id="player-data-meter" class="player-data-meter" title="Real-Time Data Consumption">
+                📶 <span id="data-meter-val">1.2 GB/h</span>
+              </div>
+
+              <!-- Real-Time Network CDN Latency & Dropped Frames Telemetry -->
+              <div id="player-net-telemetry" class="player-data-meter"
+                style="color: #4ade80; border-color: rgba(74, 222, 128, 0.3); background: rgba(74, 222, 128, 0.1);"
+                title="Network CDN Latency & Quality">
+                ⚡ <span id="net-latency-val">12ms • 0% Loss</span>
+              </div>
+
+              <!-- Aspect Ratio Pan & Crop -->
+              <button id="player-btn-aspect" class="player-pill"
+                title="Cycle Aspect Ratio (16:9 Fit, 16:9 Fill Zoom, 4:3 Vintage, 21:9 Cinema)">
+                <span>⛶</span>
+                <span id="player-aspect-label">16:9</span>
+              </button>
+
+              <!-- Dynamic Ambient Backlighting Toggle -->
+              <button id="player-btn-ambilight" class="player-pill"
+                title="Toggle Reactive Ambient Backlighting (Ambilight)">
+                <span>💡</span>
+                <span id="player-ambilight-label">Ambient</span>
+              </button>
+
+              <!-- Instant Highlight 30s Clip Downloader -->
+              <button id="player-btn-clip" class="player-pill"
+                title="Instant Highlight Clip Downloader (Save Last 30s)">
+                <span>✂️</span>
+                <span>Clip</span>
+              </button>
+
+              <!-- Real-Time Speech-to-Text Live Captions -->
+              <button id="player-btn-captions" class="player-pill" title="Toggle Real-Time Live Captions / Subtitles">
+                <span>💬</span>
+                <span id="player-captions-label">Captions</span>
+              </button>
+
+              <!-- Dynamic Range Audio Compressor / Normalizer -->
+              <button id="player-btn-compressor" class="player-pill"
+                title="Audio Normalizer & Night Mode (Clamps Loud Sounds)">
+                <span>🔊</span>
+                <span id="player-compressor-label">Normalizer</span>
+              </button>
+
+              <!-- Google Cast, AirPlay & Smart TV Transmitter -->
+              <button id="player-btn-cast" class="player-pill" title="Cast Stream to Smart TV / AirPlay / Chromecast">
+                <span>📡</span>
+                <span>Cast</span>
+              </button>
+
+              <!-- Dual Audio Mixer (Stadium + Commentary) -->
+              <button id="player-btn-audiomixer" class="player-pill"
+                title="Dual Audio Mixer (Stadium Ambient + Custom Commentary)">
+                <span>🎛️</span>
+                <span>Dual Audio</span>
+              </button>
+
+              <!-- AI Video Clarity & Retina HDR Enhancer -->
+              <button id="player-btn-clarity" class="player-pill" title="AI Video Clarity & Retina HDR Enhancer">
+                <span>✨</span>
+                <span id="player-clarity-label">AI Clarity</span>
+              </button>
+
+              <!-- Commercial Break Auto-Muter -->
+              <button id="player-btn-break-mute" class="player-pill"
+                title="Mute Commercial Break (30s / 60s / 90s / 120s)">
+                <span>🔇</span>
+                <span id="player-break-mute-label">Ad Mute</span>
+              </button>
+
+              <!-- Break Countdown Badge (Active when muted) -->
+              <div id="player-break-countdown" class="player-break-countdown" style="display: none;"
+                title="Click to resume audio immediately">
+                🔇 <span id="break-countdown-text">Break: 0:45</span> <span>▶</span>
+              </div>
+
+              <!-- Quick Mini-Guide Drawer Toggle -->
+              <button id="player-btn-guide" class="player-pill" title="Open Quick In-Player Mini-Guide (Down Arrow)">
+                <span>🧭</span>
+                <span>Guide</span>
+              </button>
+
+              <!-- Instant Slow-Mo Replay Button -->
+              <button id="player-btn-replay" class="player-pill" title="Instant 10s Slow-Motion Replay (0.5×)">
+                <span>⏱️</span>
+                <span>Replay</span>
+              </button>
+
+              <!-- Live Clip Recorder Button -->
+              <button id="player-btn-record" class="player-pill rec-pill" title="Record Live Highlight Clip (R)">
+                <span class="rec-dot" id="rec-dot">●</span>
+                <span id="player-record-label">REC</span>
+              </button>
+
+              <!-- Audio & Subtitles Selector Pill -->
+              <button id="player-btn-audio-sub" class="player-pill" title="Audio Tracks & Subtitles">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 3v9.28a4.39 4.39 0 0 0-1.5-.28C8.01 12 6 14.01 6 16.5S8.01 21 10.5 21c2.31 0 4.2-1.75 4.45-4H15V6h4V3h-7z" />
+                </svg>
+                <span id="player-audio-sub-label">Audio</span>
+              </button>
+
+              <!-- Radio / Audio-Only Mode Pill -->
+              <button id="player-btn-radio" class="player-pill"
+                title="Toggle Radio / Audio-Only Mode (Saves 85% Battery & CPU)">
+                <span>📻</span>
+                <span id="player-radio-label">Radio</span>
+              </button>
+
+              <!-- Ultra-Low Latency Sports Mode Pill -->
+              <button id="player-btn-lowlatency" class="player-pill"
+                title="Ultra-Low Latency Mode (Real-Time Live Sports Sync)">
+                <span>⚡</span>
+                <span id="player-lowlatency-label">Realtime</span>
+              </button>
+
+              <!-- Multi-View Studio Pill -->
+              <button id="player-btn-multiview" class="player-pill" title="Open Multi-View Studio (V)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3 3h8v8H3zm10 0h8v8h-8zM3 13h8v8H3zm10 0h8v8h-8z" />
+                </svg>
+                <span>Multi-View</span>
+              </button>
+
+              <!-- Always On Top Pin Button -->
+              <button id="player-btn-pin" class="player-icon-btn" title="Pin Always on Top (T)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M16 9V4l1 0V2H7v2l1 0v5c0 1.66-1.34 3-3 3v2h5.97v7l1 1 1-1v-7H19v-2c-1.66 0-3-1.34-3-3z" />
+                </svg>
+              </button>
+
+              <!-- Favorite Button -->
+              <button id="player-btn-fav" class="player-pill" title="Toggle Favorite">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>
+                <span id="player-fav-label">Favorite</span>
+              </button>
+
+              <!-- Video Quality Selector Pill -->
+              <button id="player-btn-quality" class="player-pill active-quality" title="Select Video Quality">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 4H5c-1.11 0-2 .9-2 2v12c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H5V6h14v12zM7.5 13.5h2.5V15H6v-6h4v1.5H7.5v1.5zm6-4.5h3.5v6H15.5v-2H13.5v-4zm-2 2h2v2h-2v-2z" />
+                </svg>
+                <span id="player-quality-label">1080p HD</span>
+              </button>
+
+              <!-- Broadcast Server Switcher Pill (Server 1 / Server 2) -->
+              <button id="player-btn-server" class="player-pill" title="Switch Broadcast Server (S)"
+                style="display: none;">
+                <span>⚡</span>
+                <span id="player-server-label">Server 1</span>
+              </button>
+
+              <!-- DVR Offset Pill -->
+              <div id="player-dvr-offset-pill" class="player-pill" style="font-family: monospace; font-weight: 700;">
+                LIVE
+              </div>
+
+              <!-- Audio Sound Profile Selector Pill -->
+              <button id="player-btn-audio-profile" class="player-pill" title="Audio Sound Profile">
+                <span>🎧</span>
+                <span id="player-audio-profile-label">Normal</span>
+              </button>
+
+              <!-- Sleep Timer Countdown Pill -->
+              <div id="player-sleep-countdown" class="player-pill"
+                style="display: none; background: rgba(229, 9, 20, 0.25); border-color: var(--accent-red); color: #fff; cursor: pointer;"
+                title="Click to manage Sleep Timer">
+                ⏱️ <span id="sleep-countdown-val">30:00</span>
+              </div>
+
+              <!-- Sleep Timer Button -->
+              <button id="player-btn-sleep" class="player-icon-btn" title="Bedtime Sleep Timer">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.3 2a10 10 0 0 0-1.9 19.8 10 10 0 0 0 11.6-11.6A10 10 0 0 1 12.3 2z" />
+                </svg>
+              </button>
+
+              <!-- Stream Stats Button -->
+              <button id="player-btn-stats" class="player-icon-btn" title="Toggle Stream Stats (HUD)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
+                </svg>
+              </button>
+
+              <!-- Aspect Ratio Button -->
+              <button id="player-btn-aspect" class="player-icon-btn" title="Cycle Aspect Ratio (Fit / 16:9 / Fill)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 12h-2v3h-3v2h5v-5zM7 9h3V7H5v5h2V9zm14-6H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16.01H3V4.99h18v14.02z" />
+                </svg>
+              </button>
+
+              <!-- Lock Controls Button -->
+              <button id="player-btn-lock" class="player-icon-btn" title="Lock Screen Controls">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+                </svg>
+              </button>
+
+              <!-- Picture-in-Picture Button -->
+              <button id="player-btn-pip" class="player-icon-btn" title="Picture in Picture">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 7h-8v6h8V7zm2-4H3c-1.1 0-2 .9-2 2v14c0 1.1.9 1.98 2 1.98h18c1.1 0 2-.88 2-1.98V5c0-1.1-.9-2-2-2zm0 16.01H3V4.98h18v14.03z" />
+                </svg>
+              </button>
+
+              <!-- Fullscreen Button -->
+              <button id="player-btn-fullscreen" class="player-icon-btn" title="Toggle Fullscreen (F)">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Center Controls (Standard Size Matching v3.0 Specification) -->
+          <div class="player-center-controls">
+            <!-- Previous Channel (34px) -->
+            <button id="player-btn-prev-chan" class="center-btn prev-next" title="Previous Channel ([)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" />
+              </svg>
+            </button>
+
+            <!-- Rewind 10s (36px) -->
+            <button id="player-btn-rewind" class="center-btn seek" title="Rewind 10 Seconds (Left Arrow)">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11 18V6l-8.5 6 8.5 6zm.5-6l8.5 6V6l-8.5 6z" />
+              </svg>
+              <span>-10s</span>
+            </button>
+
+            <!-- Play / Pause (46px) -->
+            <button id="player-btn-play" class="center-btn play-pause" title="Play / Pause (Space)">
+              <svg id="play-pause-svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+              </svg>
+            </button>
+
+            <!-- Forward 10s (36px) -->
+            <button id="player-btn-forward" class="center-btn seek" title="Forward 10 Seconds (Right Arrow)">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M4 18l8.5-6L4 6v12zm9-12v12l8.5-6L13 6z" />
+              </svg>
+              <span>+10s</span>
+            </button>
+
+            <!-- Next Channel (34px) -->
+            <button id="player-btn-next-chan" class="center-btn prev-next" title="Next Channel (])">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Bottom Bar: DVR Catch-Up Scrubber & Quick Switch Carousel -->
+          <div class="player-bottom-bar">
+            <!-- DVR Scrubber Row -->
+            <div class="dvr-row">
+              <span id="dvr-offset-label" class="dvr-badge">LIVE</span>
+              <input type="range" id="dvr-slider" class="dvr-slider" min="-3600" max="0" value="0" step="1"
+                title="1-Hour Timeshift Scrubber" />
+              <button id="dvr-btn-1h" class="dvr-pill-btn" title="Jump Back 1 Hour">-1h</button>
+              <button id="dvr-btn-30m" class="dvr-pill-btn" title="Jump Back 30 Minutes">-30m</button>
+              <button id="dvr-btn-15m" class="dvr-pill-btn" title="Jump Back 15 Minutes">-15m</button>
+              <button id="dvr-btn-live" class="dvr-pill-btn go-live" title="Return to Live Stream">GO LIVE</button>
+            </div>
+
+            <!-- Volume / Brightness Sliders Row -->
+            <div class="player-sliders-row">
+              <div class="quick-switch-header">Quick Switch Channel</div>
+              <div style="display: flex; gap: 12px; align-items: center;">
+                <!-- Brightness Slider -->
+                <div class="slider-group">
+                  <div class="slider-pill">
+                    <span>☀️</span>
+                    <input type="range" id="slider-brightness" min="20" max="150" value="100" />
+                  </div>
+                </div>
+
+                <!-- Volume Slider (with 200% Audio Booster) -->
+                <div class="slider-group">
+                  <div class="slider-pill" id="slider-pill-volume">
+                    <span>🔊</span>
+                    <input type="range" id="slider-volume" min="0" max="200" value="100"
+                      title="Volume & 200% Audio Booster" />
+                    <span id="volume-val-text" style="font-size: 10px; font-weight: 700; min-width: 34px;">100%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Switch Channel Carousel -->
+            <div class="quick-switch-carousel" id="quick-switch-carousel">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+
+        <!-- In-Player Quick Mini-Guide Drawer -->
+        <div class="player-mini-guide" id="player-mini-guide">
+          <div class="mini-guide-header">
+            <div class="mini-guide-title">
+              <span>🧭</span>
+              <span>Quick Channel Guide</span>
+            </div>
+            <div class="mini-guide-tabs" id="mini-guide-tabs">
+              <button class="mini-guide-tab active" data-cat="Favorites">★ Favorites</button>
+              <button class="mini-guide-tab" data-cat="Sports">Sports</button>
+              <button class="mini-guide-tab" data-cat="Bangladesh">Bangladesh</button>
+              <button class="mini-guide-tab" data-cat="All">All</button>
+            </div>
+            <button class="player-icon-btn" style="width:26px; height:26px; font-size:12px;"
+              onclick="window.closeMiniGuide()">✕</button>
+          </div>
+          <div class="mini-guide-scroll" id="mini-guide-scroll">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: Rank Favorites Dialog -->
+    <div class="modal-overlay" id="modal-rank-favorites" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span style="font-size: 20px;">⭐</span>
+            <div>
+              <div class="modal-title">Rank Favorite Channels</div>
+              <div class="modal-subtitle">Reorder your favorites list (#1, #2, #3, ...) for top priority access</div>
+            </div>
+          </div>
+          <button class="modal-close-btn" id="btn-close-rank-modal">✕</button>
+        </div>
+        <div class="modal-body" id="favorites-list-body">
+          <!-- List rendered dynamically -->
+        </div>
+        <div class="modal-footer">
+          <button class="btn-secondary" id="btn-cancel-rank">Cancel</button>
+          <button class="btn-primary" id="btn-save-rank">Save Order</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: Rearrange Categories Dialog -->
+    <div class="modal-overlay" id="modal-rearrange-categories" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span style="font-size: 20px;">📑</span>
+            <div>
+              <div class="modal-title">Rearrange Categories</div>
+              <div class="modal-subtitle">Organize and order category tabs to match your personal viewing habits</div>
+            </div>
+          </div>
+          <button class="modal-close-btn" id="btn-close-reorder-modal">✕</button>
+        </div>
+        <div class="modal-body" id="categories-list-body">
+          <!-- Categories list rendered dynamically -->
+        </div>
+        <div class="modal-footer">
+          <button class="btn-secondary" id="btn-reset-categories">Reset Default</button>
+          <button class="btn-primary" id="btn-save-categories">Save Order</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: Player Settings & Quality Dialog -->
+    <div class="modal-overlay" id="modal-player-settings" style="display: none;">
+      <div class="modal-dialog" style="max-width: 440px;">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span style="font-size: 18px;">⚙️</span>
+            <div>
+              <div class="modal-title">Playback Settings</div>
+              <div class="modal-subtitle">Quality, Speed, Sleep Timer & Display</div>
+            </div>
+          </div>
+          <button class="modal-close-btn" id="btn-close-settings-modal">✕</button>
+        </div>
+        <div class="modal-body">
+          <!-- Video Quality Selection -->
+          <div style="font-weight: 700; margin-bottom: 6px; font-size: 12px; color: var(--gold);">VIDEO QUALITY</div>
+          <div id="quality-options-container"
+            style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+            <!-- Rendered dynamically -->
+          </div>
+
+          <!-- Playback Speed -->
+          <div style="font-weight: 700; margin-bottom: 6px; font-size: 12px; color: var(--gold);">PLAYBACK SPEED</div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px;" id="speed-options-container">
+            <button class="dvr-pill-btn speed-btn" data-speed="0.5">0.5x</button>
+            <button class="dvr-pill-btn speed-btn" data-speed="0.75">0.75x</button>
+            <button class="dvr-pill-btn speed-btn active" data-speed="1.0">1.0x (Normal)</button>
+            <button class="dvr-pill-btn speed-btn" data-speed="1.25">1.25x</button>
+            <button class="dvr-pill-btn speed-btn" data-speed="1.5">1.5x</button>
+            <button class="dvr-pill-btn speed-btn" data-speed="2.0">2.0x</button>
+          </div>
+
+          <!-- Sleep Timer -->
+          <div style="font-weight: 700; margin-bottom: 6px; font-size: 12px; color: var(--gold);">SLEEP TIMER</div>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px;" id="sleep-options-container">
+            <button class="dvr-pill-btn sleep-btn active" data-minutes="0">Off</button>
+            <button class="dvr-pill-btn sleep-btn" data-minutes="15">15 min</button>
+            <button class="dvr-pill-btn sleep-btn" data-minutes="30">30 min</button>
+            <button class="dvr-pill-btn sleep-btn" data-minutes="45">45 min</button>
+            <button class="dvr-pill-btn sleep-btn" data-minutes="60">60 min</button>
+            <button class="dvr-pill-btn sleep-btn" data-minutes="90">90 min</button>
+            <button class="dvr-pill-btn sleep-btn" data-minutes="120">120 min</button>
+          </div>
+
+          <!-- Audio Track Selection -->
+          <div style="font-weight: 700; margin-bottom: 6px; font-size: 12px; color: var(--gold);">AUDIO TRACK
+            (MULTILINGUAL)</div>
+          <div id="audio-options-container"
+            style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+            <div style="font-size: 11px; color: var(--text-secondary);">Default Audio Stream</div>
+          </div>
+
+          <!-- Subtitles Selection -->
+          <div style="font-weight: 700; margin-bottom: 6px; font-size: 12px; color: var(--gold);">SUBTITLES / CLOSED
+            CAPTIONS</div>
+          <div id="subtitle-options-container"
+            style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+            <div style="font-size: 11px; color: var(--text-secondary);">No Subtitles Available</div>
+          </div>
+
+          <!-- Audio Booster & Normalizer Switch -->
+          <div style="font-weight: 700; margin-bottom: 6px; font-size: 12px; color: var(--gold);">AUDIO ENHANCEMENT
+          </div>
+          <div class="list-item-row" style="cursor: pointer;" id="row-audio-boost">
+            <span>🚀 200% Audio Booster & Dynamics Compressor</span>
+            <input type="checkbox" id="chk-audio-boost" checked style="cursor: pointer;" />
+          </div>
+
+          <!-- Alternative Live Audio Commentary Feed -->
+          <div style="font-weight: 700; margin-top: 14px; margin-bottom: 6px; font-size: 12px; color: var(--gold);">
+            ALTERNATIVE LIVE COMMENTARY SYNC</div>
+          <div style="background: rgba(255,255,255,0.04); padding: 10px; border-radius: 8px; margin-bottom: 16px;">
+            <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 8px;">Play alternate radio commentary
+              (e.g. TalkSPORT, BBC 5 Live, or custom stream) synced to this video.</div>
+            <div style="display: flex; gap: 6px; margin-bottom: 8px;">
+              <input type="text" id="input-custom-commentary" placeholder="Paste Audio Stream URL..."
+                style="flex:1; background:rgba(0,0,0,0.4); border:1px solid var(--border-color); border-radius:6px; color:#fff; font-size:11.5px; padding:6px 10px;">
+              <button class="btn-primary" id="btn-apply-commentary"
+                style="padding: 6px 12px; font-size: 11px;">Connect</button>
+              <button class="btn-secondary" id="btn-detach-commentary"
+                style="padding: 6px 10px; font-size: 11px; display:none;">✕</button>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px;">
+              <span>Audio Sync Delay: <strong id="commentary-delay-val">0.0s</strong></span>
+              <div style="display: flex; gap: 4px;">
+                <button class="btn-secondary" style="padding: 2px 8px; font-size: 10px;"
+                  onclick="window.adjustCommentaryDelay(-0.5)">-0.5s</button>
+                <button class="btn-secondary" style="padding: 2px 8px; font-size: 10px;"
+                  onclick="window.adjustCommentaryDelay(0.5)">+0.5s</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-primary" id="btn-done-settings">Done</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: Keyboard Shortcuts -->
+    <div class="modal-overlay" id="modal-shortcuts" style="display: none;">
+      <div class="modal-dialog" style="max-width: 480px;">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span style="font-size: 18px;">⌨️</span>
+            <div>
+              <div class="modal-title">Keyboard Shortcuts</div>
+              <div class="modal-subtitle">Quick controls for seamless Live TV viewing</div>
+            </div>
+          </div>
+          <button class="modal-close-btn" id="btn-close-shortcuts-modal">✕</button>
+        </div>
+        <div class="modal-body" style="font-size: 12px; display: flex; flex-direction: column; gap: 8px;">
+          <div class="list-item-row"><span>Space / K</span><span
+              style="color:var(--text-secondary); font-weight: 600;">Play / Pause</span></div>
+          <div class="list-item-row"><span>Left / Right Arrow</span><span
+              style="color:var(--text-secondary); font-weight: 600;">Seek -10s / +10s (Catch-Up)</span></div>
+          <div class="list-item-row"><span>Up / Down Arrow</span><span
+              style="color:var(--text-secondary); font-weight: 600;">Volume Up / Down (5%)</span></div>
+          <div class="list-item-row"><span>[ / ] (Brackets)</span><span
+              style="color:var(--text-secondary); font-weight: 600;">Previous / Next Channel</span></div>
+          <div class="list-item-row"><span>F</span><span style="color:var(--text-secondary); font-weight: 600;">Toggle
+              Fullscreen</span></div>
+          <div class="list-item-row"><span>M</span><span style="color:var(--text-secondary); font-weight: 600;">Mute /
+              Unmute</span></div>
+          <div class="list-item-row"><span>L</span><span style="color:var(--text-secondary); font-weight: 600;">Lock /
+              Unlock Screen Controls</span></div>
+          <div class="list-item-row"><span>G</span><span style="color:var(--text-secondary); font-weight: 600;">Return
+              to Live Edge</span></div>
+          <div class="list-item-row"><span>S</span><span style="color:var(--text-secondary); font-weight: 600;">Switch
+              Broadcast Server (Multi-Feed)</span></div>
+          <div class="list-item-row"><span>T</span><span style="color:var(--text-secondary); font-weight: 600;">Always
+              on Top (Floating Window)</span></div>
+          <div class="list-item-row"><span>R</span><span style="color:var(--text-secondary); font-weight: 600;">Record
+              Live Clip (.mp4/.webm)</span></div>
+          <div class="list-item-row"><span>V</span><span
+              style="color:var(--text-secondary); font-weight: 600;">Multi-View Studio (Dual/Quad Stream)</span></div>
+          <div class="list-item-row"><span>0 - 9</span><span
+              style="color:var(--text-secondary); font-weight: 600;">Cable TV Numeric Channel Dialing</span></div>
+          <div class="list-item-row"><span>A</span><span style="color:var(--text-secondary); font-weight: 600;">Audio &
+              Subtitle Track Selector</span></div>
+          <div class="list-item-row"><span>Escape</span><span
+              style="color:var(--text-secondary); font-weight: 600;">Exit Fullscreen / Minimize Player</span></div>
+          <div class="list-item-row"><span>Double-Click Left / Right</span><span
+              style="color:var(--text-secondary); font-weight: 600;">Seek -10s / +10s Ripple</span></div>
+          <div class="list-item-row"><span>Scroll Left / Right Screen</span><span
+              style="color:var(--text-secondary); font-weight: 600;">Adjust Brightness / Volume</span></div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-primary" id="btn-done-shortcuts">Got It</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: Custom Stream & M3U Importer -->
+    <div class="modal-overlay" id="modal-import-m3u" style="display: none;">
+      <div class="modal-dialog" style="max-width: 500px;">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span style="font-size: 18px;">➕</span>
+            <div>
+              <div class="modal-title">Custom Stream & M3U Importer</div>
+              <div class="modal-subtitle">Add your own .m3u8 live streams or batch import an IPTV playlist</div>
+            </div>
+          </div>
+          <button class="modal-close-btn" id="btn-close-m3u-modal">✕</button>
+        </div>
+        <div class="modal-body" style="gap: 14px;">
+          <!-- Tabs for Single Stream vs Batch M3U -->
+          <div style="display: flex; gap: 6px; background: rgba(0,0,0,0.3); padding: 4px; border-radius: 8px;">
+            <button id="tab-single-channel" class="btn-secondary"
+              style="flex: 1; padding: 6px 10px; font-size: 12px; font-weight: 700; background: var(--accent-red); color: #fff;">Single
+              Stream</button>
+            <button id="tab-batch-m3u" class="btn-secondary"
+              style="flex: 1; padding: 6px 10px; font-size: 12px; font-weight: 600;">Batch M3U File / URL</button>
+          </div>
+
+          <!-- Section 1: Single Custom Stream -->
+          <div id="section-single-channel" style="display: flex; flex-direction: column; gap: 10px;">
+            <div>
+              <label style="display: block; font-size: 11.5px; margin-bottom: 4px; color: var(--text-secondary);">Stream
+                HLS/M3U8 URL *</label>
+              <input type="url" id="custom-channel-url" class="search-input"
+                placeholder="https://example.com/live/stream.m3u8" />
+            </div>
+            <div>
+              <label
+                style="display: block; font-size: 11.5px; margin-bottom: 4px; color: var(--text-secondary);">Channel
+                Name *</label>
+              <input type="text" id="custom-channel-name" class="search-input"
+                placeholder="e.g. My Private Sports HD" />
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+              <div>
+                <label
+                  style="display: block; font-size: 11.5px; margin-bottom: 4px; color: var(--text-secondary);">Category</label>
+                <input type="text" id="custom-channel-cat" class="search-input" placeholder="Custom Channels"
+                  value="Custom Channels" />
+              </div>
+              <div>
+                <label style="display: block; font-size: 11.5px; margin-bottom: 4px; color: var(--text-secondary);">Logo
+                  URL (Optional)</label>
+                <input type="url" id="custom-channel-logo" class="search-input" placeholder="https://.../logo.png" />
+              </div>
+            </div>
+            <button class="btn-primary" id="btn-save-single-channel" style="margin-top: 4px;">Save & Add
+              Channel</button>
+          </div>
+
+          <!-- Section 2: Batch M3U -->
+          <div id="section-batch-m3u" style="display: none; flex-direction: column; gap: 10px;">
+            <div>
+              <label style="display: block; font-size: 11.5px; margin-bottom: 4px; color: var(--text-secondary);">M3U
+                Playlist URL</label>
+              <input type="url" id="m3u-url-input" class="search-input"
+                placeholder="https://example.com/playlist.m3u" />
+            </div>
+            <div>
+              <label style="display: block; font-size: 11.5px; margin-bottom: 4px; color: var(--text-secondary);">Or
+                select local .m3u / .m3u8 file</label>
+              <input type="file" id="m3u-file-input" accept=".m3u,.m3u8,.txt"
+                style="color: var(--text-secondary); font-size: 12px; width: 100%;" />
+            </div>
+            <button class="btn-primary" id="btn-load-m3u" style="margin-top: 4px;">Load Playlist</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-secondary" id="btn-cancel-m3u">Done</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: Wireless Phone Remote Control -->
+    <div class="modal-overlay" id="modal-remote-control" style="display: none;">
+      <div class="modal-dialog" style="max-width: 440px; text-align: center;">
+        <div class="modal-header" style="justify-content: space-between;">
+          <div class="modal-title-group" style="text-align: left;">
+            <span style="font-size: 22px;">📱</span>
+            <div>
+              <div class="modal-title">Phone as TV Remote</div>
+              <div class="modal-subtitle">Control Live TV wirelessly from any phone on your Wi-Fi</div>
+            </div>
+          </div>
+          <button class="modal-close-btn" id="btn-close-remote-modal">✕</button>
+        </div>
+        <div class="modal-body" style="align-items: center; gap: 12px; padding: 18px 16px;">
+          <!-- Permanent vs Direct IP Switcher -->
+          <div
+            style="display: flex; background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); border-radius: 8px; padding: 3px; gap: 4px; width: 100%; max-width: 350px;">
+            <button id="btn-tab-remote-host" class="category-chip active"
+              style="flex: 1; padding: 6px 6px; font-size: 11.5px; border-radius: 6px; justify-content: center;"
+              onclick="switchRemoteQrType('host')">
+              🛡️ Permanent (.local)
+            </button>
+            <button id="btn-tab-remote-ip" class="category-chip"
+              style="flex: 1; padding: 6px 6px; font-size: 11.5px; border-radius: 6px; justify-content: center;"
+              onclick="switchRemoteQrType('ip')">
+              📶 Direct Wi-Fi IP
+            </button>
+          </div>
+
+          <div id="remote-qr-box"
+            style="background: #ffffff; padding: 14px; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,0,0,0.5);">
+            <!-- QR code rendered here -->
+          </div>
+          <div id="remote-help-text"
+            style="font-size: 11.5px; color: var(--text-secondary); max-width: 320px; line-height: 1.4;">
+            <span style="color: #10b981; font-weight: 700;">★ Permanent (.local)</span>: Never breaks even if your Wi-Fi
+            router assigns a new IP address!
+          </div>
+          <div
+            style="background: var(--surface-variant); border: 1px solid var(--border-color); border-radius: 8px; padding: 8px 14px; display: flex; align-items: center; gap: 10px; width: 100%; max-width: 350px; justify-content: space-between;">
+            <code id="remote-server-url"
+              style="color: #38bdf8; font-size: 12.5px; font-weight: 700; word-break: break-all;">http://127.0.0.1:8998</code>
+            <button id="btn-copy-remote-url" class="btn-secondary"
+              style="padding: 4px 10px; font-size: 11px;">Copy</button>
+          </div>
+          <div style="display: flex; gap: 14px; font-size: 11px; color: var(--text-secondary); margin-top: 2px;">
+            <span>⚡ Zero App Install Required</span>
+            <span>•</span>
+            <span>📶 Same Wi-Fi Network</span>
+          </div>
+        </div>
+        <div class="modal-footer" style="justify-content: flex-end;">
+          <button class="btn-primary" id="btn-done-remote">Done</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: Bedtime Sleep Timer -->
+    <div class="modal-overlay" id="modal-sleep-timer" style="display: none;">
+      <div class="modal-dialog" style="max-width: 420px;">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span style="font-size: 20px;">⏱️</span>
+            <div>
+              <div class="modal-title">Bedtime Sleep Timer</div>
+              <div class="modal-subtitle">Stop playback automatically with gentle 2-minute audio fade-out</div>
+            </div>
+          </div>
+          <button class="modal-close-btn" id="btn-close-sleep-modal">✕</button>
+        </div>
+        <div class="modal-body" style="gap: 12px;">
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+            <button class="sleep-preset-btn" data-minutes="15">15 min</button>
+            <button class="sleep-preset-btn" data-minutes="30">30 min</button>
+            <button class="sleep-preset-btn" data-minutes="45">45 min</button>
+            <button class="sleep-preset-btn" data-minutes="60">60 min</button>
+            <button class="sleep-preset-btn" data-minutes="90">90 min</button>
+            <button class="sleep-preset-btn" data-minutes="120">2 Hours</button>
+          </div>
+          <div
+            style="padding: 10px 12px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 11.5px; color: var(--text-secondary); line-height: 1.5;">
+            🌙 <strong>Gentle Fade-Out:</strong> Audio volume gently ramps down to zero over the last 2 minutes so you
+            can fall asleep comfortably.
+          </div>
+        </div>
+        <div class="modal-footer" style="justify-content: space-between;">
+          <button class="btn-secondary" id="btn-cancel-sleep-timer" style="color: #ef4444;">Turn Off Timer</button>
+          <button class="btn-primary" id="btn-close-sleep-done">Done</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: Audio Profiles & Equalizer -->
+    <div class="modal-overlay" id="modal-audio-profiles" style="display: none;">
+      <div class="modal-dialog" style="max-width: 440px;">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span style="font-size: 20px;">🎚️</span>
+            <div>
+              <div class="modal-title">Audio Sound Profiles</div>
+              <div class="modal-subtitle">Pro acoustic equalizer tuned for broadcast audio</div>
+            </div>
+          </div>
+          <button class="modal-close-btn" id="btn-close-audio-modal">✕</button>
+        </div>
+        <div class="modal-body" style="gap: 8px;">
+          <div class="audio-profile-card" data-profile="normal">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 20px;">🎧</span>
+              <div>
+                <div style="font-weight: 700; font-size: 13px;">Normal (Flat Response)</div>
+                <div style="font-size: 11px; color: var(--text-secondary);">Balanced, authentic sound as originally
+                  broadcast</div>
+              </div>
+            </div>
+            <span class="profile-check" id="check-normal">✓</span>
+          </div>
+
+          <div class="audio-profile-card" data-profile="stadium">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 20px;">🏟️</span>
+              <div>
+                <div style="font-weight: 700; font-size: 13px;">Stadium Atmosphere (Sports)</div>
+                <div style="font-size: 11px; color: var(--text-secondary);">Boosts crowd ambiance & commentary clarity
+                  for Cricket / Football</div>
+              </div>
+            </div>
+            <span class="profile-check" id="check-stadium">✓</span>
+          </div>
+
+          <div class="audio-profile-card" data-profile="vocal">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 20px;">🎙️</span>
+              <div>
+                <div style="font-weight: 700; font-size: 13px;">Dialogue Clarity (News & Talk)</div>
+                <div style="font-size: 11px; color: var(--text-secondary);">Elevates human voices, eliminates low
+                  rumbling and echo</div>
+              </div>
+            </div>
+            <span class="profile-check" id="check-vocal">✓</span>
+          </div>
+
+          <div class="audio-profile-card" data-profile="night">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 20px;">🌙</span>
+              <div>
+                <div style="font-weight: 700; font-size: 13px;">Night Mode (Dynamics Normalizer)</div>
+                <div style="font-size: 11px; color: var(--text-secondary);">Compresses loud explosions/cheers, boosts
+                  quiet dialogue</div>
+              </div>
+            </div>
+            <span class="profile-check" id="check-night">✓</span>
+          </div>
+
+          <div class="audio-profile-card" data-profile="music">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 20px;">🎵</span>
+              <div>
+                <div style="font-weight: 700; font-size: 13px;">Music & Concert Mode</div>
+                <div style="font-size: 11px; color: var(--text-secondary);">Rich deep bass resonance and sparkling
+                  treble brilliance</div>
+              </div>
+            </div>
+            <span class="profile-check" id="check-music">✓</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-primary" id="btn-done-audio">Done</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: Sports Team Alerts & Match Notifications -->
+    <div class="modal-overlay" id="modal-team-alerts" style="display: none;">
+      <div class="modal-dialog" style="max-width: 480px;">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span style="font-size: 20px;">🔔</span>
+            <div>
+              <div class="modal-title">Sports Team Alerts</div>
+              <div class="modal-subtitle">Instant goal & score notifications for your favorite teams</div>
+            </div>
+          </div>
+          <button class="modal-close-btn" id="btn-close-alerts-modal">✕</button>
+        </div>
+        <div class="modal-body" style="gap: 12px;">
+          <div style="font-size: 12px; color: var(--text-secondary);">Select the teams and sports you want real-time
+            notifications for:</div>
+          <div class="team-chips-grid" id="team-chips-container">
+            <!-- Dynamically populated chips -->
+          </div>
+          <div style="display: flex; gap: 8px; margin-top: 4px;">
+            <input type="text" id="input-custom-team" class="search-input"
+              placeholder="Add custom team (e.g. Barcelona, Ducati)..." style="font-size: 12px; height: 34px;">
+            <button id="btn-add-custom-team" class="btn-primary"
+              style="padding: 0 14px; font-size: 12px; white-space: nowrap;">+ Add</button>
+          </div>
+          <div
+            style="background: rgba(255,255,255,0.03); border-radius: 8px; padding: 10px 12px; font-size: 11px; color: var(--text-secondary); line-height: 1.5;">
+            ⚡ <strong>Live Notification Flash:</strong> Alerts appear in the top-right corner with a 1-click <em>Watch
+              Live</em> button whenever your team scores or takes a wicket.
+          </div>
+        </div>
+        <div class="modal-footer" style="justify-content: flex-end;">
+          <button class="btn-primary" id="btn-done-alerts">Done</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: About & Software Updates -->
+    <div class="modal-overlay" id="modal-about" style="display: none;">
+      <div class="modal-dialog" style="max-width: 500px;">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <div class="brand-icon" style="width: 32px; height: 32px;">
+              <img src="icon.png" class="brand-icon-img" alt="Live TV" />
+            </div>
+            <div>
+              <div class="modal-title">Live TV <span style="font-size: 11px; opacity: 0.7; font-weight: normal;">for
+                  macOS</span></div>
+              <div class="modal-subtitle">Version 5.1.8 (Build 44) • Apple Silicon arm64</div>
+            </div>
+          </div>
+          <button class="modal-close-btn" id="btn-close-about-modal">✕</button>
+        </div>
+        <div class="modal-body" style="gap: 14px; font-size: 12.5px;">
+          <!-- Software Update Section Card -->
+          <div class="update-card" id="update-card">
+            <div class="update-card-header">
+              <span class="update-icon" id="update-status-icon">🚀</span>
+              <div style="flex: 1;">
+                <div class="update-card-title" id="update-status-title">Software Updates</div>
+                <div class="update-card-subtitle" id="update-status-subtitle">Check for latest Live TV releases &
+                  features</div>
+              </div>
+              <button class="btn-check-update" id="btn-check-update">Check Now</button>
+            </div>
+            <div class="update-card-body" id="update-details-area" style="display: none;">
+              <!-- Populated dynamically when checking or update found -->
+            </div>
+          </div>
+
+          <!-- App Telemetry & Features -->
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div class="list-item-row"><span>📺 Live Channels</span><span
+                style="color:var(--text-secondary); font-weight: 700;">2,989 Channels (1080p / 4K)</span></div>
+            <div class="list-item-row"><span>🔥 Real-Time Sports Feed</span><span
+                style="color:#34c759; font-weight: 700;">Active • Live Telemetry</span></div>
+            <div class="list-item-row"><span>⚡ Multi-Server Failover</span><span
+                style="color:var(--text-secondary); font-weight: 700;">Automatic Instant Healing</span></div>
+            <div class="list-item-row"><span>⏪ DVR Catch-Up</span><span
+                style="color:var(--text-secondary); font-weight: 700;">1-Hour Live Timeshift</span></div>
+            <div class="list-item-row"><span>💻 Architecture</span><span
+                style="color:var(--text-secondary); font-weight: 700;">macOS Apple Silicon (Native arm64)</span></div>
+          </div>
+        </div>
+        <div class="modal-footer" style="justify-content: space-between;">
+          <button class="btn-secondary" id="btn-github-link" style="font-size: 11px;">GitHub Releases</button>
+          <button class="btn-primary" id="btn-close-about">Done</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Multi-View / Quad-Stream Studio Overlay -->
+    <div class="multiview-overlay" id="multiview-overlay" style="display: none;">
+      <div class="multiview-top-bar">
+        <div class="multiview-title-group">
+          <div class="brand-icon" style="width: 28px; height: 28px; font-size: 14px;">🔲</div>
+          <div>
+            <div style="font-weight: 700; font-size: 14px; color: #fff;">Multi-View Studio</div>
+            <div style="font-size: 11px; color: var(--text-secondary);" id="multiview-status-text">Dual Stream Active •
+              Click any screen to focus audio</div>
+          </div>
+        </div>
+        <div class="multiview-controls-group">
+          <div class="multiview-layout-pills">
+            <button class="multiview-layout-btn active" id="btn-mv-mode-dual">Dual (2-Up)</button>
+            <button class="multiview-layout-btn" id="btn-mv-mode-quad">Quad (4-Up)</button>
+          </div>
+          <button class="btn-primary" id="btn-close-multiview" style="padding: 6px 14px; font-size: 12px;">✕ Exit
+            Multi-View</button>
+        </div>
+      </div>
+      <div class="multiview-grid mode-dual" id="multiview-grid">
+        <!-- Slot 0 -->
+        <div class="multiview-slot active-audio" id="mv-slot-0" data-slot="0">
+          <video class="mv-video" id="mv-video-0" playsinline></video>
+          <div class="mv-slot-header">
+            <span class="mv-channel-title" id="mv-title-0">Channel 1</span>
+            <button class="mv-audio-badge active" id="mv-audio-btn-0">🔊 AUDIO ACTIVE</button>
+          </div>
+        </div>
+        <!-- Slot 1 -->
+        <div class="multiview-slot" id="mv-slot-1" data-slot="1">
+          <video class="mv-video" id="mv-video-1" playsinline muted></video>
+          <div class="mv-slot-header">
+            <span class="mv-channel-title" id="mv-title-1">Channel 2</span>
+            <button class="mv-audio-badge" id="mv-audio-btn-1">🔇 MUTED</button>
+          </div>
+        </div>
+        <!-- Slot 2 -->
+        <div class="multiview-slot" id="mv-slot-2" data-slot="2" style="display: none;">
+          <video class="mv-video" id="mv-video-2" playsinline muted></video>
+          <div class="mv-slot-header">
+            <span class="mv-channel-title" id="mv-title-2">Channel 3</span>
+            <button class="mv-audio-badge" id="mv-audio-btn-2">🔇 MUTED</button>
+          </div>
+        </div>
+        <!-- Slot 3 -->
+        <div class="multiview-slot" id="mv-slot-3" data-slot="3" style="display: none;">
+          <video class="mv-video" id="mv-video-3" playsinline muted></video>
+          <div class="mv-slot-header">
+            <span class="mv-channel-title" id="mv-title-3">Channel 4</span>
+            <button class="mv-audio-badge" id="mv-audio-btn-3">🔇 MUTED</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: Scheduled DVR Background Recording -->
+    <div class="modal-overlay" id="modal-scheduled-dvr" style="display: none;">
+      <div class="modal-dialog" style="max-width: 460px;">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span style="font-size: 20px;">⏱️</span>
+            <div>
+              <div class="modal-title">Schedule DVR Recording</div>
+              <div class="modal-subtitle">Automatically record any match or show to your Mac</div>
+            </div>
+          </div>
+          <button class="modal-close-btn" id="btn-close-schedule-modal">✕</button>
+        </div>
+        <div class="modal-body" style="gap: 12px; font-size: 13px;">
+          <div>
+            <label
+              style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Select
+              Channel</label>
+            <select id="schedule-channel-select" class="multiview-select"
+              style="width: 100%; margin-top: 4px; padding: 8px; font-size: 13px;"></select>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div>
+              <label
+                style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Start
+                Recording In</label>
+              <select id="schedule-start-select" class="multiview-select"
+                style="width: 100%; margin-top: 4px; padding: 8px; font-size: 13px;">
+                <option value="0">Right Now (Instant)</option>
+                <option value="15">In 15 Minutes</option>
+                <option value="30">In 30 Minutes</option>
+                <option value="60">In 1 Hour</option>
+                <option value="120">In 2 Hours</option>
+                <option value="240">In 4 Hours (Overnight)</option>
+              </select>
+            </div>
+            <div>
+              <label
+                style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Duration</label>
+              <select id="schedule-duration-select" class="multiview-select"
+                style="width: 100%; margin-top: 4px; padding: 8px; font-size: 13px;">
+                <option value="15">15 Minutes</option>
+                <option value="30" selected>30 Minutes</option>
+                <option value="60">1 Hour</option>
+                <option value="120">2 Hours</option>
+                <option value="180">3 Hours (Full Match)</option>
+              </select>
+            </div>
+          </div>
+          <div
+            style="background: rgba(255,255,255,0.05); padding: 10px 12px; border-radius: 8px; font-size: 11.5px; color: var(--text-muted);">
+            📁 Destination: <span style="color:#fff; font-weight:600;">~/Movies/Live TV Recordings/</span>
+          </div>
+          <div id="active-schedules-list" style="display:none; flex-direction:column; gap:6px;">
+            <div style="font-size: 11px; font-weight:700; color:#38bdf8;">ACTIVE SCHEDULED RECORDINGS:</div>
+            <div id="active-schedules-container" style="display: flex; flex-direction: column; gap: 4px;"></div>
+          </div>
+        </div>
+        <div class="modal-footer" style="justify-content: space-between;">
+          <button class="btn-secondary" id="btn-cancel-schedule">Cancel</button>
+          <button class="btn-primary" id="btn-save-schedule">Set Recording Timer</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: Kids Safe Mode & Parental PIN Lock -->
+    <div class="modal-overlay" id="modal-parental-pin" style="display: none;">
+      <div class="modal-dialog" style="max-width: 360px; text-align: center;">
+        <div class="modal-header" style="justify-content: center; position: relative;">
+          <div class="modal-title" id="pin-modal-title">🔒 Parental PIN Lock</div>
+          <button class="modal-close-btn" id="btn-close-pin-modal" style="position: absolute; right: 12px;">✕</button>
+        </div>
+        <div class="modal-body" style="gap: 10px;">
+          <div id="pin-modal-desc" style="font-size: 12.5px; color: var(--text-muted);">Enter 4-digit PIN to toggle Kids
+            Safe Mode</div>
+          <div class="pin-dots">
+            <div class="pin-dot" id="pin-dot-0"></div>
+            <div class="pin-dot" id="pin-dot-1"></div>
+            <div class="pin-dot" id="pin-dot-2"></div>
+            <div class="pin-dot" id="pin-dot-3"></div>
+          </div>
+          <div class="pin-keypad">
+            <button class="pin-key" onclick="window.pressPinKey('1')">1</button>
+            <button class="pin-key" onclick="window.pressPinKey('2')">2</button>
+            <button class="pin-key" onclick="window.pressPinKey('3')">3</button>
+            <button class="pin-key" onclick="window.pressPinKey('4')">4</button>
+            <button class="pin-key" onclick="window.pressPinKey('5')">5</button>
+            <button class="pin-key" onclick="window.pressPinKey('6')">6</button>
+            <button class="pin-key" onclick="window.pressPinKey('7')">7</button>
+            <button class="pin-key" onclick="window.pressPinKey('8')">8</button>
+            <button class="pin-key" onclick="window.pressPinKey('9')">9</button>
+            <button class="pin-key" style="font-size: 13px;" onclick="window.clearPinKey()">Clear</button>
+            <button class="pin-key" onclick="window.pressPinKey('0')">0</button>
+            <button class="pin-key" style="font-size: 14px;" onclick="window.backspacePinKey()">⌫</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: Cross-Device Backup & Restore -->
+    <div class="modal-overlay" id="modal-backup-sync" style="display: none;">
+      <div class="modal-dialog" style="max-width: 440px;">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span style="font-size: 20px;">💾</span>
+            <div>
+              <div class="modal-title">Cloud Sync & Data Backup</div>
+              <div class="modal-subtitle">Backup or transfer your favorites, M3U playlists and settings</div>
+            </div>
+          </div>
+          <button class="modal-close-btn" id="btn-close-backup-modal">✕</button>
+        </div>
+        <div class="modal-body" style="gap: 14px; font-size: 13px;">
+          <div style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 8px;">
+            <div style="font-weight: 700; color: #fff; margin-bottom: 4px;">📤 Export Backup File</div>
+            <div style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 8px;">Save your ranked favorites,
+              custom M3U streams, and preferences as a portable JSON file.</div>
+            <button class="btn-primary" style="width: 100%;" onclick="window.exportAppDataJSON()">Export
+              LiveTV_Backup.json</button>
+          </div>
+          <div style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 8px;">
+            <div style="font-weight: 700; color: #fff; margin-bottom: 4px;">📥 Restore from Backup File</div>
+            <div style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 8px;">Select a previously exported
+              JSON backup file to instantly restore your setup.</div>
+            <input type="file" id="backup-file-input" accept=".json" style="display: none;"
+              onchange="window.handleBackupFileChosen(this)">
+            <button class="btn-secondary" style="width: 100%;"
+              onclick="document.getElementById('backup-file-input').click()">Choose JSON File to Restore</button>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-primary" id="btn-done-backup">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL: Xtream Codes IPTV Importer -->
+    <div class="modal-overlay" id="modal-xtream-codes" style="display: none;">
+      <div class="modal-dialog" style="max-width: 480px;">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span style="font-size: 20px;">⚡</span>
+            <div>
+              <div class="modal-title">Xtream Codes IPTV Login</div>
+              <div class="modal-subtitle">Connect your private paid IPTV service directly into Live TV</div>
+            </div>
+          </div>
+          <button class="modal-close-btn" id="btn-close-xtream-modal">✕</button>
+        </div>
+        <div class="modal-body" style="gap: 12px; font-size: 13px;">
+          <div class="xtream-input-grid">
+            <div class="xtream-input-row">
+              <label>Xtream Server URL (Host & Port)</label>
+              <input type="url" id="xtream-server-url" placeholder="http://example.com:8080" />
+            </div>
+            <div class="xtream-input-row">
+              <label>Username</label>
+              <input type="text" id="xtream-username" placeholder="Enter IPTV username" />
+            </div>
+            <div class="xtream-input-row">
+              <label>Password</label>
+              <input type="password" id="xtream-password" placeholder="Enter IPTV password" />
+            </div>
+          </div>
+          <div style="font-size: 11px; color: var(--text-muted); line-height: 1.4;">
+            🔒 Credentials are kept 100% private in local storage. Channels are seamlessly imported into the
+            <strong>Xtream IPTV</strong> category.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-secondary" id="btn-cancel-xtream">Cancel</button>
+          <button class="btn-primary" id="btn-login-xtream">Connect & Import</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Live Channel Peek Preview Bubble -->
+    <div id="channel-peek-bubble" class="channel-peek-bubble" style="display: none;">
+      <div class="peek-video-wrap">
+        <video id="peek-video" muted playsinline></video>
+        <div class="peek-live-badge">● LIVE PEEK</div>
+      </div>
+      <div class="peek-meta">
+        <span class="peek-name" id="peek-name">Channel Name</span>
+        <span class="peek-hint">Click card to tune</span>
+      </div>
+    </div>
+
+    <!-- Digital Cable Numeric Dialing OSD -->
+    <div class="channel-dial-osd" id="channel-dial-osd" style="display: none;">
+      <div class="dial-number" id="dial-number">CH ---</div>
+      <div class="dial-name" id="dial-name">Direct Channel Tuning</div>
+    </div>
+
+    <!-- Feature-Packed Sports Scoreboard Floating HUD (Micro-Widget) -->
+    <div id="sports-floating-hud" style="display: none;">
+      <div class="hud-header" id="hud-drag-header">
+        <div class="hud-header-title">
+          <span>🏆</span>
+          <span>Live Sports HUD</span>
+          <span class="hud-live-tag"><span class="hud-live-dot"></span>LIVE</span>
+        </div>
+        <div class="hud-header-actions">
+          <button class="hud-btn" id="hud-btn-min" title="Minimize HUD">_</button>
+          <button class="hud-btn" id="hud-btn-close" title="Close HUD">✕</button>
+        </div>
+      </div>
+      <div class="hud-tabs">
+        <button class="hud-tab-pill active" data-sport="all">All Sports</button>
+        <button class="hud-tab-pill" data-sport="cricket">🏏 Cricket</button>
+        <button class="hud-tab-pill" data-sport="football">⚽ Football</button>
+        <button class="hud-tab-pill" data-sport="tennis">🎾 Tennis</button>
+        <button class="hud-tab-pill" data-sport="motogp">🏎️ Racing</button>
+      </div>
+      <div class="hud-body" id="hud-matches-list">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+
+    <!-- Sticky Pinned Match Floating Mini-Pill -->
+    <div id="hud-pinned-pill" style="display: none;" title="Click to open Sports HUD">
+      <span class="pinned-pill-live"></span>
+      <span class="pinned-pill-text" id="pinned-pill-text">Match</span>
+      <span class="pinned-pill-score" id="pinned-pill-score">0 - 0</span>
+      <span class="pinned-pill-close" id="pinned-pill-close" title="Unpin match">✕</span>
+    </div>
+
+    <!-- Voice Command Assistant HUD -->
+    <div id="voice-command-hud" style="display: none;">
+      <span style="font-size: 18px;">🎙️</span>
+      <div class="voice-wave">
+        <div class="voice-bar"></div>
+        <div class="voice-bar"></div>
+        <div class="voice-bar"></div>
+        <div class="voice-bar"></div>
+      </div>
+      <div>
+        <div class="voice-text" id="voice-transcript">Listening...</div>
+        <div class="voice-hint">Say "Tune Somoy TV", "Sports HUD", "Mute", or "HDR"</div>
+      </div>
+      <button class="hud-btn" id="voice-hud-close" style="margin-left: 8px;">✕</button>
+    </div>
+
+    <!-- EPG Timeline Guide Modal -->
+    <div class="modal" id="modal-epg-guide" style="display: none;">
+      <div class="modal-content" style="max-width: 900px; width: 92%;">
+        <div class="modal-header">
+          <div class="modal-title">
+            <span>📅</span>
+            <span>Electronic Program Guide (EPG Timeline)</span>
+          </div>
+          <button class="modal-close" id="modal-epg-close">✕</button>
+        </div>
+        <div class="modal-body">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <div style="font-size: 12px; color: var(--text-muted);">
+              Live 12-Hour Schedule & Now Playing Timeline
+            </div>
+            <button class="btn-secondary" id="btn-import-xmltv" style="font-size: 11px; padding: 4px 10px;">
+              + Import XMLTV URL
+            </button>
+          </div>
+          <div class="epg-grid-container" id="epg-grid-container">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cast, AirPlay & DLNA Modal -->
+    <div class="modal" id="modal-cast-picker" style="display: none;">
+      <div class="modal-content" style="max-width: 480px;">
+        <div class="modal-header">
+          <div class="modal-title">
+            <span>📡</span>
+            <span>Cast & Smart TV Streaming</span>
+          </div>
+          <button class="modal-close" id="modal-cast-close">✕</button>
+        </div>
+        <div class="modal-body" style="gap: 12px;">
+          <div class="cast-device-card" id="cast-option-airplay">
+            <div>
+              <div class="cast-device-title"><span>🍏</span> Apple AirPlay</div>
+              <div class="cast-device-meta">Mirror to Apple TV, HomePod or AirPlay Smart TV</div>
+            </div>
+            <button class="btn-primary" style="font-size: 12px; padding: 6px 14px;">Connect</button>
+          </div>
+          <div class="cast-device-card" id="cast-option-chromecast">
+            <div>
+              <div class="cast-device-title"><span>📺</span> Google Cast / Chromecast</div>
+              <div class="cast-device-meta">Stream directly to Google TV & Chromecast receivers</div>
+            </div>
+            <button class="btn-primary" style="font-size: 12px; padding: 6px 14px;">Cast</button>
+          </div>
+          <div class="cast-device-card" id="cast-option-dlna">
+            <div style="flex: 1;">
+              <div class="cast-device-title"><span>🌐</span> Local DLNA / Smart TV Stream URL</div>
+              <div class="cast-device-meta" id="dlna-stream-url-display">http://localhost:8998/stream/current</div>
+            </div>
+            <button class="btn-secondary" id="btn-copy-dlna" style="font-size: 12px; padding: 6px 14px;">Copy
+              Link</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Morning TV Wake-Up Alarm Modal -->
+    <div class="modal" id="modal-tv-alarm" style="display: none;">
+      <div class="modal-content" style="max-width: 460px;">
+        <div class="modal-header">
+          <div class="modal-title">
+            <span>⏰</span>
+            <span>Morning TV Wake-Up Alarm</span>
+          </div>
+          <button class="modal-close" id="modal-alarm-close">✕</button>
+        </div>
+        <div class="modal-body" style="gap: 14px;">
+          <div style="display: flex; justify-content: center; align-items: center; gap: 12px;">
+            <input type="time" id="alarm-time-picker" class="alarm-time-input" value="07:00" />
+          </div>
+          <div>
+            <label style="font-size: 11.5px; color: var(--text-muted); font-weight: 600;">Wake-Up Channel</label>
+            <select id="alarm-channel-select"
+              style="width: 100%; margin-top: 4px; padding: 8px 12px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); border-radius: 8px; color: #fff;"></select>
+          </div>
+          <div>
+            <label style="font-size: 11.5px; color: var(--text-muted); font-weight: 600;">Gentle Volume Fade-in</label>
+            <select id="alarm-fade-select"
+              style="width: 100%; margin-top: 4px; padding: 8px 12px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); border-radius: 8px; color: #fff;">
+              <option value="60">1 Minute Gentle Ramp</option>
+              <option value="180" selected>3 Minutes Gentle Ramp</option>
+              <option value="300">5 Minutes Gentle Ramp</option>
+            </select>
+          </div>
+          <div id="alarm-active-status" style="font-size: 11.5px; color: #4ade80; display: none;">
+            ✓ Alarm set for 07:00 AM
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-secondary" id="btn-cancel-alarm">Clear Alarm</button>
+          <button class="btn-primary" id="btn-save-alarm">Set Alarm</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Channel Renumbering & Custom Bouquets Modal -->
+    <div class="modal" id="modal-channel-manager" style="display: none;">
+      <div class="modal-content" style="max-width: 580px;">
+        <div class="modal-header">
+          <div class="modal-title">
+            <span>📑</span>
+            <span>Channel Lineup & Custom Bouquets</span>
+          </div>
+          <button class="modal-close" id="modal-manager-close">✕</button>
+        </div>
+        <div class="modal-body" style="gap: 12px; max-height: 440px; overflow-y: auto;">
+          <div style="font-size: 12px; color: var(--text-muted);">
+            Create custom channel bouquets or assign numbers to your top channels.
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <input type="text" id="new-bouquet-name" placeholder="New Bouquet Name (e.g., Champions League)"
+              style="flex: 1; padding: 8px 12px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-color); border-radius: 8px; color: #fff; font-size: 12px;" />
+            <button class="btn-primary" id="btn-create-bouquet" style="font-size: 12px; white-space: nowrap;">+ Add
+              Bouquet</button>
+          </div>
+          <div id="custom-bouquets-list" style="display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0;">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dual Audio Mixer Modal -->
+    <div class="modal" id="modal-dual-audio" style="display: none;">
+      <div class="modal-content" style="max-width: 460px;">
+        <div class="modal-header">
+          <div class="modal-title">
+            <span>🎛️</span>
+            <span>Dual Audio Mixer (Stadium + Commentary)</span>
+          </div>
+          <button class="modal-close" id="modal-dual-audio-close">✕</button>
+        </div>
+        <div class="modal-body" style="gap: 14px;">
+          <div>
+            <div
+              style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; margin-bottom: 4px;">
+              <span>🏟️ Primary Broadcast (Stadium Crowd)</span>
+              <span id="label-primary-vol">70%</span>
+            </div>
+            <input type="range" id="slider-primary-vol" min="0" max="100" value="70"
+              style="width: 100%; accent-color: var(--accent-red);" />
+          </div>
+          <div>
+            <div
+              style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; margin-bottom: 4px;">
+              <span>🎙️ Auxiliary Audio (Custom Commentary)</span>
+              <span id="label-aux-vol">100%</span>
+            </div>
+            <input type="range" id="slider-aux-vol" min="0" max="100" value="100"
+              style="width: 100%; accent-color: #38bdf8;" />
+          </div>
+          <div style="display: flex; gap: 8px; margin-top: 6px;">
+            <button class="btn-secondary" style="flex: 1; font-size: 11px;"
+              onclick="window.applyDualAudioPreset && window.applyDualAudioPreset(50, 50)">Balanced (50/50)</button>
+            <button class="btn-secondary" style="flex: 1; font-size: 11px;"
+              onclick="window.applyDualAudioPreset && window.applyDualAudioPreset(80, 20)">Stadium (80/20)</button>
+            <button class="btn-secondary" style="flex: 1; font-size: 11px;"
+              onclick="window.applyDualAudioPreset && window.applyDualAudioPreset(20, 80)">Commentary (20/80)</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10-Band Graphic Audio Equalizer Modal -->
+    <div class="modal" id="modal-10band-eq" style="display: none;">
+      <div class="modal-content" style="max-width: 620px;">
+        <div class="modal-header">
+          <div class="modal-title">
+            <span>🎛️</span>
+            <span>10-Band Pro Graphic Audio Equalizer</span>
+          </div>
+          <button class="modal-close" id="modal-10band-close">✕</button>
+        </div>
+        <div class="modal-body">
+          <div style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 8px;">
+            Hardware-accelerated Web Audio biquad filter bank for studio-grade acoustic tuning.
+          </div>
+          <div class="eq-sliders-row" id="eq-sliders-row">
+            <!-- 10 bands rendered dynamically (32Hz to 16kHz) -->
+          </div>
+          <div style="font-size: 11px; font-weight: 700; color: #fff; margin-top: 10px;">Acoustic Presets:</div>
+          <div class="eq-presets-row">
+            <button class="eq-preset-chip active"
+              onclick="window.apply10BandPreset && window.apply10BandPreset('flat')">Flat</button>
+            <button class="eq-preset-chip" onclick="window.apply10BandPreset && window.apply10BandPreset('stadium')">🏟️
+              Stadium Live</button>
+            <button class="eq-preset-chip" onclick="window.apply10BandPreset && window.apply10BandPreset('voice')">🗣️
+              Voice Clarity</button>
+            <button class="eq-preset-chip" onclick="window.apply10BandPreset && window.apply10BandPreset('bass')">💥
+              Bass Extreme</button>
+            <button class="eq-preset-chip" onclick="window.apply10BandPreset && window.apply10BandPreset('theater')">🎬
+              Cinema Theater</button>
+            <button class="eq-preset-chip" onclick="window.apply10BandPreset && window.apply10BandPreset('night')">🌙
+              Night Mode</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Live Match Center Scorecard Modal -->
+    <div class="modal" id="modal-match-center" style="display: none;">
+      <div class="modal-content" style="max-width: 640px;">
+        <div class="modal-header">
+          <div class="modal-title">
+            <span>📊</span>
+            <span>Live Match Center & Telemetry</span>
+          </div>
+          <button class="modal-close" id="modal-match-center-close">✕</button>
+        </div>
+        <div class="modal-body" id="match-center-body">
+          <!-- Populated dynamically with live scorecard & stats -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification Banner -->
+    <div class="toast-notification" id="toast-notification" style="display: none;">
+      <span id="toast-icon">✨</span>
+      <span id="toast-message">Notification</span>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/channels_data.js"></script>
+  <script src="js/hls.min.js"></script>
+  <script src="js/shaka-player.compiled.js"></script>
+  <script src="js/cenc_decryptor.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
