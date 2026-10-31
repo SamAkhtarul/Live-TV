@@ -60,7 +60,17 @@ android {
     }
 }
 
+val syncWebAssets by tasks.registering(Copy::class) {
+    from("${rootProject.projectDir}/desktop/web")
+    into("${projectDir}/src/main/assets/web")
+}
+
+tasks.named("preBuild") {
+    dependsOn(syncWebAssets)
+}
+
 dependencies {
+    implementation("androidx.webkit:webkit:1.11.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
