@@ -1,20 +1,18 @@
 {
-  "version": "5.1.4",
-  "build": 40,
-  "release_name": "Live TV v5.1.4 — Fixed Catalog Scrolling, Hardware Wheel Acceleration & Pro Sports UI",
+  "version": "5.1.5",
+  "build": 41,
+  "release_name": "Live TV v5.1.5 — 100% Zero-Scroll Phone TV & Pure Hardware TV Remote",
   "release_date": "2026-10-31",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
-    "🚀 Fixed Catalog Scrolling: Fixed CSS rule boundary so the channel browser scrolls smoothly across all 2,989 channels via trackpad, mouse wheel, or keyboard",
-    "🎯 Native Hardware Wheel & Keyboard Navigation: Added smooth ArrowUp/Down and PageUp/Down keyboard channel scrolling when browsing, and styled an 8px high-visibility custom scrollbar",
-    "🏟️ Professional Sports Broadcast UI: Re-engineered live sports cards inspired by Apple TV+ and ESPN with glassmorphic cards, monospaced scoreboards, and sleek left accent lines",
-    "👁️ 1-Click Show / Hide Information Toggle: Instant toggle between Compact Mode (minimalist score strips) and Detailed Mode (full telemetry) with persisted preference",
-    "✕ 1-Click Section Dismiss & Toolbar Toggle: Easily hide or show the entire Live Sports carousel from the section header (✕) or top tools bar (🔥 Sports)",
-    "⚡ Prominent Header Update Icon & Status Pill: Always-visible update badge and 1-click live GitHub version check",
+    "📱 100% Zero-Scroll Phone TV Viewport: Re-engineered CSS layout with dynamic in-flow bottom nav and bounded flexbox, completely eliminating vertical scroll on iOS Safari and Android Chrome",
+    "🎮 Dedicated Hardware TV Remote: Pure remote control controller with zero player elements, unified steppers (CH, Quality, VOL), hardware circular D-Pad, and collapsible keypad drawer",
+    "🎯 Scoped Mini Player Bar: Now-playing Mac sync bar is strictly scoped to the Channels browser tab and permanently hidden on the Remote and Phone TV tabs",
+    "⚡ Ultra-Fast 0ms Latency: Hardware-accelerated touch targets and responsive flex bounds across all mobile screens",
     "🛡️ 100% Ad-Free Live TV (Zero-Ad Shield): Zero commercial interruptions across all 2,989 channels"
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.4/LiveTV-v5.1.4.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.4/LiveTV-v5.1.4.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.5/LiveTV-v5.1.5.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.5/LiveTV-v5.1.5.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }
