@@ -30,8 +30,6 @@
 
 body {
   background-color: var(--bg-dark);
-  background-image: var(--bg-radial);
-  background-attachment: fixed;
   color: var(--text-primary);
   font-family: var(--font-family);
   font-size: 13px;
@@ -39,6 +37,16 @@ body {
   height: 100vh;
   width: 100vw;
   -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: var(--bg-radial);
+  pointer-events: none;
+  z-index: -1;
+  transform: translateZ(0);
 }
 
 /* Custom Sleek Scrollbars */
@@ -4575,9 +4583,19 @@ body.turbo-mode .hero-spotlight {
    Mobile & iPhone Video Player & Battery Optimization (Zero Impact on macOS App)
    ============================================================================== */
 @media (max-width: 768px) {
-  /* Battery & GPU Cooling: Remove expensive GPU compositing blurs on mobile */
-  body, .app-header, .search-container, .live-events-container, .modal-dialog {
+  /* Battery & GPU Cooling: Remove expensive GPU compositing blurs and idle animation loops on mobile */
+  *, *::before, *::after {
     -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  .app-header, .search-container, .live-events-container, .modal-dialog, .player-bottom-bar, .mini-player-bar {
+    background: rgba(10, 12, 16, 0.98) !important;
+  }
+  .live-badge,
+  .header-update-pill.has-update,
+  .realtime-status-dot,
+  .event-live-dot {
+    animation: none !important;
   }
 
   .channels-grid {
