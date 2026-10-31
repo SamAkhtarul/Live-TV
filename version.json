@@ -1,16 +1,19 @@
 {
-  "version": "4.0.1",
-  "build": 31,
-  "release_name": "Live TV v4.0.1 — Notification Polish, Phone Quick Controls & Favorites Sync",
+  "version": "4.1.0",
+  "build": 32,
+  "release_name": "Live TV v4.1.0 — OSD Keypad Dialing, Slow-Mo Replay, Team Alerts & Phone Swipe Surfing",
   "release_date": "2026-10-31",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
-    "🚨 Goal & Wicket Notification Fix: Sports celebration flash notifications now auto-dismiss cleanly after 6s and can be instantly dismissed with 1-click on the ✕ close button. Eliminates distortion and prevents repeat alerts triggered purely by the match clock",
-    "📱 Phone Remote Quick Controls Reordered: Reorganized phone player tool buttons to Quality ➔ Full Screen ➔ PiP ➔ Lock ➔ Audio ➔ Fit ➔ Radio ➔ Speed ➔ Sleep ➔ Dim so the most essential controls are immediately accessible without scrolling",
-    "⭐ Full Mac & Phone Favorites Synchronization: Ranked favorites (#1, #2, #3, ...) now seamlessly synchronize in real-time between Mac and Phone Remote across both the Channels catalog and the phone player's Quick Channels carousel"
+    "🔢 Direct Channel Number Dialing (TV OSD Overlay & Keypad): Dial any channel number with instant glowing on-screen display (CH 0-9) on Mac keyboard or using the tactile 3x4 numeric keypad on the Phone Remote to jump straight to your favorite station",
+    "⏱️ Instant Slow-Motion Replay (0.5×): One-tap 10s instant rewind at half speed with dedicated glowing HUD banner on Mac and 0.5× tool button on Phone TV for reviewing thrilling goals, wickets, and race moments before returning seamlessly to Live",
+    "🔔 Sports Team Alerts & Match Notification System: Select your favorite cricket, football, or motorsport clubs (Bangladesh, Real Madrid, Ducati, India, etc.) or add custom teams to receive instant celebrations and 1-tap tune alerts whenever they score or take the field",
+    "🎧 Full System MediaSession Integration: Native lock-screen, Control Center, headphone touch gestures, and media keys support on macOS and mobile phone player with rich metadata, channel art, and next/previous surfing",
+    "📱 Phone TV Touch Swipe Channel Surfing & Audio EQ: Swipe vertically on the mobile player to surf channels effortlessly (Swipe Up for next, Down for prev), with multi-mode Audio EQ voice boosting"
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v4.0.1/LiveTV-v4.0.1.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v4.0.1/LiveTV-v4.0.1.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v4.1.0/LiveTV-v4.1.0.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v4.1.0/LiveTV-v4.1.0.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }
+
