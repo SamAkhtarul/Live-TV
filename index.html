@@ -12,7 +12,7 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Live TV</title>
   <link rel="icon" type="image/png" href="icon.png" />
-  <link rel="stylesheet" href="css/style.css?v=5.1.8" />
+  <link rel="stylesheet" href="css/style.css?v=5.1.9" />
 </head>
 
 <body>
@@ -26,7 +26,7 @@
           </div>
           <span class="brand-title">Live TV</span>
           <span class="live-badge">LIVE</span>
-          <span class="app-version">v5.1.8</span>
+          <span class="app-version">v5.1.9</span>
           <!-- Prominent Header Update Pill (Always visible on left!) -->
           <button id="btn-header-update-badge" class="header-update-pill" title="Check for Updates & System Status">
             <span class="update-pill-dot">⚡</span>
@@ -36,6 +36,12 @@
             target="_blank"
             onclick="event.preventDefault(); openExternalUrl('https://github.com/SamAkhtarul/Live-TV/releases');"
             title="Live TV Releases on GitHub by SamAkhtarul">by SamAkhtarul</a>
+          <!-- Creator Traffic Analytics Pill (Only visible to Sam) -->
+          <button id="btn-owner-analytics" class="header-btn btn-owner-visitors" style="display: none;" title="Private Traffic Analytics • Only visible to creator">
+            <span>👑</span>
+            <span class="btn-lbl">Visits: </span>
+            <span id="owner-visits-count">...</span>
+          </button>
         </div>
       </div>
 
@@ -1921,6 +1927,50 @@
       </div>
     </div>
 
+    <!-- Creator Traffic Analytics Modal (Only for Sam) -->
+    <div class="modal-overlay" id="modal-owner-analytics" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span style="font-size: 20px;">👑</span>
+            <div>
+              <div class="modal-title">Creator Traffic & Visitor Analytics</div>
+              <div class="modal-subtitle">Private Analytics for SamAkhtarul • Live GitHub Pages Tracking</div>
+            </div>
+          </div>
+          <button class="modal-close-btn" id="btn-close-owner-modal">✕</button>
+        </div>
+        <div class="modal-body">
+          <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 14px; margin-bottom: 12px;">
+            <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-secondary); margin-bottom: 4px;">Total Link Visits (All-Time)</div>
+            <div style="font-size: 32px; font-weight: 800; color: #4ade80;" id="owner-modal-total-visits">Loading...</div>
+            <div style="font-size: 11.5px; color: var(--text-secondary); margin-top: 4px;">Live visits recorded across all browsers accessing https://samakhtarul.github.io/Live-TV/</div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+            <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 12px;">
+              <div style="font-size: 11px; color: var(--text-secondary);">Tracking Status</div>
+              <div style="font-size: 14px; font-weight: 700; color: #38bdf8; margin-top: 4px;">🟢 Real-Time Active</div>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 10px; padding: 12px;">
+              <div style="font-size: 11px; color: var(--text-secondary);">Visibility Mode</div>
+              <div style="font-size: 14px; font-weight: 700; color: #eab308; margin-top: 4px;">🔒 Hidden from Public</div>
+            </div>
+          </div>
+
+          <div style="font-size: 11.5px; color: var(--text-secondary); line-height: 1.5;">
+            Tip: Only you can see this count. It is hidden from other visitors. You can also view daily graphs and referral sources in your GitHub Repository Insights.
+          </div>
+        </div>
+        <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center;">
+          <a href="https://github.com/SamAkhtarul/Live-TV/graphs/traffic" target="_blank" class="modal-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px; background: rgba(56, 189, 248, 0.18); border: 1px solid #38bdf8; color: #38bdf8; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 600;">
+            <span>📈</span> Open GitHub Insights
+          </a>
+          <button class="modal-btn modal-btn-primary" id="btn-done-owner-modal" style="padding: 6px 16px; border-radius: 6px; cursor: pointer;">Close</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Toast Notification Banner -->
     <div class="toast-notification" id="toast-notification" style="display: none;">
       <span id="toast-icon">✨</span>
@@ -1933,7 +1983,7 @@
   <script src="js/hls.min.js"></script>
   <script src="js/shaka-player.compiled.js"></script>
   <script src="js/cenc_decryptor.js"></script>
-  <script src="js/app.js?v=5.1.8"></script>
+  <script src="js/app.js?v=5.1.9"></script>
 </body>
 
 </html>
