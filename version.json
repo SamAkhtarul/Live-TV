@@ -1,19 +1,18 @@
 {
-  "version": "3.9.2",
-  "build": 27,
-  "release_name": "Live TV v3.9.2 — Real-Time Match Scores, Overs, Goals & Bangladesh Standard Time (BST)",
+  "version": "3.9.3",
+  "build": 28,
+  "release_name": "Live TV v3.9.3 — Independent Phone TV Mobile Playback & Phone Remote",
   "release_date": "2026-10-31",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
-    "🕒 Bangladesh Standard Time (BST, UTC+6): All match start times and dates are now precisely converted and displayed in Bangladesh Standard Time (e.g. 'Today, 8:35 AM BST', 'Oct 31, 12:45 PM BST')",
-    "🏏 Live Cricket Scores, Overs & Wickets: Cards now display real-time live match scores with wickets and overs (e.g. 'IND: 24/3 (2.1/6 ov)', 'SOA: 154 & 262/5 (81 ov, target 422)')",
-    "📢 Match Situation & Summaries: Real-time summaries like 'South Aust require 160 runs', 'NSW trail by 414 runs', or 'U.A.E. won toss & fielded' are highlighted on match cards",
-    "⚽ Football Goal Scores & Live Clocks: Shows live scoreline (e.g. 'Home 2 - 1 Away • 90\u0027+5\u0027') for world football fixtures",
-    "🔗 Seamless Stream & Telemetry Fusion: Merges live HD match broadcast streams with real-time ESPN telemetry, retaining instant '▶ Watch Live' access",
-    "🛡️ Retains all v3.9.1 features: Continuous SPOTV 2 HD playback without WebKit CDM crashes, Phone Remote, Drag-to-resize PiP, and 2,989 channels"
+    "📱 Independent Mobile TV Playback: Watch any of the 2,989 TV channels directly on your smartphone through the Phone Remote web app without interrupting or changing what is playing on the Mac screen",
+    "📺 Dual Channel Card Controls: Every channel card now features dedicated '📺 Mac' (tunes the big screen) and '📱 Phone' (streams directly on your smartphone) buttons",
+    "⚡ Quick Switch Bar & PiP: Switch mobile channels with a single tap beneath the player, with native iOS Safari HLS, Android Hls.js hardware decoding, and Mobile Picture-in-Picture",
+    "📡 'Send to Mac' Action: Transfer any stream you're watching on your phone directly to the Mac TV display with one touch",
+    "🕒 Bangladesh Standard Time (BST) & Live Scores: Retains all real-time cricket scores, overs, wickets, football match times, and uninterrupted SPOTV 2 HD playback"
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.9.2/LiveTV-v3.9.2.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.9.2/LiveTV-v3.9.2.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.9.3/LiveTV-v3.9.3.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.9.3/LiveTV-v3.9.3.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }
