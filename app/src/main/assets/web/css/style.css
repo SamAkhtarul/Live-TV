@@ -4552,10 +4552,30 @@ body.turbo-mode .hero-spotlight {
   border-radius: 6px;
 }
 
+/* Creator Traffic Analytics Badge (Only for Sam) */
+.btn-owner-visitors {
+  background: rgba(234, 179, 8, 0.18) !important;
+  border: 1px solid rgba(234, 179, 8, 0.5) !important;
+  color: #facc15 !important;
+  font-weight: 700 !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.btn-owner-visitors:hover {
+  background: rgba(234, 179, 8, 0.28) !important;
+  border-color: #fde047 !important;
+}
+
 /* ==============================================================================
-   Mobile & iPhone Standalone PWA Responsiveness (Zero Impact on macOS Desktop App)
+   Mobile & iPhone Video Player & Battery Optimization (Zero Impact on macOS App)
    ============================================================================== */
-@media (max-width: 680px) {
+@media (max-width: 768px) {
+  /* Battery & GPU Cooling: Remove expensive GPU compositing blurs on mobile */
+  body, .app-header, .search-container, .live-events-container, .modal-dialog {
+    -webkit-backdrop-filter: none !important;
+  }
+
   .channels-grid {
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)) !important;
     gap: 10px !important;
@@ -4565,18 +4585,6 @@ body.turbo-mode .hero-spotlight {
   .browser-view {
     padding: 10px 10px 100px 10px !important;
   }
-  .player-top-left {
-    max-width: 60% !important;
-  }
-  .player-top-right {
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: 6px !important;
-  }
-  .player-top-right::-webkit-scrollbar {
-    display: none;
-  }
   .category-tabs {
     gap: 6px !important;
     padding-bottom: 6px !important;
@@ -4584,5 +4592,240 @@ body.turbo-mode .hero-spotlight {
   .sub-bar {
     flex-wrap: wrap;
     gap: 8px;
+  }
+
+  /* Full Screen Dynamic Viewport Height Player */
+  .player-overlay {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    width: 100vw !important;
+    overflow: hidden !important;
+    background: #090a0f !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Video Container: Fills width cleanly, no giant empty voids */
+  .video-container {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100dvh !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    background: #000 !important;
+  }
+
+  video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  /* When aspect ratio Fill is toggled: zero black bars, fills mobile screen */
+  video.aspect-fill {
+    object-fit: cover !important;
+  }
+
+  /* Player Controls: Structured flex column with accessible toolbar */
+  .player-controls {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    height: 100dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    padding: 0 0 max(10px, env(safe-area-inset-bottom)) 0 !important;
+    box-sizing: border-box !important;
+    z-index: 20 !important;
+  }
+
+  /* 1. Top Bar on Mobile */
+  .player-top-bar {
+    order: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: max(8px, env(safe-area-inset-top)) 10px 6px 10px !important;
+    gap: 8px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    pointer-events: auto !important;
+    background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 80%, transparent 100%) !important;
+  }
+
+  .player-top-left {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    max-width: calc(100% - 90px) !important;
+    min-width: 0 !important;
+    flex-shrink: 1 !important;
+    overflow: hidden !important;
+  }
+
+  #player-btn-back {
+    min-width: 36px !important;
+    width: 36px !important;
+    height: 36px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(0,0,0,0.6) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+  }
+  .player-back-text {
+    display: none !important;
+  }
+
+  .player-title-info {
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .player-channel-title {
+    font-size: 14px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .player-channel-meta {
+    font-size: 10.5px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .player-epg-strip {
+    display: none !important;
+  }
+
+  /* 2. Center Play/Seek Controls */
+  .player-center-controls {
+    order: 2 !important;
+    margin: auto 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    pointer-events: auto !important;
+  }
+
+  .center-btn.play-pause {
+    width: 52px !important;
+    height: 52px !important;
+  }
+
+  /* 3. ACCESSIBLE PHONE TOOLS STRIP: Full width horizontal scroll bar with all 16 feature icons right above bottom bar! */
+  .player-top-right {
+    order: 3 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    padding: 8px 12px !important;
+    background: rgba(12, 14, 20, 0.92) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    pointer-events: auto !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+    z-index: 25 !important;
+  }
+
+  .player-top-right::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .player-top-right .player-pill,
+  .player-top-right .player-icon-btn {
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    padding: 6px 12px !important;
+    font-size: 11.5px !important;
+    font-weight: 600 !important;
+    border-radius: 18px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    color: #fff !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    min-height: 32px !important;
+  }
+
+  .player-top-right .player-pill:active,
+  .player-top-right .player-icon-btn:active {
+    background: rgba(229, 9, 20, 0.35) !important;
+    border-color: var(--accent-red) !important;
+    transform: scale(0.96) !important;
+  }
+
+  /* 4. Bottom Controls Bar */
+  .player-bottom-bar {
+    order: 4 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    padding: 6px 12px max(12px, env(safe-area-inset-bottom)) 12px !important;
+    background: rgba(10, 12, 18, 0.94) !important;
+    pointer-events: auto !important;
+  }
+
+  .dvr-row {
+    gap: 6px !important;
+  }
+
+  .dvr-pill-btn {
+    padding: 3px 6px !important;
+    font-size: 10px !important;
+  }
+
+  .player-sliders-row {
+    display: none !important; /* Hide sliders on mobile portrait to keep layout clean & compact */
+  }
+
+  .quick-switch-carousel {
+    max-height: 48px !important;
+    gap: 8px !important;
+    padding: 2px 0 !important;
+  }
+}
+
+/* Landscape Mode on Mobile Phones: Immersive Fullscreen */
+@media (max-width: 900px) and (orientation: landscape) {
+  .player-top-bar {
+    order: 1 !important;
+    padding: max(6px, env(safe-area-inset-top)) max(14px, env(safe-area-inset-right)) 4px max(14px, env(safe-area-inset-left)) !important;
+  }
+  .player-top-right {
+    order: unset !important;
+    width: auto !important;
+    max-width: 60% !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+  .player-center-controls {
+    order: unset !important;
+  }
+  .player-bottom-bar {
+    order: unset !important;
+    background: transparent !important;
+    padding: 0 max(16px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)) !important;
   }
 }
