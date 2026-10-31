@@ -1,11 +1,14 @@
 {
-  "version": "5.1.0",
-  "build": 36,
-  "release_name": "Live TV v5.1.0 — Mobile WebGL AI Enhancer, Immersive Fullscreen & Telemetry Suite",
+  "version": "5.1.1",
+  "build": 37,
+  "release_name": "Live TV v5.1.1 — Smooth Channel Browsing, Sticky Category Header & Mobile AI Enhancer",
   "release_date": "2026-10-31",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
+    "🚀 Fixed Channel Browsing & Scrolling Access: Unblocked root scroll container enabling smooth, lightning-fast access down to all 2,989 channels and auto-loading lazy-batches",
+    "📌 Pinned Sticky Category Bar & Quick Counts: Categories and live channel counter now smoothly stick to the top during catalog scrolling for effortless category jumping",
+    "🎬 Collapsible Hero Broadcast Billboard: Compact 140px featured broadcast hero with 1-click dismiss (✕) and quick Billboard toggle button in the browser tools bar",
     "📱 Fixed Mobile Remote AI Video Enhancer in Fullscreen: Re-engineered phone player with Container Fullscreen and iOS Immersive Fullscreen Mode (100vw x 100vh) preventing iOS QuickTime and Android media engines from stripping AI sharpening and color grading filters",
     "✨ Hardware-Accelerated Mobile WebGL AI Super-Resolution Engine: Ported zero-latency 60fps GPU WebGL Sobel convolution, high-pass sharpening, and HDR tone mapping directly to mobile phones and tablets",
     "⚖️ Mobile Interactive Split-Screen Comparison Slider: Real-time touch-draggable divider on mobile phone player to compare Native 1080p vs AI 4K live during playback",
@@ -16,7 +19,7 @@
     "⚡ Real-Time Network CDN Latency & Stability Telemetry: Live ping monitor and dropped-frame watchdog on player HUD ensuring seamless jitter-free broadcasts",
     "🛡️ 100% Ad-Free Live TV (Zero-Ad Shield): Completely clean broadcast without commercial interruptions, popup ads, or tracking scripts"
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.0/LiveTV-v5.1.0.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.0/LiveTV-v5.1.0.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.1/LiveTV-v5.1.1.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.1/LiveTV-v5.1.1.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }
