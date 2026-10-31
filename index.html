@@ -12,7 +12,7 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Live TV</title>
   <link rel="icon" type="image/png" href="icon.png" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=5.1.8" />
 </head>
 
 <body>
@@ -349,7 +349,7 @@
         </div>
 
         <!-- Video Element -->
-        <video id="video-player" playsinline preload="auto"></video>
+        <video id="video-player" playsinline webkit-playsinline="true" preload="auto"></video>
 
         <!-- Real-Time Live Closed Captions / Subtitles Overlay -->
         <div id="player-live-captions" style="display: none;"></div>
@@ -1933,7 +1933,7 @@
   <script src="js/hls.min.js"></script>
   <script src="js/shaka-player.compiled.js"></script>
   <script src="js/cenc_decryptor.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/app.js?v=5.1.8"></script>
 </body>
 
 </html>

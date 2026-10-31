@@ -135,6 +135,18 @@ let LIVE_EVENTS = [];
 
 // Initialize Application
 document.addEventListener("DOMContentLoaded", async () => {
+  // Platform Detection: Detect native macOS WKWebView wrapper vs Web Browser / Mobile iPhone PWA
+  const isNativeMac = !!(window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.startWindowDrag);
+  if (isNativeMac) {
+    document.body.classList.add("native-mac-app");
+  } else {
+    document.body.classList.add("web-mode");
+  }
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (isIOS) {
+    document.body.classList.add("ios-device");
+  }
+
   try {
     if (window.shaka && window.shaka.polyfill) {
       shaka.polyfill.installAll();
@@ -1953,6 +1965,17 @@ function loadHlsStream(cleanUrl) {
         switch (data.type) {
           case Hls.ErrorTypes.NETWORK_ERROR:
             console.warn("Fatal network error encountered, attempting reload...", data);
+            if (state.video && state.video.canPlayType("application/vnd.apple.mpegurl") && !state._triedNativeHlsFallback) {
+              state._triedNativeHlsFallback = true;
+              console.log("Switching to Apple Native HLS fallback...");
+              hls.destroy();
+              state.hls = null;
+              state.video.src = cleanUrl;
+              state.video.play().catch(e => console.log("Native video play error:", e));
+              updatePlayPauseIcons(true);
+              startContinuousHealthWatchdog();
+              return;
+            }
             hls.startLoad();
             break;
           case Hls.ErrorTypes.MEDIA_ERROR:
@@ -1978,6 +2001,7 @@ function loadHlsStream(cleanUrl) {
 
 // Unified Stream Engine: Shaka Player (DASH + ClearKey DRM) & HLS.js (1-Hour Timeshift)
 async function loadMediaStream(rawUrl) {
+  state._triedNativeHlsFallback = false;
   const { cleanUrl, clearKeys, headers } = parseStreamEndpoint(rawUrl);
   const chId = state.currentChannel ? state.currentChannel.id : null;
   const isMotoGp = state.currentChannel && (
