@@ -157,6 +157,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
     initElements();
+    if (el.playerOverlay) {
+      el.playerOverlay.classList.remove("is-active");
+      el.playerOverlay.style.display = "none";
+    }
+    document.body.classList.remove("player-active");
+    state.isPlayerOpen = false;
   } catch (e) {
     console.error("initElements error:", e);
   }
@@ -1683,6 +1689,7 @@ function playChannel(channel, index) {
   updateServerButton();
 
   // Show player overlay
+  el.playerOverlay.classList.add("is-active");
   el.playerOverlay.style.display = "flex";
   document.body.classList.add("player-active");
   state.isPlayerOpen = true;
@@ -3349,6 +3356,7 @@ async function closePlayer() {
   state.isPlaying = false;
   state.currentChannel = null;
   hideControls();
+  el.playerOverlay.classList.remove("is-active");
   el.playerOverlay.style.display = "none";
   document.body.classList.remove("player-active");
   state.isPlayerOpen = false;
@@ -3358,6 +3366,7 @@ async function closePlayer() {
 
 function expandPlayer() {
   el.miniPlayerBar.style.display = "none";
+  el.playerOverlay.classList.add("is-active");
   el.playerOverlay.style.display = "flex";
   document.body.classList.add("player-active");
   state.isPlayerOpen = true;

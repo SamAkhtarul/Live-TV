@@ -353,9 +353,7 @@ body:not(.native-mac-app) .app-header {
 
 /* Completely remove search bar and channel browser when full video player is active */
 body.player-active .search-container,
-body.player-active #browser-view,
-body:has(#player-overlay:not([style*="display: none"])) .search-container,
-body:has(#player-overlay:not([style*="display: none"])) #browser-view {
+body.player-active #browser-view {
   display: none !important;
 }
 
@@ -1116,17 +1114,23 @@ body.pip-mode-active.player-active .search-container {
   opacity: 0.5;
 }
 
-/* Video Player Overlay View */
+/* Video Player Overlay View - Strictly Hidden by Default */
+#player-overlay,
 .player-overlay {
+  display: none !important;
   position: fixed;
   inset: 0;
   width: 100vw;
   height: 100vh;
   background: #000;
   z-index: 500;
-  display: flex;
   flex-direction: column;
   overflow: hidden;
+}
+
+body.player-active #player-overlay,
+#player-overlay.is-active {
+  display: flex !important;
 }
 
 .video-container {
@@ -4595,13 +4599,14 @@ body.turbo-mode .hero-spotlight {
   }
 
   /* Full Screen Dynamic Viewport Height Player */
-  .player-overlay {
+  body.player-active #player-overlay,
+  #player-overlay.is-active {
+    display: flex !important;
     height: 100dvh !important;
     max-height: 100dvh !important;
     width: 100vw !important;
     overflow: hidden !important;
     background: #090a0f !important;
-    display: flex !important;
     flex-direction: column !important;
   }
 
