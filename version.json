@@ -1,20 +1,20 @@
 {
-  "version": "5.1.3",
-  "build": 39,
-  "release_name": "Live TV v5.1.3 — Professional Sports Broadcast UI & Match Info Toggle",
+  "version": "5.1.4",
+  "build": 40,
+  "release_name": "Live TV v5.1.4 — Fixed Catalog Scrolling, Hardware Wheel Acceleration & Pro Sports UI",
   "release_date": "2026-10-31",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
-    "🏟️ Professional Sports Broadcast UI: Completely redesigned live sports cards inspired by Apple TV+ and ESPN with glassmorphic cards, monospaced scoreboards, and sleek left accent lines without bulky boxes",
-    "👁️ 1-Click Show / Hide Information Toggle: Instant toggle between Compact Mode (minimalist score strips) and Detailed Mode (full telemetry, series subtitle, time, and summaries) with persisted preference",
+    "🚀 Fixed Catalog Scrolling: Fixed CSS rule boundary so the channel browser scrolls smoothly across all 2,989 channels via trackpad, mouse wheel, or keyboard",
+    "🎯 Native Hardware Wheel & Keyboard Navigation: Added smooth ArrowUp/Down and PageUp/Down keyboard channel scrolling when browsing, and styled an 8px high-visibility custom scrollbar",
+    "🏟️ Professional Sports Broadcast UI: Re-engineered live sports cards inspired by Apple TV+ and ESPN with glassmorphic cards, monospaced scoreboards, and sleek left accent lines",
+    "👁️ 1-Click Show / Hide Information Toggle: Instant toggle between Compact Mode (minimalist score strips) and Detailed Mode (full telemetry) with persisted preference",
     "✕ 1-Click Section Dismiss & Toolbar Toggle: Easily hide or show the entire Live Sports carousel from the section header (✕) or top tools bar (🔥 Sports)",
     "⚡ Prominent Header Update Icon & Status Pill: Always-visible update badge and 1-click live GitHub version check",
-    "🗜️ Ultra-Compact Desktop Header: Zero horizontal scroll across all screen sizes",
-    "📱 Scroll-Free Phone TV & Remote: Optimized single-screen layout with zero scrollbars",
     "🛡️ 100% Ad-Free Live TV (Zero-Ad Shield): Zero commercial interruptions across all 2,989 channels"
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.3/LiveTV-v5.1.3.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.3/LiveTV-v5.1.3.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.4/LiveTV-v5.1.4.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.4/LiveTV-v5.1.4.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }
