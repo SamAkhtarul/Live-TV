@@ -4646,26 +4646,26 @@ body.turbo-mode .hero-spotlight {
 
   /* 1. Top Bar on Mobile */
   .player-top-bar {
-    order: 1 !important;
     display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: max(8px, env(safe-area-inset-top)) 10px 6px 10px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: max(8px, env(safe-area-inset-top)) 12px 6px 12px !important;
     gap: 8px !important;
     width: 100% !important;
+    background: linear-gradient(180deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.5) 75%, transparent 100%) !important;
     box-sizing: border-box !important;
     pointer-events: auto !important;
-    background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 80%, transparent 100%) !important;
   }
 
   .player-top-left {
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
-    max-width: calc(100% - 90px) !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
     min-width: 0 !important;
-    flex-shrink: 1 !important;
-    overflow: hidden !important;
+    flex-shrink: 0 !important;
   }
 
   #player-btn-back {
@@ -4678,8 +4678,8 @@ body.turbo-mode .hero-spotlight {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    background: rgba(0,0,0,0.6) !important;
-    border: 1px solid rgba(255,255,255,0.2) !important;
+    background: rgba(229, 9, 20, 0.45) !important;
+    border: 1.5px solid var(--accent-red) !important;
   }
   .player-back-text {
     display: none !important;
@@ -4687,21 +4687,24 @@ body.turbo-mode .hero-spotlight {
 
   .player-title-info {
     min-width: 0 !important;
+    flex: 1 1 auto !important;
     overflow: hidden !important;
   }
 
   .player-channel-title {
-    font-size: 14px !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
   }
 
   .player-channel-meta {
-    font-size: 10.5px !important;
+    font-size: 11px !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
+    opacity: 0.8 !important;
   }
 
   .player-epg-strip {
@@ -4710,7 +4713,6 @@ body.turbo-mode .hero-spotlight {
 
   /* 2. Center Play/Seek Controls */
   .player-center-controls {
-    order: 2 !important;
     margin: auto 0 !important;
     display: flex !important;
     align-items: center !important;
@@ -4724,9 +4726,8 @@ body.turbo-mode .hero-spotlight {
     height: 52px !important;
   }
 
-  /* 3. ACCESSIBLE PHONE TOOLS STRIP: Full width horizontal scroll bar with all 16 feature icons right above bottom bar! */
+  /* 3. ACCESSIBLE PHONE TOOLS STRIP: Full width horizontal scroll bar with all 16 feature icons! */
   .player-top-right {
-    order: 3 !important;
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
@@ -4736,14 +4737,10 @@ body.turbo-mode .hero-spotlight {
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch !important;
     scrollbar-width: none !important;
-    padding: 8px 12px !important;
-    background: rgba(12, 14, 20, 0.92) !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 2px 0 6px 0 !important;
     pointer-events: auto !important;
     box-sizing: border-box !important;
     flex-shrink: 0 !important;
-    z-index: 25 !important;
   }
 
   .player-top-right::-webkit-scrollbar {
@@ -4756,33 +4753,31 @@ body.turbo-mode .hero-spotlight {
     display: inline-flex !important;
     align-items: center !important;
     gap: 5px !important;
-    padding: 6px 12px !important;
+    padding: 5px 11px !important;
     font-size: 11.5px !important;
     font-weight: 600 !important;
-    border-radius: 18px !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    border-radius: 16px !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
     color: #fff !important;
     white-space: nowrap !important;
     cursor: pointer !important;
-    min-height: 32px !important;
+    min-height: 28px !important;
   }
 
   .player-top-right .player-pill:active,
   .player-top-right .player-icon-btn:active {
-    background: rgba(229, 9, 20, 0.35) !important;
+    background: rgba(229, 9, 20, 0.4) !important;
     border-color: var(--accent-red) !important;
-    transform: scale(0.96) !important;
   }
 
   /* 4. Bottom Controls Bar */
   .player-bottom-bar {
-    order: 4 !important;
     display: flex !important;
     flex-direction: column !important;
     gap: 6px !important;
-    padding: 6px 12px max(12px, env(safe-area-inset-bottom)) 12px !important;
-    background: rgba(10, 12, 18, 0.94) !important;
+    padding: 6px 12px max(14px, env(safe-area-inset-bottom)) 12px !important;
+    background: linear-gradient(0deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.5) 80%, transparent 100%) !important;
     pointer-events: auto !important;
   }
 
