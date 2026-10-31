@@ -4641,10 +4641,14 @@ body.turbo-mode .hero-spotlight {
     background: #000 !important;
   }
 
-  video {
+  video,
+  #video-player {
     width: 100% !important;
     height: 100% !important;
     object-fit: contain !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    transition: none !important;
   }
 
   /* When aspect ratio Fill is toggled: zero black bars, fills mobile screen */
