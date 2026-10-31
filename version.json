@@ -1,18 +1,21 @@
 {
-  "version": "3.9.3",
-  "build": 28,
-  "release_name": "Live TV v3.9.3 — Independent Phone TV Mobile Playback & Phone Remote",
+  "version": "3.9.4",
+  "build": 29,
+  "release_name": "Live TV v3.9.4 — Zero-Scroll Mobile Player & Advanced Feature Suite",
   "release_date": "2026-10-31",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
-    "📱 Independent Mobile TV Playback: Watch any of the 2,989 TV channels directly on your smartphone through the Phone Remote web app without interrupting or changing what is playing on the Mac screen",
-    "📺 Dual Channel Card Controls: Every channel card now features dedicated '📺 Mac' (tunes the big screen) and '📱 Phone' (streams directly on your smartphone) buttons",
-    "⚡ Quick Switch Bar & PiP: Switch mobile channels with a single tap beneath the player, with native iOS Safari HLS, Android Hls.js hardware decoding, and Mobile Picture-in-Picture",
-    "📡 'Send to Mac' Action: Transfer any stream you're watching on your phone directly to the Mac TV display with one touch",
-    "🕒 Bangladesh Standard Time (BST) & Live Scores: Retains all real-time cricket scores, overs, wickets, football match times, and uninterrupted SPOTV 2 HD playback"
+    "📱 Zero-Scroll Viewport Layout: Removed the Mac sticky bar from the Phone TV tab so the mobile video player starts immediately at the top without being obstructed or needing any scrolling to view",
+    "🎬 Mobile Quality & Bitrate Switcher: Instant manual and adaptive resolution selector (Auto, 1080p Full HD, 720p HD, 480p, 360p)",
+    "⛶ Display Zoom & Aspect Ratio: 1-tap toggle between Fit (16:9 Letterbox), Fill Screen (Zoomed edge-to-edge with no black bars), and Stretch",
+    "⏮⏭ Mobile Channel Surfer: Dedicated Prev/Next channel buttons on the mobile player to flip through live channels directly on your phone",
+    "⏱️ Mobile Sleep Timer: Bedtime countdown timer (15m, 30m, 45m, 60m, 90m) that automatically pauses playback to conserve battery and mobile data",
+    "🌙 Bedtime Brightness Dimmer: Dim video screen down to 40% for comfortable late-night viewing in dark rooms",
+    "🔒 Screen Lock & Live DVR: 1-tap accidental touch screen lock, 10s Rewind/Forward, and Go Live button",
+    "🔍 In-Player Channel Search: Search and tune any of the 2,989 channels directly within the Phone TV tab without switching screens"
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.9.3/LiveTV-v3.9.3.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.9.3/LiveTV-v3.9.3.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.9.4/LiveTV-v3.9.4.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.9.4/LiveTV-v3.9.4.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }
