@@ -1,21 +1,21 @@
 {
-  "version": "3.9.4",
-  "build": 29,
-  "release_name": "Live TV v3.9.4 — Zero-Scroll Mobile Player & Advanced Feature Suite",
+  "version": "4.0.0",
+  "build": 30,
+  "release_name": "Live TV v4.0.0 — Sports Score Ticker, Radio Mode, EPG & Scheduled DVR",
   "release_date": "2026-10-31",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
-    "📱 Zero-Scroll Viewport Layout: Removed the Mac sticky bar from the Phone TV tab so the mobile video player starts immediately at the top without being obstructed or needing any scrolling to view",
-    "🎬 Mobile Quality & Bitrate Switcher: Instant manual and adaptive resolution selector (Auto, 1080p Full HD, 720p HD, 480p, 360p)",
-    "⛶ Display Zoom & Aspect Ratio: 1-tap toggle between Fit (16:9 Letterbox), Fill Screen (Zoomed edge-to-edge with no black bars), and Stretch",
-    "⏮⏭ Mobile Channel Surfer: Dedicated Prev/Next channel buttons on the mobile player to flip through live channels directly on your phone",
-    "⏱️ Mobile Sleep Timer: Bedtime countdown timer (15m, 30m, 45m, 60m, 90m) that automatically pauses playback to conserve battery and mobile data",
-    "🌙 Bedtime Brightness Dimmer: Dim video screen down to 40% for comfortable late-night viewing in dark rooms",
-    "🔒 Screen Lock & Live DVR: 1-tap accidental touch screen lock, 10s Rewind/Forward, and Go Live button",
-    "🔍 In-Player Channel Search: Search and tune any of the 2,989 channels directly within the Phone TV tab without switching screens"
+    "⚡ Real-Time Sports Score Ticker: Live running ticker bar at the top displaying instant cricket scores (runs, wickets, overs), football scores, and Bangladesh Standard Time (BST) match times with 1-click channel tuning",
+    "🚨 Instant Goal & Wicket Celebration Toasts: Automatic detection of goals and wickets from live telemetry that pops a flash celebration notification with a 'Watch Live' quick switch button",
+    "📻 Audio-Only / Radio Mode (85%+ Battery & CPU Saver): Disables video decoding and displays an animated visualizer HUD on Mac and Phone, saving 85%+ CPU and battery for listening to matches, commentary, and news",
+    "⏱️ Background Scheduled DVR Recording: Schedule automatic recordings to ~/Movies/Live TV Recordings/ with custom start delays (instant, 15m, 30m, 1h, 4h overnight) and match durations (up to 3h full match)",
+    "📺 Realistic EPG 'Now & Next' Timeline: Dynamic Electronic Program Guide progress bars and show titles displayed on every channel card and inside the player overlay",
+    "🔒 Kids Safe Mode & Parental PIN Lock: 4-digit PIN lock (default: 0000) that filters the catalog to family, animation, nature, and sports channels while blocking adult and violence content",
+    "💾 Cross-Device Backup & Cloud Sync: Export and import all ranked favorites, custom M3U playlists, and settings to a portable JSON backup file",
+    "⚡ Ultra-Low Latency Mode: 1-click buffer optimizer reducing live broadcast lag to ~2s behind live for real-time sports synchronization"
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.9.4/LiveTV-v3.9.4.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v3.9.4/LiveTV-v3.9.4.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v4.0.0/LiveTV-v4.0.0.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v4.0.0/LiveTV-v4.0.0.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }
