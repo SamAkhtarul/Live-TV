@@ -7,7 +7,7 @@
 
 [![Platform: macOS](https://img.shields.io/badge/Platform-macOS%20(Apple%20Silicon%20arm64)-000000?style=for-the-badge&logo=apple)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 [![Platform: Android](https://img.shields.io/badge/Platform-Android%208.0+-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
-[![Version: 5.1.1](https://img.shields.io/badge/Version-5.1.1%20(Build%2037)-E50914?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
+[![Version: 5.1.2](https://img.shields.io/badge/Version-5.1.2%20(Build%2038)-E50914?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 [![Live Channels](https://img.shields.io/badge/Channels-2%2C989%20Active-blue?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 [![100% Ad-Free](https://img.shields.io/badge/Zero--Ad%20Shield-100%25%20Clean-success?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 
@@ -17,8 +17,8 @@
 
 | Platform | Installer Package | Architecture / OS | Direct Download Link |
 | :--- | :--- | :--- | :--- |
-| **🍎 macOS** | `LiveTV-v5.1.1.dmg` | Apple Silicon (M1/M2/M3/M4) • macOS 11+ | [⬇️ **Download for macOS (.dmg)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.1/LiveTV-v5.1.1.dmg) |
-| **🤖 Android** | `LiveTV-v5.1.1.apk` | Universal APK • Android 8.0+ (Phone, Tablet, TV) | [⬇️ **Download for Android (.apk)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.1/LiveTV-v5.1.1.apk) |
+| **🍎 macOS** | `LiveTV-v5.1.2.dmg` | Apple Silicon (M1/M2/M3/M4) • macOS 11+ | [⬇️ **Download for macOS (.dmg)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.2/LiveTV-v5.1.2.dmg) |
+| **🤖 Android** | `LiveTV-v5.1.2.apk` | Universal APK • Android 8.0+ (Phone, Tablet, TV) | [⬇️ **Download for Android (.apk)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.2/LiveTV-v5.1.2.apk) |
 
 *All releases are pre-compiled and ready to install immediately.*
 
@@ -26,34 +26,24 @@
 
 </div>
 
-## 🌟 Feature Highlights (v5.1.1)
+## 🌟 Feature Highlights (v5.1.2)
 
-### 1. 🚀 Smooth Channel Browsing & Pinned Category Header
-- **Unblocked Channel Access**: Fully restored smooth scrolling across all banners and the 2,989 channel grid, with automated lazy-loading batches.
-- **Sticky Category Bar**: Category navigation chips and live channel counts remain pinned to the top as you scroll through channels.
-- **Collapsible Hero Spotlight Billboard**: Compact 140px featured broadcast hero with 1-click dismiss (`✕`) and quick toggle button in the browser tools bar.
+### 1. ⚡ Prominent Header Update Icon & Status Pill
+- **Always-Visible Update Badge**: Permanent `⚡ Up to Date` status pill placed beside the app brand in `header-left` and dedicated `🔄` update button in `header-right`.
+- **1-Click Live Check**: Tapping either immediately triggers real-time GitHub release inspection and opens the update modal.
 
-### 2. 📱 Mobile Remote AI Video Enhancer & Immersive Fullscreen
-- **Retained AI Enhancer in Fullscreen**: Re-engineered phone player with Container Fullscreen and iOS Immersive Fullscreen Mode preventing native player overlays from stripping AI filters.
-- **Hardware-Accelerated Mobile WebGL AI Super-Resolution**: Zero-latency GPU WebGL Sobel convolution, high-pass sharpening, and HDR tone mapping directly on smartphones.
-- **Interactive Mobile Split-Screen Slider**: Real-time touch-draggable divider to compare Native 1080p vs AI 4K live.
-- **In-Video Floating Fullscreen HUD & Gestures**: Auto-dimming on-screen controls, double-tap to toggle fullscreen, and vertical swipe channel surfing.
-- **Mobile Voice Assistant**: Hands-free voice commands to tune channels, mute, and toggle AI enhancement.
-- **Pure OLED Pitch-Black Mode**: True `#000000` power-saving background mode on OLED screens.
+### 2. 🗜️ Ultra-Compact Desktop Header (Zero Horizontal Scroll)
+- **Zero Horizontal Overflow**: Header buttons redesigned with concise labels (`HUD`, `Alerts`, `Scores`, `EPG`, `Voice`, `Alarm`, `Bouquets`, `Rec`, `Kids`, `Backup`, `Multi`, `Remote`).
+- **Responsive Auto-Collapsing**: On narrower displays, button text collapses to clean icon-only buttons with hover tooltips, guaranteeing zero horizontal scroll on any window size.
 
-### 3. ✨ Hardware-Accelerated Real-Time WebGL AI Super-Resolution & Enhancer (macOS)
-- **Zero-Latency GPU Engine**: Direct WebGL 2D Quad running edge-adaptive Sobel convolution and high-pass unsharp masking natively at 60fps on Apple Silicon GPUs without taxing CPU cores.
-- **Interactive Split-Screen Slider**: Live draggable before/after comparison divider (`Native 1080p` vs `✨ AI 4K Upscaled`).
-- **5 Selectable AI Enhancement Modes**: AI 4K Super Resolution, Retina HDR Cinema, Sports Motion Clarity Pro, Anime/Cartoon Sharp, and Passthrough.
+### 3. 📱 Scroll-Free Phone TV Player (Zero Vertical Scroll)
+- **100% Single-Screen Viewport**: Height-optimized mobile layout (`100dvh`) fitting the video player, channel title, playback bar, tool buttons, and quick channels simultaneously with zero vertical scrolling.
 
-### 4. 🎛️ 10-Band Studio Graphic Audio Equalizer (32Hz–16kHz)
-- Hardware-accelerated Web Audio BiquadFilter bank covering 32Hz, 64Hz, 125Hz, 250Hz, 500Hz, 1kHz, 2kHz, 4kHz, 8kHz, 16kHz.
-- Instant acoustic presets: Flat, Stadium Live, Voice Clarity, Bass Extreme, Cinema Theater, and Night Mode.
+### 4. 🎮 Compact Scroll-Free Phone Remote (Zero Horizontal Scroll)
+- **Proportional D-Pad & Controls**: Compacted circular D-pad to 144px, streamlined duplicate volume buttons, and consolidated quick tools into two 4-button rows.
+- **Collapsible Channel Keypad**: Direct channel number dialing is tucked inside a 1-tap collapsible drawer (`🔢 Direct Channel Dial (1-9)`), keeping the remote fully visible without scrolling.
 
-### 5. 🚀 Turbo Performance Engine (-60% RAM, Near-Zero CPU)
-- Low-RAM optimizer activating DOM virtualization and throttling background overhead.
-
-### 6. 🛡️ 100% Ad-Free Experience (Zero-Ad Shield)
+### 5. 🛡️ 100% Ad-Free Experience (Zero-Ad Shield)
 - All 2,989 channels stream without commercial interruptions, popup ads, or tracking scripts.
 
 ---
@@ -62,12 +52,12 @@
 
 ### macOS
 ```bash
-./desktop/build_mac.sh 5.1.1 37
+./desktop/build_mac.sh 5.1.2 38
 ```
-Or download `LiveTV-v5.1.1.dmg`, drag `Live TV.app` into `/Applications`, and launch.
+Or download `LiveTV-v5.1.2.dmg`, drag `Live TV.app` into `/Applications`, and launch.
 
 ### Android
 ```bash
 ./gradlew assembleRelease
 ```
-Or download `LiveTV-v5.1.1.apk` directly to your Android device or TV.
+Or download `LiveTV-v5.1.2.apk` directly to your Android device or TV.

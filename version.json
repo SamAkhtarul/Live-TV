@@ -1,25 +1,19 @@
 {
-  "version": "5.1.1",
-  "build": 37,
-  "release_name": "Live TV v5.1.1 — Smooth Channel Browsing, Sticky Category Header & Mobile AI Enhancer",
+  "version": "5.1.2",
+  "build": 38,
+  "release_name": "Live TV v5.1.2 — Compact Header, Zero-Scroll Mobile & Scroll-Free Remote",
   "release_date": "2026-10-31",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
-    "🚀 Fixed Channel Browsing & Scrolling Access: Unblocked root scroll container enabling smooth, lightning-fast access down to all 2,989 channels and auto-loading lazy-batches",
-    "📌 Pinned Sticky Category Bar & Quick Counts: Categories and live channel counter now smoothly stick to the top during catalog scrolling for effortless category jumping",
-    "🎬 Collapsible Hero Broadcast Billboard: Compact 140px featured broadcast hero with 1-click dismiss (✕) and quick Billboard toggle button in the browser tools bar",
-    "📱 Fixed Mobile Remote AI Video Enhancer in Fullscreen: Re-engineered phone player with Container Fullscreen and iOS Immersive Fullscreen Mode (100vw x 100vh) preventing iOS QuickTime and Android media engines from stripping AI sharpening and color grading filters",
-    "✨ Hardware-Accelerated Mobile WebGL AI Super-Resolution Engine: Ported zero-latency 60fps GPU WebGL Sobel convolution, high-pass sharpening, and HDR tone mapping directly to mobile phones and tablets",
-    "⚖️ Mobile Interactive Split-Screen Comparison Slider: Real-time touch-draggable divider on mobile phone player to compare Native 1080p vs AI 4K live during playback",
-    "🪟 In-Video Floating Fullscreen HUD & Gestures: Auto-dimming on-screen controls in fullscreen with one-tap AI mode switching, double-tap to toggle fullscreen, and vertical swipe channel surfing",
-    "🎙️ Mobile Voice Assistant & Search: Integrated Web Speech recognition allowing hands-free channel tuning, muting, and AI cycling directly from the phone remote",
-    "🌙 Pure OLED Pitch-Black Mode: Battery-saving true #000000 background mode saving up to 40% display power on mobile OLED and Super AMOLED screens",
-    "⛶ Aspect Ratio Pan & Zoom Controller: Cycle between 16:9 Fit, 16:9 Fill Zoom (no black bars), 4:3 Vintage Pillarbox, and 21:9 Ultra-Wide Cinema on Mac and Mobile",
-    "⚡ Real-Time Network CDN Latency & Stability Telemetry: Live ping monitor and dropped-frame watchdog on player HUD ensuring seamless jitter-free broadcasts",
-    "🛡️ 100% Ad-Free Live TV (Zero-Ad Shield): Completely clean broadcast without commercial interruptions, popup ads, or tracking scripts"
+    "⚡ Prominent Header Update Icon & Status Pill: Added permanent, always-visible update pill and updater icon in the top header displaying real-time GitHub release status",
+    "🗜️ Ultra-Compact Desktop Header (Zero Horizontal Scroll): Redesigned header buttons with compact padding, concise labels, and responsive collapse ensuring all 16 tools fit perfectly without horizontal scrolling on any window size",
+    "📱 Scroll-Free Phone TV Player (Zero Vertical Scroll): Optimized viewport and component heights so the entire mobile player, channel title, playback bar, and quick channel surfer fit on screen at once",
+    "🎮 Compact Scroll-Free Phone Remote (Zero Horizontal Scroll): Slimmed D-pad from 220px to 144px, eliminated redundant volume buttons, streamlined quick tools, and introduced a 1-tap collapsible channel keypad drawer",
+    "🚀 Full Channel Access: Smooth scrolling and lazy-loaded rendering of all 2,989 channels with pinned category navigation",
+    "🛡️ 100% Ad-Free Live TV (Zero-Ad Shield): Zero commercial interruptions, popups, or tracking scripts"
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.1/LiveTV-v5.1.1.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.1/LiveTV-v5.1.1.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.2/LiveTV-v5.1.2.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.2/LiveTV-v5.1.2.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }
