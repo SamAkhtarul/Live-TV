@@ -1,19 +1,22 @@
 {
-  "version": "4.1.0",
-  "build": 32,
-  "release_name": "Live TV v4.1.0 — OSD Keypad Dialing, Slow-Mo Replay, Team Alerts & Phone Swipe Surfing",
+  "version": "4.2.0",
+  "build": 33,
+  "release_name": "Live TV v4.2.0 — Premium Broadcast Edition: Zero-Ad Shield, AI Video Clarity HDR, Peek Preview & Xtream IPTV",
   "release_date": "2026-10-31",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
-    "🔢 Direct Channel Number Dialing (TV OSD Overlay & Keypad): Dial any channel number with instant glowing on-screen display (CH 0-9) on Mac keyboard or using the tactile 3x4 numeric keypad on the Phone Remote to jump straight to your favorite station",
-    "⏱️ Instant Slow-Motion Replay (0.5×): One-tap 10s instant rewind at half speed with dedicated glowing HUD banner on Mac and 0.5× tool button on Phone TV for reviewing thrilling goals, wickets, and race moments before returning seamlessly to Live",
-    "🔔 Sports Team Alerts & Match Notification System: Select your favorite cricket, football, or motorsport clubs (Bangladesh, Real Madrid, Ducati, India, etc.) or add custom teams to receive instant celebrations and 1-tap tune alerts whenever they score or take the field",
-    "🎧 Full System MediaSession Integration: Native lock-screen, Control Center, headphone touch gestures, and media keys support on macOS and mobile phone player with rich metadata, channel art, and next/previous surfing",
-    "📱 Phone TV Touch Swipe Channel Surfing & Audio EQ: Swipe vertically on the mobile player to surf channels effortlessly (Swipe Up for next, Down for prev), with multi-mode Audio EQ voice boosting"
+    "🛡️ 100% Zero-Ad & Anti-Popup Shield: Enforced WebKit security delegate and inline ad filters unconditionally blocking popups, new window traps, redirect domains, and intrusive overlay banners across macOS and mobile remote",
+    "✨ AI Video Clarity & Retina HDR Enhancer: Hardware-accelerated post-processing filters featuring Normal, AI Sharp 4K, HDR Cinema, and Sports Vivid with dedicated toolbar cycling and real-time HUD badge feedback",
+    "👀 Live Channel Peek Preview (Hover Sniffer): Instant floating picture-in-picture preview bubble when hovering over channel cards for >500ms before tuning",
+    "🧭 In-Player Quick Mini-Guide: Frosted glass bottom drawer (ArrowDown or Guide button) allowing rapid one-click channel surfing without leaving playback",
+    "🔇 Smart Commercial Break Muter: 1-click commercial break mute timer cycling 45s, 60s, 90s, 120s with real-time countdown badge and automatic audio restoration",
+    "📡 Xtream Codes IPTV API & Multi-Playlist Vault: Native support for Xtream IPTV server logins (/player_api.php), auto-ingesting live stream categories directly into your library",
+    "📶 Metered Data Saver Mode: Smart bandwidth conservation mode restricting playback to 720p/480p and pausing background hover video previews",
+    "🎙️ Alternative Live Commentary Sync: Auxiliary live audio stream playback with precision delay sync (±0.5s) for custom radio or language broadcasts",
+    "🎨 Brand-New Modern Glass Dock Icon & Fixed Back Button: High-res glassmorphic app icon with immediate Dock cache refresh, and persistent non-collapsing Back button"
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v4.1.0/LiveTV-v4.1.0.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v4.1.0/LiveTV-v4.1.0.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v4.2.0/LiveTV-v4.2.0.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v4.2.0/LiveTV-v4.2.0.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }
-
