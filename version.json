@@ -1,18 +1,17 @@
 {
-  "version": "5.1.7",
-  "build": 43,
-  "release_name": "Live TV v5.1.7 — Fixed Sticky Search & Edge-to-Edge Phone TV Player",
+  "version": "5.1.8",
+  "build": 44,
+  "release_name": "Live TV v5.1.8 — Complete Removal of Search Bar From Video Player View",
   "release_date": "2026-10-31",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
-    "🔍 Fixed Channels Search Bar in Mobile Remote: Relocated and pinned sticky at the very top of the Channels view with solid backdrop and shadow, ensuring it is immediately accessible and never hides under the top bar",
-    "📌 Fixed Sticky Search Bar in Mac App: Transformed search container into a fixed glassmorphic sticky header pinned to the top of the browser view, allowing instant live search from anywhere while browsing channels",
-    "📱 Edge-to-Edge Phone TV Video Player: Expanded mobile video player to 100% full phone width with zero side margins, increased aspect height, and cover fill, completely eliminating letterboxing black side bars",
-    "⚡ Perfectly Padded Mobile Controls: Wrapped all player buttons, dials, and quick surfer in a comfortable cushioned container below the edge-to-edge video",
+    "🎬 Zero-Distraction Video Player: Completely eliminated search bar leakage and overlay bleed from the full video player view with high-priority z-index (500) and explicit player-active body isolation",
+    "📌 Fixed Sticky Search in Channel Browser: Maintained sticky glassmorphic search pinned cleanly at the top of the browser catalog without interfering with active video playback",
+    "📱 Edge-to-Edge Phone TV: 100% full phone width with zero black letterbox side bars and comfortable cushioned playback controls",
     "🛡️ 100% Ad-Free Live TV (Zero-Ad Shield): Zero commercial interruptions across all 2,989 channels"
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.7/LiveTV-v5.1.7.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.7/LiveTV-v5.1.7.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.8/LiveTV-v5.1.8.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.8/LiveTV-v5.1.8.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }
