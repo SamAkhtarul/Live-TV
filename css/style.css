@@ -292,17 +292,82 @@ body:not(.native-mac-app) .app-header {
   }
 }
 
-/* Mobile & iPhone portrait: swipeable header tools bar */
+/* Mobile & iPhone portrait: fully swipeable header bar (entire bar glides smoothly) */
 @media (max-width: 900px) {
-  .header-right {
+  .app-header {
     overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    padding-bottom: 2px;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-x !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding-left: max(10px, env(safe-area-inset-left)) !important;
+    padding-right: max(14px, env(safe-area-inset-right)) !important;
+    -webkit-app-region: no-drag !important;
   }
-  .header-right::-webkit-scrollbar {
-    display: none;
+
+  .app-header::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .header-left {
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+  }
+
+  .brand-badge {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .header-right {
+    flex-shrink: 0 !important;
+    overflow: visible !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    padding-right: 24px !important;
+  }
+
+  .header-btn {
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 5px 8px !important;
+    min-width: 32px !important;
+    height: 30px !important;
+  }
+}
+
+/* On compact mobile screens (< 600px), streamline text so more buttons are visible immediately */
+@media (max-width: 600px) {
+  #header-update-text {
+    display: none !important; /* Keep just the ⚡ dot on small phone screens */
+  }
+
+  .header-update-pill {
+    padding: 3px 6px !important;
+  }
+
+  .author-link {
+    font-size: 10px !important;
+    max-width: 95px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .brand-title {
+    font-size: 14px !important;
   }
 }
 
