@@ -12,7 +12,10 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <title>Live TV</title>
   <link rel="icon" type="image/png" href="icon.png" />
-  <link rel="stylesheet" href="css/style.css?v=5.1.13" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="stylesheet" href="css/style.css?v=5.1.14" />
 </head>
 
 <body>
@@ -26,7 +29,7 @@
           </div>
           <span class="brand-title">Live TV</span>
           <span class="live-badge">LIVE</span>
-          <span class="app-version">v5.1.13</span>
+          <span class="app-version">v5.1.14</span>
           <!-- Prominent Header Update Pill (Always visible on left!) -->
           <button id="btn-header-update-badge" class="header-update-pill" title="Check for Updates & System Status">
             <span class="update-pill-dot">⚡</span>
@@ -354,7 +357,7 @@
         </div>
 
         <!-- Video Element -->
-        <video id="video-player" playsinline webkit-playsinline="true" preload="auto"></video>
+        <video id="video-player" playsinline webkit-playsinline="true" preload="none"></video>
 
         <!-- Real-Time Live Closed Captions / Subtitles Overlay -->
         <div id="player-live-captions" style="display: none;"></div>
@@ -362,7 +365,7 @@
         <!-- Audio-Only / Radio Mode Equalizer HUD -->
         <div class="audio-only-hud" id="audio-only-hud" style="display: none;">
           <div class="audio-only-logo-wrap">
-            <img id="audio-only-logo" src="" alt="Channel Logo" onerror="this.src='';">
+            <img id="audio-only-logo" src="icon.png" alt="Channel Logo" style="display:none;" onerror="this.style.display='none';">
           </div>
           <div style="font-size: 18px; font-weight: 800; color: #fff;" id="audio-only-title">Channel Name</div>
           <div class="eq-bars-wrap">
@@ -1982,7 +1985,7 @@
   <script src="js/hls.min.js"></script>
   <script src="js/shaka-player.compiled.js"></script>
   <script src="js/cenc_decryptor.js"></script>
-  <script src="js/app.js?v=5.1.13"></script>
+  <script src="js/app.js?v=5.1.14"></script>
 </body>
 
 </html>
