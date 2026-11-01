@@ -1615,6 +1615,8 @@ body:not(.native-mac-app) .player-top-bar {
   max-width: calc(100% - 150px);
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+  overscroll-behavior-x: contain;
   padding: 2px 0;
 }
 
@@ -1887,7 +1889,11 @@ body:not(.native-mac-app) .player-top-bar {
   align-items: center;
   gap: 8px;
   overflow-x: auto;
+  overflow-y: hidden;
   padding-bottom: 2px;
+  touch-action: pan-x;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .quick-channel-item {
@@ -4845,7 +4851,10 @@ body.turbo-mode .hero-spotlight {
     width: 100% !important;
     max-width: 100% !important;
     overflow-x: auto !important;
+    overflow-y: hidden !important;
     -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-x !important;
+    overscroll-behavior-x: contain !important;
     scrollbar-width: none !important;
     padding: 2px 0 6px 0 !important;
     pointer-events: auto !important;
@@ -4929,6 +4938,9 @@ body.turbo-mode .hero-spotlight {
     max-height: 48px !important;
     gap: 8px !important;
     padding: 2px 0 !important;
+    touch-action: pan-x !important;
+    overscroll-behavior-x: contain !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 }
 
