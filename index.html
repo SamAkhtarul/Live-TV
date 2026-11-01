@@ -15,7 +15,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <link rel="stylesheet" href="css/style.css?v=5.1.16" />
+  <link rel="stylesheet" href="css/style.css?v=5.1.17" />
 </head>
 
 <body>
@@ -29,7 +29,7 @@
           </div>
           <span class="brand-title">Live TV</span>
           <span class="live-badge">LIVE</span>
-          <span class="app-version">v5.1.16</span>
+          <span class="app-version">v5.1.17</span>
           <!-- Prominent Header Update Pill (Always visible on left!) -->
           <button id="btn-header-update-badge" class="header-update-pill" title="Check for Updates & System Status">
             <span class="update-pill-dot">⚡</span>
@@ -485,6 +485,7 @@
         <div id="player-stream-notice" class="player-stream-notice" style="display: none;">
           <span id="player-stream-notice-icon">⚠️</span>
           <span id="player-stream-notice-text">Stream Notice</span>
+          <button id="btn-player-notice-reconnect" class="player-stream-reconnect-btn" title="Reconnect stream immediately" style="display: none;">↻ Reconnect</button>
         </div>
 
         <!-- Player Controls (Overlay) -->
@@ -516,6 +517,30 @@
             </div>
 
             <div class="player-top-right">
+              <!-- Last Channel Recall (Q) -->
+              <button id="player-btn-recall" class="player-pill" title="Recall Last Channel (Q)">
+                <span>⇄</span>
+                <span id="player-recall-label">Last CH</span>
+              </button>
+
+              <!-- Video Zoom & Pan (Z) -->
+              <button id="player-btn-zoom" class="player-pill" title="Cycle Video Zoom (1.0x, 1.25x, 1.5x, 2.0x)">
+                <span>🔎</span>
+                <span id="player-zoom-label">1.0x</span>
+              </button>
+
+              <!-- Quick Channel Search Overlay (/) -->
+              <button id="player-btn-quick-search" class="player-pill" title="Quick Channel Search (/)">
+                <span>🔍</span>
+                <span>Search</span>
+              </button>
+
+              <!-- Reload / Reconnect Stream -->
+              <button id="player-btn-reconnect" class="player-pill" title="Reload / Reconnect Stream">
+                <span>↻</span>
+                <span>Reconnect</span>
+              </button>
+
               <!-- Real-Time Hardware-Accelerated WebGL AI Super-Resolution 4K Upscaler -->
               <button id="player-btn-ai-upscaler" class="player-pill"
                 title="Toggle Real-Time WebGL AI Super-Resolution 4K Upscaler">
@@ -982,6 +1007,25 @@
             <input type="checkbox" id="chk-audio-boost" checked style="cursor: pointer;" />
           </div>
 
+          <!-- Audio / Video Lip-Sync Offset -->
+          <div style="font-weight: 700; margin-top: 14px; margin-bottom: 6px; font-size: 12px; color: var(--gold);">
+            AUDIO / VIDEO LIP-SYNC OFFSET</div>
+          <div style="background: rgba(255,255,255,0.04); padding: 10px; border-radius: 8px; margin-bottom: 16px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+              <span style="font-size: 11px; color: var(--text-secondary);">Delay compensation:</span>
+              <span id="lipsync-val-display" style="font-size: 12px; font-weight: 700; color: #ef4444; font-family: monospace;">0 ms</span>
+            </div>
+            <input type="range" id="lipsync-slider" min="-500" max="1500" step="50" value="0" style="width: 100%; accent-color: var(--accent-red); margin-bottom: 8px; cursor: pointer;" />
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;" id="lipsync-preset-container">
+              <button class="dvr-pill-btn lipsync-btn active" data-delay="0">0ms</button>
+              <button class="dvr-pill-btn lipsync-btn" data-delay="100">+100ms</button>
+              <button class="dvr-pill-btn lipsync-btn" data-delay="250">+250ms</button>
+              <button class="dvr-pill-btn lipsync-btn" data-delay="500">+500ms</button>
+              <button class="dvr-pill-btn lipsync-btn" data-delay="750">+750ms</button>
+              <button class="dvr-pill-btn lipsync-btn" data-delay="1000">+1.0s</button>
+            </div>
+          </div>
+
           <!-- Alternative Live Audio Commentary Feed -->
           <div style="font-weight: 700; margin-top: 14px; margin-bottom: 6px; font-size: 12px; color: var(--gold);">
             ALTERNATIVE LIVE COMMENTARY SYNC</div>
@@ -1049,6 +1093,14 @@
               on Top (Floating Window)</span></div>
           <div class="list-item-row"><span>R</span><span style="color:var(--text-secondary); font-weight: 600;">Record
               Live Clip (.mp4/.webm)</span></div>
+          <div class="list-item-row"><span>Q</span><span style="color:var(--text-secondary); font-weight: 600;">Recall
+              Last Watched Channel</span></div>
+          <div class="list-item-row"><span>/</span><span style="color:var(--text-secondary); font-weight: 600;">Spotlight
+              Quick Channel Search</span></div>
+          <div class="list-item-row"><span>Z</span><span style="color:var(--text-secondary); font-weight: 600;">Cycle
+              Video Zoom & Pan (1.0x-2.0x)</span></div>
+          <div class="list-item-row"><span>E</span><span style="color:var(--text-secondary); font-weight: 600;">Reload
+              & Reconnect Stream</span></div>
           <div class="list-item-row"><span>V</span><span
               style="color:var(--text-secondary); font-weight: 600;">Multi-View Studio (Dual/Quad Stream)</span></div>
           <div class="list-item-row"><span>0 - 9</span><span
@@ -1366,7 +1418,7 @@
             <div>
               <div class="modal-title">Live TV <span style="font-size: 11px; opacity: 0.7; font-weight: normal;">for
                   macOS</span></div>
-              <div class="modal-subtitle">Version 5.1.16 (Build 51) • Apple Silicon arm64</div>
+              <div class="modal-subtitle">Version 5.1.17 (Build 52) • Apple Silicon arm64</div>
             </div>
           </div>
           <button class="modal-close-btn" id="btn-close-about-modal">✕</button>
@@ -1974,6 +2026,21 @@
       </div>
     </div>
 
+    <!-- MODAL: In-Player Quick Channel Search / Spotlight HUD (/) -->
+    <div class="modal-overlay" id="modal-player-search" style="display: none; z-index: 200000 !important;">
+      <div class="modal-dialog" style="max-width: 520px; width: 92%; border-radius: var(--radius-lg); background: rgba(18, 20, 29, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 20px 60px rgba(0,0,0,0.85); padding: 0; overflow: hidden;">
+        <div style="display: flex; align-items: center; gap: 10px; padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04);">
+          <span style="font-size: 18px;">🔍</span>
+          <input type="text" id="hud-channel-search-input" placeholder="Search 2,989+ channels, sports, or numbers..." style="flex: 1; background: transparent; border: none; outline: none; color: #fff; font-size: 14px; font-weight: 600; font-family: inherit;" autocomplete="off" spellcheck="false" />
+          <span style="font-size: 10.5px; color: var(--text-muted); background: rgba(255,255,255,0.08); padding: 2px 7px; border-radius: 4px; font-weight: 700;">ESC</span>
+          <button id="btn-close-hud-search" style="background: none; border: none; color: var(--text-muted); font-size: 18px; cursor: pointer; padding: 0 4px; line-height: 1;">✕</button>
+        </div>
+        <div id="hud-channel-search-results" style="max-height: 380px; overflow-y: auto; padding: 8px;">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </div>
+
     <!-- Toast Notification Banner -->
     <div class="toast-notification" id="toast-notification" style="display: none;">
       <span id="toast-icon">✨</span>
@@ -1986,7 +2053,7 @@
   <script src="js/hls.min.js"></script>
   <script src="js/shaka-player.compiled.js"></script>
   <script src="js/cenc_decryptor.js"></script>
-  <script src="js/app.js?v=5.1.16"></script>
+  <script src="js/app.js?v=5.1.17"></script>
 </body>
 
 </html>
