@@ -1917,14 +1917,16 @@ body:not(.native-mac-app) .player-top-bar {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.72);
+  background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 200000 !important;
-  animation: fadeIn 0.18s ease;
+  opacity: 1 !important;
+  visibility: visible !important;
+  animation: fadeIn 0.18s ease forwards;
 }
 
 .modal-dialog {
