@@ -1,0 +1,17 @@
+{
+  "version": "5.1.16",
+  "build": 51,
+  "release_name": "Live TV v5.1.16 (Build 51) — In-Player Settings Modal & Performance Polish",
+  "release_date": "2026-11-01",
+  "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
+  "min_os_android": "Android 8.0 Oreo or later",
+  "changelog": [
+    "🎬 In-Player Playback & Quality Settings: Quality pill ([ 1080p ]) and Audio/Subtitles options now open directly over the active video stream without closing the player",
+    "⚡ Seamless Quality Ladder: Switching between Auto, 4K, 1440p, 1080p, 720p, 480p, and Data Saver preserves continuous video playback",
+    "❄️ Zero-Heat & Battery Optimization: iOS native AVPlayer hardware fullscreen, 0% idle GPU overhead, and direct Apple Silicon CoreAnimation layer",
+    "🛡️ 100% Ad-Free Zero-Ad Shield: Comprehensive popup blocker and ad filter protecting all 2,989 channels"
+  ],
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.16/LiveTV-v5.1.16.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.16/LiveTV-v5.1.16.apk",
+  "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
+}
