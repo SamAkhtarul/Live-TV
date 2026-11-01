@@ -1910,19 +1910,20 @@ body:not(.native-mac-app) .player-top-bar {
   gap: 8px;
 }
 
-/* Modal Dialogs */
+/* Modal Dialogs - High z-index ensures modals always appear over full player overlay and home page */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 200000 !important;
   animation: fadeIn 0.18s ease;
 }
 
