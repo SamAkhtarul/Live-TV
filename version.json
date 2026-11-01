@@ -1,13 +1,15 @@
 {
-  "version": "5.1.18",
-  "build": 53,
-  "release_name": "Live TV v5.1.18 (Build 53) — Mobile Header Horizontal Swipe & Pro Polish",
+  "version": "5.1.19",
+  "build": 54,
+  "release_name": "Live TV v5.1.19 (Build 54) — Touch & Scroll Controls Stability Fix",
   "release_date": "2026-11-01",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
-    "📱 Mobile Header Smooth Swipe: The entire top header bar now glides horizontally with inertial touch scrolling on phones, allowing access to all 15+ tool buttons (EPG, Scores, Alarm, Bouquets, DVR, Kids, Multi-View, etc.)",
-    "✨ Compact Phone Header Optimization: Streamlined badge spacing and update indicators on narrow screens to maximize accessible feature tools upfront",
+    "👆 Player Controls Touch & Scroll Lock: Touching, swiping, or horizontally scrolling through the top action pills and quick-switch channel carousel will NEVER prematurely hide the controls overlay",
+    "🛡️ Dedicated Touch Interaction Engine: Active gesture tracking on touchstart, touchmove, and scroll with a 4-second grace period after releasing your finger before auto-hide timer resumes",
+    "🎯 Accurate Backdrop Tap Detection: Clicks and touches anywhere inside controls containers no longer trigger false background dismissals",
+    "📱 Mobile Header Smooth Swipe: The entire top header bar glides horizontally with inertial touch scrolling on phones",
     "⇄ Last Channel Recall (Q): Instant flashback toggle between current and previous channel",
     "🎚️ Web Audio Lip-Sync Offset: Real-time delay compensation (-500ms to +1500ms)",
     "🔍 In-Player Spotlight Channel Search (/): Instant modal HUD search across all 2,989+ channels without exiting fullscreen",
@@ -15,7 +17,7 @@
     "🔎 Custom Video Zoom & Pan: Multi-level zoom with touch pinch and drag-to-pan",
     "↻ Stream Auto-Retry & Reconnect: 3-stage automatic stall recovery and instant reload"
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.18/LiveTV-v5.1.18.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.18/LiveTV-v5.1.18.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.19/LiveTV-v5.1.19.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.1.19/LiveTV-v5.1.19.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }
