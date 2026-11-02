@@ -2870,6 +2870,12 @@ body:not(.native-mac-app) .player-top-bar {
   animation: fadeIn 0.2s ease;
 }
 
+body.player-active .toast-notification {
+  bottom: 120px !important;
+  z-index: 999999 !important;
+  pointer-events: none !important;
+}
+
 /* ==========================================================================
    Picture-in-Picture (PiP) Floating Mini-Player Mode
    ========================================================================== */
