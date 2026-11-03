@@ -1,20 +1,20 @@
 {
-  "version": "5.2.2",
-  "build": 57,
-  "release_name": "Live TV v5.2.2 (Build 57) — Polsat Sport Premium Super HD & UEFA Europa League",
+  "version": "5.2.3",
+  "build": 58,
+  "release_name": "Live TV v5.2.3 (Build 58) — Sport Klub 4, Sky Sports Main Event & Sky Sports Tennis HD",
   "release_date": "2026-11-03",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
-    "⚽ Added Polsat Sport Premium 2 Super HD: Official broadcast channel for UEFA Europa League & Champions League in full Super HD with dedicated sports stream failover",
-    "🏆 Added Polsat Sport Premium 1 Super HD: Flagship UEFA European tournaments channel with multi-server backup feeds",
-    "🛡️ Intelligent Multi-Server Failover: Instant fallback between high-definition sports feeds, beIN Sports Live, and European Sports broadcasts on 403 or network errors",
-    "🎾 Live Sports 'Watch Live' Instant Play: Seamless sports event tuning across macOS, Android, and Web without black screens",
-    "🔒 Secure HTTPS & Mixed Content Elimination: Verified CORS-enabled HTTPS feeds for all platforms",
+    "🎾 Added Sport Klub 4 HD (SK 4 HD): Live coverage of ATP Rolex Paris Masters tennis and European sports competitions",
+    "🎾 Added Sky Sports Main Event HD: Premium broadcast covering top-tier tennis matchups (Djokovic, Alcaraz, Paris Masters) and headline live sporting events",
+    "🎾 Added Sky Sports Tennis HD: Dedicated 24/7 tennis tournament channel delivering comprehensive ATP and WTA world tour coverage",
+    "⚽ Added Polsat Sport Premium 2 & 1 Super HD: Full UEFA Europa League & Champions League coverage with failover streams",
+    "🛡️ Resilient Multi-Server Failover: Direct match streams automatically backed by verified 24/7 CDN feeds (Tennis Channel HD, T2, beIN Sports XTRA)",
     "⇄ Last Channel Toggle & Recall: Alternates between current and previous channels with on-screen button labels and hotkey Q",
     "👆 Player Controls Touch & Scroll Lock: Touching or scrolling through action pills and channels will never hide controls overlay"
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.2/LiveTV-v5.2.2.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.2/LiveTV-v5.2.2.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.3/LiveTV-v5.2.3.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.3/LiveTV-v5.2.3.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }
