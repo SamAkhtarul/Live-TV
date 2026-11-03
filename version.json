@@ -1,22 +1,20 @@
 {
-  "version": "5.2.1",
-  "build": 56,
-  "release_name": "Live TV v5.2.1 (Build 56) — Watch Live Sports Multi-Server Failover",
+  "version": "5.2.2",
+  "build": 57,
+  "release_name": "Live TV v5.2.2 (Build 57) — Polsat Sport Premium Super HD & UEFA Europa League",
   "release_date": "2026-11-03",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
-    "🎾 Live Sports 'Watch Live' Instant Play & Multi-Server Resilience: Fixed live sports event tuning so clicking '▶ Watch Live' or event cards plays instantly across macOS, Android, and Web without blank/black screens",
-    "🛡️ Intelligent Multi-Server Failover: Direct match streams (FanCode / live feeds) now automatically attach verified 24/7 backup sports broadcast feeds (Tennis Channel HD Amagi CDN, T2 Live, beIN Sports XTRA, T Sports HD, Red Bull MotoGP) with zero-delay auto-failover on HTTP 403 / 404 / geo-blocking",
-    "🔒 Secure HTTPS & Mixed Content Elimination: Replaced legacy HTTP sports streams with CORS-enabled HTTPS feeds to ensure flawless playback in web browsers and native app webviews",
+    "⚽ Added Polsat Sport Premium 2 Super HD: Official broadcast channel for UEFA Europa League & Champions League in full Super HD with dedicated sports stream failover",
+    "🏆 Added Polsat Sport Premium 1 Super HD: Flagship UEFA European tournaments channel with multi-server backup feeds",
+    "🛡️ Intelligent Multi-Server Failover: Instant fallback between high-definition sports feeds, beIN Sports Live, and European Sports broadcasts on 403 or network errors",
+    "🎾 Live Sports 'Watch Live' Instant Play: Seamless sports event tuning across macOS, Android, and Web without black screens",
+    "🔒 Secure HTTPS & Mixed Content Elimination: Verified CORS-enabled HTTPS feeds for all platforms",
     "⇄ Last Channel Toggle & Recall: Alternates between current and previous channels with on-screen button labels and hotkey Q",
-    "👆 Player Controls Touch & Scroll Lock: Touching or scrolling through action pills and channels will never hide controls overlay",
-    "🎚️ Web Audio Lip-Sync Offset: Real-time delay compensation (-500ms to +1500ms)",
-    "🔍 In-Player Spotlight Channel Search (/): Instant modal HUD search across all 2,989+ channels without exiting fullscreen",
-    "🔔 Live Sports Match Reminders: Set alerts on upcoming matches with synthesized chime and 1-click tune",
-    "🔎 Custom Video Zoom & Pan: Multi-level zoom with touch pinch and drag-to-pan"
+    "👆 Player Controls Touch & Scroll Lock: Touching or scrolling through action pills and channels will never hide controls overlay"
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.1/LiveTV-v5.2.1.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.1/LiveTV-v5.2.1.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.2/LiveTV-v5.2.2.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.2/LiveTV-v5.2.2.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }
