@@ -520,6 +520,14 @@
     "country": "Poland"
   },
   {
+    "id": "sky_sports_main_event_hd",
+    "name": "Sky Sports Main Event HD",
+    "streamUrl": "https://zekonew.newkso.ru/zeko/premium38/mono.m3u8|Referer=https%3A%2F%2Fcaq21harderv991gpluralplay.xyz%2F&User-Agent=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+17_7+like+Mac+OS+X%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Mobile%2F15E148+Safari%2F604.1&Origin=https%3A%2F%2Fcaq21harderv991gpluralplay.xyz",
+    "logoUrl": "https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/sky-sports-main-event-icon-uk.png",
+    "category": "Sports",
+    "country": "United Kingdom"
+  },
+  {
     "id": "servustv_motogp_hd",
     "name": "ServusTV MotoGP HD",
     "streamUrl": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
@@ -806,6 +814,22 @@
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/BeIN_Sports_logo.svg/320px-BeIN_Sports_logo.svg.png",
     "category": "Tennis",
     "country": "Kuwait"
+  },
+  {
+    "id": "sky_sports_tennis_hd",
+    "name": "Sky Sports Tennis HD",
+    "streamUrl": "https://windnew.newkso.ru/wind/premium46/mono.m3u8|Referer=https%3A%2F%2Fcaq21harderv991gpluralplay.xyz%2F&User-Agent=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+17_7+like+Mac+OS+X%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Mobile%2F15E148+Safari%2F604.1&Origin=https%3A%2F%2Fcaq21harderv991gpluralplay.xyz",
+    "logoUrl": "https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/sky-sports-tennis-icon-uk.png",
+    "category": "Tennis",
+    "country": "United Kingdom"
+  },
+  {
+    "id": "sport_klub_4_hd",
+    "name": "Sport Klub 4 HD (Rolex Paris Masters)",
+    "streamUrl": "https://nfsnew.newkso.ru/nfs/premium104/mono.m3u8|Referer=https%3A%2F%2Fcaq21harderv991gpluralplay.xyz%2F&User-Agent=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+17_7+like+Mac+OS+X%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Mobile%2F15E148+Safari%2F604.1&Origin=https%3A%2F%2Fcaq21harderv991gpluralplay.xyz",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/3/39/SportKlub.Logo.png",
+    "category": "Tennis",
+    "country": "Serbia / Balkans"
   },
   {
     "id": "fashion_tv_hd",

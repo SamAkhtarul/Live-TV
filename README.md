@@ -3,12 +3,12 @@
 # 📺 Live TV
 
 ### Next-Generation Live Streaming for macOS, Android & Web
-**2,991+ Live Channels • Real-Time WebGL AI Super-Resolution • Sports Telemetry • 10-Band EQ**
+**2,994+ Live Channels • Real-Time WebGL AI Super-Resolution • Sports Telemetry • 10-Band EQ**
 
 [![Platform: macOS](https://img.shields.io/badge/Platform-macOS%20(Apple%20Silicon%20arm64)-000000?style=for-the-badge&logo=apple)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 [![Platform: Android](https://img.shields.io/badge/Platform-Android%208.0+-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
-[![Version: 5.2.2](https://img.shields.io/badge/Version-5.2.2%20(Build%2057)-E50914?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
-[![Live Channels](https://img.shields.io/badge/Channels-2%2C991%20Active-blue?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
+[![Version: 5.2.3](https://img.shields.io/badge/Version-5.2.3%20(Build%2058)-E50914?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
+[![Live Channels](https://img.shields.io/badge/Channels-2%2C994%20Active-blue?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 [![100% Ad-Free](https://img.shields.io/badge/Zero--Ad%20Shield-100%25%20Clean-success?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 
 ---
@@ -17,8 +17,8 @@
 
 | Platform | Installer Package / Link | Architecture / OS | Direct Access Link |
 | :--- | :--- | :--- | :--- |
-| **🍎 macOS** | `LiveTV-v5.2.2.dmg` | Apple Silicon (M1/M2/M3/M4) • macOS 11+ | [⬇️ **Download for macOS (.dmg)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.2/LiveTV-v5.2.2.dmg) |
-| **🤖 Android** | `LiveTV-v5.2.2.apk` | Universal APK • Android 8.0+ (Phone, Tablet, TV) | [⬇️ **Download for Android (.apk)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.2/LiveTV-v5.2.2.apk) |
+| **🍎 macOS** | `LiveTV-v5.2.3.dmg` | Apple Silicon (M1/M2/M3/M4) • macOS 11+ | [⬇️ **Download for macOS (.dmg)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.3/LiveTV-v5.2.3.dmg) |
+| **🤖 Android** | `LiveTV-v5.2.3.apk` | Universal APK • Android 8.0+ (Phone, Tablet, TV) | [⬇️ **Download for Android (.apk)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.3/LiveTV-v5.2.3.apk) |
 | **🌐 Web / iPhone** | GitHub Pages Web App | Safari, Chrome, iOS WebKit, Edge, Firefox | [🌐 **Open Live TV Web App**](https://samakhtarul.github.io/Live-TV/) |
 
 *All releases are pre-compiled and ready to install immediately.*
@@ -61,7 +61,7 @@
 
 ### macOS Native App
 ```bash
-./desktop/build_mac.sh 5.2.2 57
+./desktop/build_mac.sh 5.2.3 58
 ```
 
 ### Android Release APK
