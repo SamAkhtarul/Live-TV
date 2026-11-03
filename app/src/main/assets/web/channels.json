@@ -832,6 +832,22 @@
     "country": "Serbia / Balkans"
   },
   {
+    "id": "tsn_1_hd",
+    "name": "TSN 1 HD (Rolex Paris Masters)",
+    "streamUrl": "https://zekonew.newkso.ru/zeko/premium111/mono.m3u8|Referer=https%3A%2F%2Fcaq21harderv991gpluralplay.xyz%2F&User-Agent=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+17_7+like+Mac+OS+X%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Mobile%2F15E148+Safari%2F604.1&Origin=https%3A%2F%2Fcaq21harderv991gpluralplay.xyz",
+    "logoUrl": "https://raw.githubusercontent.com/tv-logo/tv-logos/main/countries/canada/tsn-ca.png",
+    "category": "Tennis",
+    "country": "Canada"
+  },
+  {
+    "id": "espn_2_brasil_hd",
+    "name": "ESPN 2 Brasil HD (Tênis Na ESPN)",
+    "streamUrl": "https://windnew.newkso.ru/wind/premium82/mono.m3u8|Referer=https%3A%2F%2Fcaq21harderv991gpluralplay.xyz%2F&User-Agent=Mozilla%2F5.0+%28iPhone%3B+CPU+iPhone+OS+17_7+like+Mac+OS+X%29+AppleWebKit%2F605.1.15+%28KHTML%2C+like+Gecko%29+Version%2F18.0+Mobile%2F15E148+Safari%2F604.1&Origin=https%3A%2F%2Fcaq21harderv991gpluralplay.xyz",
+    "logoUrl": "https://raw.githubusercontent.com/saeidrahmanbd/BDIX-IPTV/main/logos/espn-2-united-states-7a4d2daafc.png",
+    "category": "Tennis",
+    "country": "Brazil"
+  },
+  {
     "id": "fashion_tv_hd",
     "name": "Fashion TV HD",
     "streamUrl": "https://ftv1.b-cdn.net/bfdbb576-83f7-11f0-9f89-0200170e3e04_1000028043_HLS/manifest.m3u8",
