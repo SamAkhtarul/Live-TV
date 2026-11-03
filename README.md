@@ -7,7 +7,7 @@
 
 [![Platform: macOS](https://img.shields.io/badge/Platform-macOS%20(Apple%20Silicon%20arm64)-000000?style=for-the-badge&logo=apple)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 [![Platform: Android](https://img.shields.io/badge/Platform-Android%208.0+-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
-[![Version: 5.2.0](https://img.shields.io/badge/Version-5.2.0%20(Build%2055)-E50914?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
+[![Version: 5.2.1](https://img.shields.io/badge/Version-5.2.1%20(Build%2056)-E50914?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 [![Live Channels](https://img.shields.io/badge/Channels-2%2C989%20Active-blue?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 [![100% Ad-Free](https://img.shields.io/badge/Zero--Ad%20Shield-100%25%20Clean-success?style=for-the-badge)](https://github.com/SamAkhtarul/Live-TV/releases/latest)
 
@@ -17,8 +17,8 @@
 
 | Platform | Installer Package / Link | Architecture / OS | Direct Access Link |
 | :--- | :--- | :--- | :--- |
-| **🍎 macOS** | `LiveTV-v5.2.0.dmg` | Apple Silicon (M1/M2/M3/M4) • macOS 11+ | [⬇️ **Download for macOS (.dmg)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.0/LiveTV-v5.2.0.dmg) |
-| **🤖 Android** | `LiveTV-v5.2.0.apk` | Universal APK • Android 8.0+ (Phone, Tablet, TV) | [⬇️ **Download for Android (.apk)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.0/LiveTV-v5.2.0.apk) |
+| **🍎 macOS** | `LiveTV-v5.2.1.dmg` | Apple Silicon (M1/M2/M3/M4) • macOS 11+ | [⬇️ **Download for macOS (.dmg)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.1/LiveTV-v5.2.1.dmg) |
+| **🤖 Android** | `LiveTV-v5.2.1.apk` | Universal APK • Android 8.0+ (Phone, Tablet, TV) | [⬇️ **Download for Android (.apk)**](https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.1/LiveTV-v5.2.1.apk) |
 | **🌐 Web / iPhone** | GitHub Pages Web App | Safari, Chrome, iOS WebKit, Edge, Firefox | [🌐 **Open Live TV Web App**](https://samakhtarul.github.io/Live-TV/) |
 
 *All releases are pre-compiled and ready to install immediately.*
@@ -61,7 +61,7 @@
 
 ### macOS Native App
 ```bash
-./desktop/build_mac.sh 5.2.0 55
+./desktop/build_mac.sh 5.2.1 56
 ```
 
 ### Android Release APK

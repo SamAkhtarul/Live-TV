@@ -292,17 +292,82 @@ body:not(.native-mac-app) .app-header {
   }
 }
 
-/* Mobile & iPhone portrait: swipeable header tools bar */
+/* Mobile & iPhone portrait: fully swipeable header bar (entire bar glides smoothly) */
 @media (max-width: 900px) {
-  .header-right {
+  .app-header {
     overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    padding-bottom: 2px;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-x !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding-left: max(10px, env(safe-area-inset-left)) !important;
+    padding-right: max(14px, env(safe-area-inset-right)) !important;
+    -webkit-app-region: no-drag !important;
   }
-  .header-right::-webkit-scrollbar {
-    display: none;
+
+  .app-header::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .header-left {
+    flex-shrink: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+  }
+
+  .brand-badge {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .header-right {
+    flex-shrink: 0 !important;
+    overflow: visible !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    padding-right: 24px !important;
+  }
+
+  .header-btn {
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 5px 8px !important;
+    min-width: 32px !important;
+    height: 30px !important;
+  }
+}
+
+/* On compact mobile screens (< 600px), streamline text so more buttons are visible immediately */
+@media (max-width: 600px) {
+  #header-update-text {
+    display: none !important; /* Keep just the ⚡ dot on small phone screens */
+  }
+
+  .header-update-pill {
+    padding: 3px 6px !important;
+  }
+
+  .author-link {
+    font-size: 10px !important;
+    max-width: 95px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .brand-title {
+    font-size: 14px !important;
   }
 }
 
@@ -359,7 +424,13 @@ body:not(.native-mac-app) .app-header {
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
 }
 
-/* Completely remove search bar and channel browser when full video player is active */
+/* Completely remove search bar, header, live events, and channel browser when full video player is active */
+body.player-active:not(.pip-mode-active) .app-header,
+body.player-active:not(.pip-mode-active) #live-events-container,
+body.player-active:not(.pip-mode-active) .sports-event-ticker,
+body.player-active:not(.pip-mode-active) .category-nav-bar,
+body.player-active:not(.pip-mode-active) .sub-bar,
+body.player-active:not(.pip-mode-active) #channel-peek-bubble,
 body.player-active .search-container,
 body.player-active #browser-view {
   display: none !important;
@@ -368,6 +439,10 @@ body.player-active #browser-view {
 /* Restore browser view when floating Picture-in-Picture is active */
 body.pip-mode-active #browser-view,
 body.pip-mode-active.player-active #browser-view {
+  display: flex !important;
+}
+body.pip-mode-active .app-header,
+body.pip-mode-active.player-active .app-header {
   display: flex !important;
 }
 body.pip-mode-active .search-container,
@@ -1540,6 +1615,8 @@ body:not(.native-mac-app) .player-top-bar {
   max-width: calc(100% - 150px);
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+  overscroll-behavior-x: contain;
   padding: 2px 0;
 }
 
@@ -1812,7 +1889,11 @@ body:not(.native-mac-app) .player-top-bar {
   align-items: center;
   gap: 8px;
   overflow-x: auto;
+  overflow-y: hidden;
   padding-bottom: 2px;
+  touch-action: pan-x;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 .quick-channel-item {
@@ -1900,20 +1981,23 @@ body:not(.native-mac-app) .player-top-bar {
   gap: 8px;
 }
 
-/* Modal Dialogs */
+/* Modal Dialogs - High z-index ensures modals always appear over full player overlay and home page */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
-  animation: fadeIn 0.18s ease;
+  z-index: 200000 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  animation: fadeIn 0.18s ease forwards;
 }
 
 .modal-dialog {
@@ -2786,6 +2870,12 @@ body:not(.native-mac-app) .player-top-bar {
   animation: fadeIn 0.2s ease;
 }
 
+body.player-active .toast-notification {
+  bottom: 120px !important;
+  z-index: 999999 !important;
+  pointer-events: none !important;
+}
+
 /* ==========================================================================
    Picture-in-Picture (PiP) Floating Mini-Player Mode
    ========================================================================== */
@@ -3574,23 +3664,24 @@ div[class*="ad-banner"], div[id*="google_ads"], div[class*="sponsor"],
    LIVE TV v4.3.0 FEATURE SUITE STYLING
    ============================================================================== */
 
-/* 1. Dynamic Ambient Backlighting ("Ambilight Mode") */
+/* 1. Dynamic Ambient Backlighting ("Ambilight Mode") - Strictly off by default to stop GPU heating */
 #ambient-canvas {
+  display: none !important;
   position: absolute;
   top: -10%;
   left: -10%;
   width: 120%;
   height: 120%;
-  filter: blur(65px) brightness(1.25) saturate(1.4);
-  transform: scale(1.15);
   pointer-events: none;
   z-index: 0;
   opacity: 0;
   transition: opacity 0.6s ease;
-  will-change: opacity, filter;
 }
 .ambient-active #ambient-canvas {
+  display: block !important;
   opacity: 0.85;
+  filter: blur(65px) brightness(1.25) saturate(1.4);
+  transform: scale(1.15);
 }
 
 /* 2. Feature-Packed Sports Scoreboard Floating HUD (Micro-Widget) */
@@ -4582,7 +4673,7 @@ body.turbo-mode .hero-spotlight {
 /* ==============================================================================
    Mobile & iPhone Video Player & Battery Optimization (Zero Impact on macOS App)
    ============================================================================== */
-@media (max-width: 768px) {
+@media (max-width: 1024px) and (pointer: coarse), (max-width: 768px), (orientation: landscape) and (max-height: 520px) {
   /* Battery & GPU Cooling: Remove expensive GPU compositing blurs and idle animation loops on mobile */
   *, *::before, *::after {
     -webkit-backdrop-filter: none !important;
@@ -4620,15 +4711,19 @@ body.turbo-mode .hero-spotlight {
   body.player-active #player-overlay,
   #player-overlay.is-active {
     display: flex !important;
+    position: fixed !important;
+    inset: 0 !important;
+    height: 100vh !important;
     height: 100dvh !important;
     max-height: 100dvh !important;
     width: 100vw !important;
     overflow: hidden !important;
-    background: #090a0f !important;
+    background: #000 !important;
     flex-direction: column !important;
+    z-index: 99999 !important;
   }
 
-  /* Video Container: Fills width cleanly, no giant empty voids */
+  /* Video Container: Fills width cleanly, zero black voids */
   .video-container {
     width: 100% !important;
     height: 100% !important;
@@ -4762,7 +4857,10 @@ body.turbo-mode .hero-spotlight {
     width: 100% !important;
     max-width: 100% !important;
     overflow-x: auto !important;
+    overflow-y: hidden !important;
     -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-x !important;
+    overscroll-behavior-x: contain !important;
     scrollbar-width: none !important;
     padding: 2px 0 6px 0 !important;
     pointer-events: auto !important;
@@ -4792,6 +4890,13 @@ body.turbo-mode .hero-spotlight {
     min-height: 28px !important;
   }
 
+  /* Priority Fullscreen Button on Mobile: Prominently First */
+  #player-btn-fullscreen {
+    order: -1 !important;
+    background: rgba(229, 9, 20, 0.5) !important;
+    border: 1.5px solid var(--accent-red) !important;
+  }
+
   .player-top-right .player-pill:active,
   .player-top-right .player-icon-btn:active {
     background: rgba(229, 9, 20, 0.4) !important;
@@ -4817,6 +4922,20 @@ body.turbo-mode .hero-spotlight {
     font-size: 10px !important;
   }
 
+  .dvr-fs-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(229, 9, 20, 0.45) !important;
+    border: 1px solid var(--accent-red) !important;
+    color: #fff !important;
+    font-size: 13px !important;
+    padding: 3px 8px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    font-weight: 700 !important;
+  }
+
   .player-sliders-row {
     display: none !important; /* Hide sliders on mobile portrait to keep layout clean & compact */
   }
@@ -4825,14 +4944,64 @@ body.turbo-mode .hero-spotlight {
     max-height: 48px !important;
     gap: 8px !important;
     padding: 2px 0 !important;
+    touch-action: pan-x !important;
+    overscroll-behavior-x: contain !important;
+    -webkit-overflow-scrolling: touch !important;
   }
 }
 
-/* Landscape Mode on Mobile Phones: Immersive Fullscreen */
-@media (max-width: 900px) and (orientation: landscape) {
+/* Landscape Mode on Mobile Phones & iPhones: Immersive Edge-to-Edge Fullscreen */
+@media (orientation: landscape) and (max-height: 520px),
+       (max-width: 1024px) and (pointer: coarse) and (orientation: landscape) {
+  /* Strictly remove background DOM components to stop GPU/CPU heating */
+  .app-header,
+  #live-events-container,
+  .sports-event-ticker,
+  .search-container,
+  #browser-view,
+  #ambient-canvas,
+  #channel-peek-bubble {
+    display: none !important;
+  }
+
+  body.player-active #player-overlay,
+  #player-overlay.is-active {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    background: #000 !important;
+    z-index: 99999 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .video-container {
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #000 !important;
+  }
+
+  video,
+  #video-player {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    background: #000 !important;
+  }
+
   .player-top-bar {
     order: 1 !important;
-    padding: max(6px, env(safe-area-inset-top)) max(14px, env(safe-area-inset-right)) 4px max(14px, env(safe-area-inset-left)) !important;
+    padding: max(4px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) 4px max(16px, env(safe-area-inset-left)) !important;
+    background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, transparent 100%) !important;
   }
   .player-top-right {
     order: unset !important;
@@ -4847,7 +5016,89 @@ body.turbo-mode .hero-spotlight {
   }
   .player-bottom-bar {
     order: unset !important;
-    background: transparent !important;
+    background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 100%) !important;
     padding: 0 max(16px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)) !important;
   }
 }
+
+/* ==============================================================================
+   LIVE TV v5.1.17 - PRO BROADCAST SUITE EXTENSIONS
+   ============================================================================== */
+
+/* In-Player Spotlight Channel Search */
+.hud-search-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-bottom: 4px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid transparent;
+}
+
+.hud-search-item:hover,
+.hud-search-item.selected {
+  background: rgba(229, 9, 20, 0.25);
+  border-color: rgba(229, 9, 20, 0.5);
+  box-shadow: 0 4px 12px rgba(229, 9, 20, 0.2);
+}
+
+.hud-search-item.current {
+  border-left: 3px solid #4ade80;
+}
+
+/* Stream Reconnect Action Button inside Notice */
+.player-stream-reconnect-btn {
+  pointer-events: auto;
+  cursor: pointer;
+  background: var(--accent-red);
+  color: #fff;
+  border: none;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  transition: all 0.2s ease;
+  margin-left: 6px;
+  box-shadow: 0 2px 8px rgba(229, 9, 20, 0.4);
+}
+
+.player-stream-reconnect-btn:hover {
+  background: var(--accent-red-hover);
+  transform: scale(1.05);
+}
+
+/* Sports Event Remind Button */
+.event-remind-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  transition: all 0.2s ease;
+}
+
+.event-remind-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+}
+
+.event-remind-btn.active {
+  background: rgba(245, 158, 11, 0.25);
+  border-color: var(--gold);
+  color: #fbbf24;
+}
+
+.player-stream-notice {
+  pointer-events: auto !important;
+}
+

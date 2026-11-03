@@ -12,8 +12,8 @@ android {
         applicationId = "com.example.livetv"
         minSdk = 24
         targetSdk = 34
-        versionCode = 44
-        versionName = "5.1.8"
+        versionCode = 56
+        versionName = "5.2.1"
         setProperty("archivesBaseName", "LiveTV-v$versionName")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
