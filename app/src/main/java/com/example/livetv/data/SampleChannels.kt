@@ -515,6 +515,23 @@ object SampleChannels {
             category = "Football",
             country = "International"
         ),
+        // --- UEFA Europa League & Champions League (Polsat Sport Premium) ---
+        Channel(
+            id = "polsat_sport_premium_2_super_hd",
+            name = "Polsat Sport Premium 2 Super HD",
+            streamUrl = "https://edge.wedd48c.top/premium992/index.m3u8|referer=https://dembed.st/&origin=https://dembed.st",
+            logoUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Polsat_Sport_Premium_2_Poziome_2021.svg/2560px-Polsat_Sport_Premium_2_Poziome_2021.svg.png",
+            category = "Sports",
+            country = "Poland"
+        ),
+        Channel(
+            id = "polsat_sport_premium_1_super_hd",
+            name = "Polsat Sport Premium 1 Super HD",
+            streamUrl = "https://edge.wedd48c.top/premium991/index.m3u8|referer=https://dembed.st/&origin=https://dembed.st",
+            logoUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Polsat_Sport_Premium_1_Poziome_2021.svg/2560px-Polsat_Sport_Premium_1_Poziome_2021.svg.png",
+            category = "Sports",
+            country = "Poland"
+        ),
 
         // --- MotoGP & Motorsport ---
         Channel(
