@@ -682,7 +682,7 @@
   {
     "id": "eurosport_1_tennis",
     "name": "Eurosport 1 HD (Grand Slam Tennis)",
-    "streamUrl": "http://45.134.141.161:2200/ARG/Eurosport_1_HD/index.m3u8",
+    "streamUrl": "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01444-tennischannelth-tennischnlintl-lggb/playlist.m3u8",
     "logoUrl": "https://i.imgur.com/olQJgm7.png",
     "category": "Tennis",
     "country": "Europe"
@@ -690,7 +690,7 @@
   {
     "id": "eurosport_2_tennis",
     "name": "Eurosport 2 HD (ATP & WTA Tour)",
-    "streamUrl": "http://45.134.141.161:2200/ARG/Eurosport_2_HD/index.m3u8",
+    "streamUrl": "https://mumbai-edge.smartplaytv.in/Tennis2/index.m3u8",
     "logoUrl": "https://i.imgur.com/f56dHgR.png",
     "category": "Tennis",
     "country": "Europe"
