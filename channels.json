@@ -538,15 +538,15 @@
   {
     "id": "spotv_2_hd_motogp",
     "name": "SPOTV 2 HD (MotoGP & Racing)",
-    "streamUrl": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+    "streamUrl": "https://a122aivottlinear-a.akamaihd.net/OTTB/syd-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd|clearkey=f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/SPOTV_logo.svg/320px-SPOTV_logo.svg.png",
     "category": "MotoGP",
     "country": "South Korea"
   },
   {
     "id": "spotv_2_hd_server2",
-    "name": "SPOTV 2 HD (Server 2 • Red Bull MotoGP)",
-    "streamUrl": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+    "name": "SPOTV 2 HD (Server 2 • Eurosport Motorsport 4K)",
+    "streamUrl": "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/SPOTV_logo.svg/320px-SPOTV_logo.svg.png",
     "category": "MotoGP",
     "country": "South Korea"
@@ -602,7 +602,7 @@
   {
     "id": "spotv_hd_motogp",
     "name": "SPOTV HD (MotoGP Asia)",
-    "streamUrl": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+    "streamUrl": "https://a122aivottlinear-a.akamaihd.net/OTTB/syd-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd|clearkey=f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/SPOTV_logo.svg/320px-SPOTV_logo.svg.png",
     "category": "MotoGP",
     "country": "South Korea"
@@ -666,7 +666,7 @@
   {
     "id": "motogp_official_world_feed",
     "name": "MotoGP Live HD (MGP World Feed)",
-    "streamUrl": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+    "streamUrl": "https://a122aivottlinear-a.akamaihd.net/OTTB/syd-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd|clearkey=f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Moto_Gp_logo.svg/500px-Moto_Gp_logo.svg.png",
     "category": "MotoGP",
     "country": "International"
@@ -674,7 +674,7 @@
   {
     "id": "fancode_motogp_live",
     "name": "FanCode Live (MotoGP Malaysian GP)",
-    "streamUrl": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+    "streamUrl": "https://a122aivottlinear-a.akamaihd.net/OTTB/syd-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd|clearkey=f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b",
     "logoUrl": "https://www.fancode.com/skillup-uploads/cms-media/Petronas-Grand-Prix-of-Malaysia_fc-web.jpg",
     "category": "MotoGP",
     "country": "India"
