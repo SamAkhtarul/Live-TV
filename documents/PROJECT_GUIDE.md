@@ -26,30 +26,33 @@ It is delivered across three target environments from a single shared web core:
 
 ```
 /Users/SAM/RiderProjects/Live TTV/           <-- Master workspace root
-├── desktop/
-│   ├── build_mac.sh                        <-- Compiles Swift app, stages DMG, packages canonical LiveTV.dmg
-│   ├── src/main.swift                      <-- Native Cocoa app, WKScriptMessageHandler, and AppUpdater engine
-│   └── web/                                <-- Primary Web application folder
-│       ├── src_js/                         <-- [EDITABLE MVC SOURCE MODULES]
-│       │   ├── models/                     <-- Models: State, Constants, ChannelModel, EventModel
-│       │   ├── views/                      <-- Views: Elements, ChannelView, PlayerView, HeroView, HUDView, ModalView, TelemetryView
-│       │   ├── controllers/                <-- Controllers: AppController, ChannelController, PlayerController, AudioController, NavigationController, AIUpscalerController, UpdateController
-│       │   ├── utils/                      <-- Utilities: DomUtils, TimeUtils
-│       │   ├── index.js                    <-- Master entry point bundling the MVC modules
-│       │   ├── app.src.js                  <-- [AUTO-BUNDLED via esbuild] Output bundle from index.js
-│       │   └── cenc_decryptor.src.js       <-- [EDITABLE SOURCE] DRM & stream decryptor
-│       ├── build_prod_assets.sh            <-- Bundles src_js/index.js via esbuild, then obfuscates & encrypts into js/
-│       ├── js/                             <-- [AUTO-GENERATED] Obfuscated production code (DO NOT edit manually!)
-│       │   ├── app.js
-│       │   ├── cenc_decryptor.js
-│       │   └── channels_data.js
-│       ├── css/style.css                   <-- Master stylesheets, themes, and modal stacking
-│       └── index.html                      <-- Master HTML template
-├── app/                                    <-- Android project
-│   ├── build.gradle.kts                    <-- Version code & name (must match desktop/web)
-│   └── src/main/assets/web/                <-- Synchronized mirror of desktop/web/
-├── version.json                            <-- Canonical update manifest read by the in-app updater
-├── build_release.sh                        <-- Orchestrates dual Android & macOS release builds
+├── documents/                              <-- Architecture guides, specifications, and project docs
+│   └── PROJECT_GUIDE.md
+├── releases/                               <-- Packaged release binaries (.apk, .dmg)
+│   ├── LiveTV-v5.3.0.apk
+│   └── LiveTV-v5.3.0.dmg
+├── scripts/                                <-- Build & release orchestrators
+│   └── build_release.sh                    <-- Orchestrates dual Android & macOS release builds
+├── src/                                    <-- Clean project source code
+│   ├── app/                                <-- Android Native App (Kotlin + WebView)
+│   │   ├── build.gradle.kts
+│   │   └── src/main/assets/web/            <-- Synchronized mirror of src/desktop/web/
+│   └── desktop/                            <-- macOS Native App & Shared Web Engine
+│       ├── build_mac.sh                    <-- Compiles Swift app, stages DMG into releases/
+│       ├── src/main.swift                  <-- Native Cocoa app & WKScriptMessageHandler
+│       └── web/                            <-- Primary Web application folder
+│           ├── src_js/                     <-- [EDITABLE MVC SOURCE MODULES]
+│           │   ├── models/                 <-- State, Constants, ChannelModel, EventModel
+│           │   ├── views/                  <-- Elements, ChannelView, PlayerView, HUDView, ModalView
+│           │   ├── controllers/            <-- AppController, PlayerController, AudioController, etc.
+│           │   ├── utils/                  <-- DomUtils, TimeUtils
+│           │   └── index.js                <-- Master bootstrap entry point
+│           ├── build_prod_assets.sh        <-- Bundles src_js via esbuild, then obfuscates into js/
+│           ├── js/                         <-- [AUTO-GENERATED] Obfuscated production code
+│           ├── css/style.css               <-- Master stylesheets and themes
+│           └── index.html                  <-- Master HTML template
+├── version.json                            <-- Canonical update manifest read by in-app updater
+├── README.md                               <-- Master documentation
 └── /tmp/Live-TV-dist/                      <-- Git working clone of https://github.com/SamAkhtarul/Live-TV.git
     ├── main                                <-- Branch holding version.json, README, and repo sources
     └── gh-pages                            <-- Branch holding live deployed website at samakhtarul.github.io/Live-TV
