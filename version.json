@@ -1,19 +1,18 @@
 {
-  "version": "5.2.5",
-  "build": 60,
-  "release_name": "Live TV v5.2.5 (Build 60) — SPOTV 2 HD & MotoGP Multi-Server Failover Fix",
+  "version": "5.2.6",
+  "build": 61,
+  "release_name": "Live TV v5.2.6 (Build 61) — SPOTV 2 HD Live MotoGP Stream & Red Bull Fix",
   "release_date": "2026-11-06",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
-    "🏍️ Fixed SPOTV 2 HD & SPOTV HD Playback: Replaced decommissioned PLDT CDN endpoints with verified 1080p 60fps MotoGP World Feed stream",
-    "🏎️ Multi-Server Failover for SPOTV 2: Instant switching between Server 1 (MotoGP World Feed 1080p), Server 2 (TNT Sports 2 HD), and Server 3 (Eurosport Motorsport)",
-    "🏁 Verified TNT Sports 1, 2, 3, 4 HD: Restored full DASH + ClearKey DRM streams on fast Akamai CDN",
-    "🛡️ Resilient MotoGP Failover: Automated watchdog recovers stream to backup servers without stalling or playback interruption",
-    "🎾 Added TSN 1 HD (Rolex Paris Masters) & ESPN 2 Brasil HD with multi-server failover",
-    "⇄ Last Channel Toggle & Recall: Alternates between current and previous channels with on-screen button labels and hotkey Q"
+    "🏍️ Fixed SPOTV 2 HD & SPOTV HD Playback: Restored authentic live MotoGP Grand Prix coverage (TNT Sports 2 HD official broadcast in 1080p 50fps)",
+    "🚫 Removed Incorrect Red Bull TV Stream from SPOTV 2: SPOTV 2 now plays live MotoGP race coverage rather than Red Bull TV Dakar programming",
+    "🏎️ Multi-Server Failover for SPOTV 2 & SPOTV: Seamless switching between Server 1 (MotoGP Live HD • TNT Sports 2), Server 2 (SPOTV Cignal Direct), Server 3 (Eurosport Motorsport 4K), and Server 4 (beIN Sports Racing HD)",
+    "🏁 Updated World Feed & FanCode MotoGP: Synced to verified live MotoGP broadcast feeds",
+    "🛡️ Resilient Failover Architecture: Background watchdog routes all MotoGP channels to active motorsport feeds without interruption"
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.5/LiveTV-v5.2.5.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.5/LiveTV-v5.2.5.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.6/LiveTV-v5.2.6.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.2.6/LiveTV-v5.2.6.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }

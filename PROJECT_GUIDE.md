@@ -30,10 +30,15 @@ It is delivered across three target environments from a single shared web core:
 │   ├── build_mac.sh                        <-- Compiles Swift app, stages DMG, packages canonical LiveTV.dmg
 │   ├── src/main.swift                      <-- Native Cocoa app, WKScriptMessageHandler, and AppUpdater engine
 │   └── web/                                <-- Primary Web application folder
-│       ├── src_js/
-│       │   ├── app.src.js                  <-- [EDITABLE SOURCE] All app logic, player, updater, shortcuts
+│       ├── src_js/                         <-- [EDITABLE MVC SOURCE MODULES]
+│       │   ├── models/                     <-- Models: State, Constants, ChannelModel, EventModel
+│       │   ├── views/                      <-- Views: Elements, ChannelView, PlayerView, HeroView, HUDView, ModalView, TelemetryView
+│       │   ├── controllers/                <-- Controllers: AppController, ChannelController, PlayerController, AudioController, NavigationController, AIUpscalerController, UpdateController
+│       │   ├── utils/                      <-- Utilities: DomUtils, TimeUtils
+│       │   ├── index.js                    <-- Master entry point bundling the MVC modules
+│       │   ├── app.src.js                  <-- [AUTO-BUNDLED via esbuild] Output bundle from index.js
 │       │   └── cenc_decryptor.src.js       <-- [EDITABLE SOURCE] DRM & stream decryptor
-│       ├── build_prod_assets.sh            <-- Obfuscates & encrypts src_js/ into protected js/
+│       ├── build_prod_assets.sh            <-- Bundles src_js/index.js via esbuild, then obfuscates & encrypts into js/
 │       ├── js/                             <-- [AUTO-GENERATED] Obfuscated production code (DO NOT edit manually!)
 │       │   ├── app.js
 │       │   ├── cenc_decryptor.js
@@ -58,7 +63,7 @@ When releasing a new version (e.g. `v5.1.16`, Build `51`), **ALL 4 of the follow
 
 | # | File Path | Field / Variable | Example Value |
 |---|---|---|---|
-| **1** | `desktop/web/src_js/app.src.js` | `const APP_VERSION`<br>`const APP_BUILD` | `"5.1.16"`<br>`51` |
+| **1** | `desktop/web/src_js/models/Constants.js`<br>(bundled to `app.src.js`) | `export const APP_VERSION`<br>`export const APP_BUILD` | `"5.1.16"`<br>`51` |
 | **2** | `desktop/web/index.html` | `.app-version`<br>`.modal-subtitle`<br>Asset query params | `v5.1.16`<br>`Version 5.1.16 (Build 51)`<br>`style.css?v=5.1.16`, `app.js?v=5.1.16` |
 | **3** | `app/build.gradle.kts` | `versionCode`<br>`versionName` | `51`<br>`"5.1.16"` |
 | **4** | `version.json` (root & dist) | `version`, `build`, `download_mac`, `download_android` | `"5.1.16"`, `51`, and URLs pointing to `releases/download/v5.1.16/...` |
