@@ -538,7 +538,7 @@
   {
     "id": "spotv_2_hd_motogp",
     "name": "SPOTV 2 HD (MotoGP & Racing)",
-    "streamUrl": "https://qp-pldt-live-grp-13-prod.akamaized.net/out/u/dr_spotv2hd.mpd|clearkey=7eea72d6075245a99ee3255603d58853:6848ef60575579bf4d415db1032153ed",
+    "streamUrl": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/SPOTV_logo.svg/320px-SPOTV_logo.svg.png",
     "category": "MotoGP",
     "country": "South Korea"
@@ -602,7 +602,7 @@
   {
     "id": "spotv_hd_motogp",
     "name": "SPOTV HD (MotoGP Asia)",
-    "streamUrl": "https://qp-pldt-live-grp-11-prod.akamaized.net/out/u/dr_spotvhd.mpd|clearkey=ec7ee27d83764e4b845c48cca31c8eef:9c0e4191203fccb0fde34ee29999129e",
+    "streamUrl": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/SPOTV_logo.svg/320px-SPOTV_logo.svg.png",
     "category": "MotoGP",
     "country": "South Korea"
@@ -634,7 +634,7 @@
   {
     "id": "tnt_sports_2_hd",
     "name": "TNT Sports 2 HD (MotoGP UK)",
-    "streamUrl": "https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/dash/enc/bsaaetko8v/out/v1/f8fa17f087564f51aa4d5c700be43ec4/cenc.mpd|clearkey=9f51f3dc6313ac8bc668e2d9d1c04dfa:74bc63e5a193454a91ca494975db33f9",
+    "streamUrl": "https://a122aivottlinear-a.akamaihd.net/OTTB/syd-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd|clearkey=f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b",
     "logoUrl": "https://r2.thesportsdb.com/images/media/channel/logo/lzqo991689746090.png",
     "category": "MotoGP",
     "country": "United Kingdom"
@@ -642,7 +642,7 @@
   {
     "id": "tnt_sports_1_hd",
     "name": "TNT Sports 1 HD",
-    "streamUrl": "https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/dash/enc/wf8usag51e/out/v1/bd3b0c314fff4bb1ab4693358f3cd2d3/cenc.mpd|clearkey=d0f2e5c39e70c18f29bf77768a1ad89a:d6853c51fcf37a18905f0609972395d7",
+    "streamUrl": "https://a122aivottlinear-a.akamaihd.net/OTTB/syd-nitro/live/clients/dash/enc/jkemlgrttp/out/v1/2af1401c8abe4e69ab861ea75fa1fa7f/cenc.mpd|clearkey=69a5aa835a061ce64a630d1046727e40:d02feac8a999bd06bf4059bf33411749",
     "logoUrl": "https://r2.thesportsdb.com/images/media/channel/logo/153ikz1689746051.png",
     "category": "MotoGP",
     "country": "United Kingdom"
@@ -650,7 +650,7 @@
   {
     "id": "tnt_sports_3_hd",
     "name": "TNT Sports 3 HD",
-    "streamUrl": "https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/dash/enc/lsdasbvglv/out/v1/bb548a3626cd4708afbb94a58d71dce9/cenc.mpd|clearkey=a93c1cbfdccd23233bac13540c693e7f:2f6ab2e6693eb847eff3c9da8f9d01fc",
+    "streamUrl": "https://a122aivottlinear-a.akamaihd.net/OTTB/syd-nitro/live/clients/dash/enc/dev1hjwzh9/out/v1/a5f0ee7ad7b24906b14f43bebbbe4678/cenc.mpd|clearkey=cc91508324ce9dcaf425a43d58f1d9d4:643e5474d9edd87c7d9091c8c97994ca",
     "logoUrl": "https://r2.thesportsdb.com/images/media/channel/logo/iwotea1701768457.png",
     "category": "MotoGP",
     "country": "United Kingdom"
@@ -658,7 +658,7 @@
   {
     "id": "tnt_sports_4_hd",
     "name": "TNT Sports 4 HD",
-    "streamUrl": "https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/dash/enc/i2pcjr4pe5/out/v1/912e9db56d75403b8a9ac0a719110f36/cenc.mpd|clearkey=192b1115da041585c77200128549efa1:634e10efe4abbb14be400a3ccbac0258",
+    "streamUrl": "https://a122aivottlinear-a.akamaihd.net/OTTB/syd-nitro/live/clients/dash/enc/tdijwiga2k/out/v1/f5fde318678f4f7583bf27b7231bde1f/cenc.mpd|clearkey=fa34fa8c90336dd528c7a23871cad1fe:552a78d1aeb74f1650d68255c5749408",
     "logoUrl": "https://r2.thesportsdb.com/images/media/channel/logo/81twnr1689746183.png",
     "category": "MotoGP",
     "country": "United Kingdom"
