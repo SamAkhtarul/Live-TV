@@ -1252,14 +1252,38 @@ video.aspect-zoom {
   justify-content: space-between;
   background: linear-gradient(180deg, rgba(0,0,0,0.75) 0%, transparent 25%, transparent 75%, rgba(0,0,0,0.85) 100%);
   opacity: 0;
-  pointer-events: none;
+  pointer-events: none !important;
   transition: opacity 0.25s ease;
   z-index: 10;
+}
+
+/* Enforce strictly NO button or control is active when controls are in hidden mode */
+.player-controls:not(.visible),
+.player-controls:not(.visible) * {
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+/* Cursor auto-hiding when player controls are in hidden mode */
+body.player-active.controls-hidden,
+body.player-active.controls-hidden *,
+body.player-active .player-overlay.controls-hidden,
+body.player-active .player-overlay.controls-hidden * {
+  cursor: none !important;
 }
 
 .player-controls.visible {
   opacity: 1;
   pointer-events: none;
+}
+
+.player-controls.visible .player-top-bar,
+.player-controls.visible .player-center-controls,
+.player-controls.visible .player-bottom-bar,
+.player-controls.visible .quick-switch-carousel,
+.player-controls.visible button,
+.player-controls.visible input {
+  pointer-events: auto !important;
 }
 
 /* Locked Screen State - completely hides all controls (Android Parity) */
@@ -1489,9 +1513,9 @@ video.aspect-zoom {
   border-color: var(--accent-red) !important;
 }
 
-.player-top-bar,
-.player-center-controls,
-.player-bottom-bar {
+.player-controls.visible .player-top-bar,
+.player-controls.visible .player-center-controls,
+.player-controls.visible .player-bottom-bar {
   pointer-events: auto;
 }
 
