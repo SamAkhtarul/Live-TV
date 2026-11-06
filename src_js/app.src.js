@@ -176,8 +176,37 @@
       { label: "Server 3 (Tennis Channel T2)", url: "https://mumbai-edge.smartplaytv.in/Tennis2/index.m3u8" }
     ],
     "espn_2_brasil_hd": [
-      { label: "Server 1 (ESPN 2 Brasil HD)", url: "https://a122aivottlinear-a.akamaihd.net/OTTB/syd-nitro/live/clients/dash/enc/7zcqb76v25/out/v1/ef1394a500b240ffb0521ad0d5656bb1/cenc.mpd|clearkey=262bb82f7d6a5996c0cae6cf4a4bc7ee:1e40eb2576b4ef67ad8be23eb120281c" },
+      { label: "Server 1 (ESPN 2 Brasil HD)", url: "https://mumbai-edge.smartplaytv.in/Tennis2/index.m3u8" },
       { label: "Server 2 (Tennis Channel HD)", url: "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01444-tennischannelth-tennischnlintl-lggb/playlist.m3u8" }
+    ],
+    "channel_24_hd": [
+      { label: "Server 1 (AynaOTT BDIX)", url: "https://tvsen6.aynaott.com/YrVDF8gujkdh/index.m3u8" },
+      { label: "Server 2 (AynaOTT Direct)", url: "https://tvsen5.aynaott.com/channel24/index.m3u8" }
+    ],
+    "zee_bangla_hd": [
+      { label: "Server 1 (CloudFront HD Master)", url: "https://d1rc86nwwc9fag.cloudfront.net/260723/smil:zeebangla.smil/chunklist_b2628000.m3u8" },
+      { label: "Server 2 (GP CDN Bangladesh)", url: "https://drk6xq0vhn.gpcdn.net/live/zee_bangla_abr/index.m3u8" }
+    ],
+    "t_sports_hd": [
+      { label: "Server 1 (BDIX Full HD)", url: "http://103.135.253.32:8080/T-SPORTS-FULL-HD/tracks-v1a1/mono.m3u8" },
+      { label: "Server 2 (AynaOTT Live)", url: "https://tvsen5.aynaott.com/tsports/index.m3u8" },
+      { label: "Server 3 (Willow HD Live)", url: "https://tvsen5.aynaott.com/willowhd/index.m3u8" }
+    ],
+    "star_sports_1": [
+      { label: "Server 1 (BDIX Select 1)", url: "http://103.135.253.32:8080/STAR-SPORTS-SELECT-1/index.m3u8" },
+      { label: "Server 2 (Willow HD Direct)", url: "https://tvsen5.aynaott.com/willowhd/index.m3u8" }
+    ],
+    "star_sports_2_hd": [
+      { label: "Server 1 (AynaOTT Direct)", url: "https://tvsen7.aynaott.com/ssport2hd/index.m3u8" },
+      { label: "Server 2 (BDIX Select 1)", url: "http://103.135.253.32:8080/STAR-SPORTS-SELECT-1/index.m3u8" }
+    ],
+    "bein_sports_1": [
+      { label: "Server 1 (Amagi 1080p Broadcast)", url: "https://bein-esp-xumo.amagi.tv/playlistR1080p.m3u8" },
+      { label: "Server 2 (CloudFront Backup)", url: "https://dc1644a9jazgj.cloudfront.net/beIN_Sports_Xtra_Espanol.m3u8" }
+    ],
+    "sky_sports_main_event_hd": [
+      { label: "Server 1 (Akamai ClearKey DASH)", url: "https://a122aivottlinear-a.akamaihd.net/OTTB/syd-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd|clearkey=f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b" },
+      { label: "Server 2 (Eurosport Motorsport 4K)", url: "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8" }
     ]
   };
   var MOTOGP_BACKUPS = {
