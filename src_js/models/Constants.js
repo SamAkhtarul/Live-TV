@@ -3,8 +3,8 @@
  * Architecture: Model / Constants
  */
 
-export const APP_VERSION = "5.3.1";
-export const APP_BUILD = 63;
+export const APP_VERSION = "5.3.2";
+export const APP_BUILD = 64;
 
 // GitHub Repository & Update Manifest URLs
 export const GITHUB_REPO_URL = "https://github.com/SamAkhtarul/Live-TV";
@@ -99,8 +99,9 @@ export const CHANNEL_SERVERS = {
     { label: "Server 2 (Eurosport Motorsport 4K)", url: "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8" }
   ],
   "fancode_motogp_live": [
-    { label: "Server 1 (MotoGP Live HD • TNT Sports 2)", url: "https://a122aivottlinear-a.akamaihd.net/OTTB/syd-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd|clearkey=f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b" },
-    { label: "Server 2 (Eurosport Motorsport 4K)", url: "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8" }
+    { label: "Server 1 (FanCode FHD • Motorsports Live)", url: "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/avqlywnuzx/out/v1/aefca6420f944a9482e117f315de535f/cenc.mpd|clearkey=1994b1df7dfd2e8a8d7b9bf3fb900285:22a1444b3da18e139191665b3d652835" },
+    { label: "Server 2 (FanCode Live HD)", url: "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash-sd/enc/eayjamsonn/out/v1/6c25cddab58043a6ace0ac64d97983f0/cenc-sd.mpd|clearkey=5318e462b9e0677487cb87837f0bbdb1:4fa0fb973b95738306005f2e8591bf8e" },
+    { label: "Server 3 (Eurosport Motorsport 4K)", url: "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8" }
   ],
   "discovery_bangla": [
     { label: "Server 1 (GP CDN Bangladesh)", url: "https://drk6xq0vhn.gpcdn.net/live/discovery_sd_abr/index.m3u8" },

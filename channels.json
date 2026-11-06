@@ -673,8 +673,8 @@
   },
   {
     "id": "fancode_motogp_live",
-    "name": "FanCode Live (MotoGP Malaysian GP)",
-    "streamUrl": "https://a122aivottlinear-a.akamaihd.net/OTTB/syd-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd|clearkey=f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b",
+    "name": "FanCode Live (Motorsports & Racing)",
+    "streamUrl": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/avqlywnuzx/out/v1/aefca6420f944a9482e117f315de535f/cenc.mpd|clearkey=1994b1df7dfd2e8a8d7b9bf3fb900285:22a1444b3da18e139191665b3d652835",
     "logoUrl": "https://www.fancode.com/skillup-uploads/cms-media/Petronas-Grand-Prix-of-Malaysia_fc-web.jpg",
     "category": "MotoGP",
     "country": "India"
