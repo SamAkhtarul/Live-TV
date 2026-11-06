@@ -440,6 +440,14 @@
     "country": "India"
   },
   {
+    "id": "willow_cricket_hd",
+    "name": "Willow Cricket HD",
+    "streamUrl": "https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/vyjgbcddti/out/v1/afd9c25f5179456fb3caf61ccbde2652/cenc.mpd|clearkey=2fcc4db0b53bea0a25def717c67cfe57:71ba2e8f5ea6cd6ad995206b300f051a",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/9/91/Willow_Cricket_logo.png/250px-Willow_Cricket_logo.png",
+    "category": "Cricket",
+    "country": "USA"
+  },
+  {
     "id": "sony_ten_3_cricket",
     "name": "Sony Sports Ten 3 HD",
     "streamUrl": "http://103.135.253.32:8080/PTV-SPORTS/tracks-v1a1/mono.m3u8",
@@ -466,8 +474,24 @@
   {
     "id": "bein_sports_1",
     "name": "beIN Sports 1 HD",
-    "streamUrl": "https://bein-esp-xumo.amagi.tv/playlistR1080p.m3u8",
-    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/BeIN_Sports_logo.svg/320px-BeIN_Sports_logo.svg.png",
+    "streamUrl": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/ghwcl6hv68/out/v1/83536910d8034e9b9895a20fbe1c1687/cenc.mpd|clearkey=335dad778109954503dcbb21dc92015f:24bfd75d436cbf73168a2a2dccd40281",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Logo_bein_sports_1.png",
+    "category": "Football",
+    "country": "International"
+  },
+  {
+    "id": "bein_sports_2",
+    "name": "beIN Sports 2 HD",
+    "streamUrl": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd|clearkey=0b42be2664d7e811d04f3e504e0924c5:ae24090123b8c72ac5404dc152847cb8",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Logo_bein_sports_2.png",
+    "category": "Football",
+    "country": "International"
+  },
+  {
+    "id": "bein_sports_3",
+    "name": "beIN Sports 3 HD",
+    "streamUrl": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd|clearkey=7995c724a13748ed970840a8ab5bb9b3:67bdaf1e2175b9ff682fcdf0e2354b1e",
+    "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Logo_bein_sports_3.png",
     "category": "Football",
     "country": "International"
   },
@@ -521,8 +545,8 @@
   },
   {
     "id": "sky_sports_main_event_hd",
-    "name": "Sky Sports Main Event HD",
-    "streamUrl": "https://a122aivottlinear-a.akamaihd.net/OTTB/syd-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd|clearkey=f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b",
+    "name": "Sky Sports Premier League HD",
+    "streamUrl": "https://bl.rutube.ru/livestream/e5bacac3b8e730791d4cab20ae81cd8f/index.m3u8?s=Dxx13S3dlOjavbRFqRtQ6g&e=2075285630&scheme=",
     "logoUrl": "https://raw.githubusercontent.com/tv-logo/tv-logos/refs/heads/main/countries/united-kingdom/sky-sports-main-event-icon-uk.png",
     "category": "Sports",
     "country": "United Kingdom"
@@ -538,7 +562,7 @@
   {
     "id": "spotv_2_hd_motogp",
     "name": "SPOTV 2 HD (MotoGP & Racing)",
-    "streamUrl": "https://a122aivottlinear-a.akamaihd.net/OTTB/syd-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd|clearkey=f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b",
+    "streamUrl": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/wjeweupwyc/out/v1/8197c8e055c94a868623653ac55c10bf/cenc.mpd|clearkey=e03f302ec4dabcccca82cc9f76731ec9:53ea1027d2bf2893a552cf15bc0366de",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/SPOTV_logo.svg/320px-SPOTV_logo.svg.png",
     "category": "MotoGP",
     "country": "South Korea"
@@ -602,7 +626,7 @@
   {
     "id": "spotv_hd_motogp",
     "name": "SPOTV HD (MotoGP Asia)",
-    "streamUrl": "https://a122aivottlinear-a.akamaihd.net/OTTB/syd-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd|clearkey=f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b",
+    "streamUrl": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/wjeweupwyc/out/v1/8197c8e055c94a868623653ac55c10bf/cenc.mpd|clearkey=e03f302ec4dabcccca82cc9f76731ec9:53ea1027d2bf2893a552cf15bc0366de",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/SPOTV_logo.svg/320px-SPOTV_logo.svg.png",
     "category": "MotoGP",
     "country": "South Korea"
@@ -666,15 +690,15 @@
   {
     "id": "motogp_official_world_feed",
     "name": "MotoGP Live HD (MGP World Feed)",
-    "streamUrl": "https://a122aivottlinear-a.akamaihd.net/OTTB/syd-nitro/live/clients/dash/enc/puehlftk5j/out/v1/f7f0da1ee112481ca0024e6d4dd97f4a/cenc.mpd|clearkey=f3df7843080ae743bf865dc5fdf64c68:567c863bc12eb74788ea74888c042e1b",
+    "streamUrl": "https://otte.cache.aiv-cdn.net/bom-nitro/live/clients/dash/enc/wjeweupwyc/out/v1/8197c8e055c94a868623653ac55c10bf/cenc.mpd|clearkey=e03f302ec4dabcccca82cc9f76731ec9:53ea1027d2bf2893a552cf15bc0366de",
     "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Moto_Gp_logo.svg/500px-Moto_Gp_logo.svg.png",
     "category": "MotoGP",
     "country": "International"
   },
   {
     "id": "fancode_motogp_live",
-    "name": "FanCode Live (Motorsports & Racing)",
-    "streamUrl": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/avqlywnuzx/out/v1/aefca6420f944a9482e117f315de535f/cenc.mpd|clearkey=1994b1df7dfd2e8a8d7b9bf3fb900285:22a1444b3da18e139191665b3d652835",
+    "name": "FanCode Live (MotoGP & Motorsports)",
+    "streamUrl": "https://otte.cache.aiv-cdn.net/iad-nitro/live/clients/dash/enc/b3b3fkmrbl/out/v1/1084d5c9a97a4c5b9f9554c88f486646/cenc.mpd|clearkey=82dfca238e8c4b430a3269db71965db9:a00b28caf4ac628e77a553d440c0ddca",
     "logoUrl": "https://www.fancode.com/skillup-uploads/cms-media/Petronas-Grand-Prix-of-Malaysia_fc-web.jpg",
     "category": "MotoGP",
     "country": "India"
