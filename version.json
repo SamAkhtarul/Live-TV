@@ -1,17 +1,18 @@
 {
-  "version": "5.3.2",
-  "build": 64,
-  "release_name": "Live TV v5.3.2 (Build 64) — FanCode Broadcast Restoration & Stream Differentiation",
+  "version": "5.3.3",
+  "build": 65,
+  "release_name": "Live TV v5.3.3 (Build 65) — Enterprise Sports CDN & Multi-Server Resilience",
   "release_date": "2026-11-06",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
-    "🏎️ Authentic FanCode Broadcast Restored: Replaced duplicate TNT Sports 2 feed on FanCode Live with genuine FanCode FHD motorsports and live sports streams",
-    "🛡️ Dedicated Multi-Server Failover for FanCode: Configured Server 1 (FanCode FHD • Motorsports Live), Server 2 (FanCode Live HD), and Server 3 (Eurosport Motorsport 4K)",
-    "📺 Fixed Channel Crosstalk: Separated TNT Sports 2, SPOTV 2, and FanCode streams to ensure each channel presents its authentic network feed",
-    "⚡ Seamless In-App One-Click Update: Delivers instant over-the-air hot updates across all three platforms"
+    "🏎️ Dedicated MotoGP Feeds Restored: Configured authentic Dorna MotoGP Official World Feed FHD, FanCode 1 FHD dedicated motorsport feed, and TNT Sports 2 HD with zero crosstalk",
+    "🏏 Willow Sports Multi-Server Failover: Upgraded Willow Cricket HD to 24/7 enterprise Amazon AIV-CDN streams with dual ClearKey servers and BDIX fallback",
+    "⚽ beIN Sports 1, 2, 3 & XTRA Enterprise Overhaul: Replaced expired and dead links with verified 24/7 Amazon AIV-CDN DASH feeds and Amagi FAST fallbacks",
+    "🏎️ Sky Sports EPL, Racing & Action Restored: Added verified high-resilience streams for Sky Sports Premier League, Sky Sports Racing, and Sky Sports Action",
+    "🛡️ SPOTV 2 HD Multi-Server Architecture: Wired 5-tier failover (World Feed, TNT Sports 2, FanCode, Sky Sports Racing, Eurosport 4K) preventing dead channel blackouts"
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.3.2/LiveTV-v5.3.2.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.3.2/LiveTV-v5.3.2.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.3.3/LiveTV-v5.3.3.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.3.3/LiveTV-v5.3.3.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }
