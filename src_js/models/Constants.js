@@ -3,8 +3,8 @@
  * Architecture: Model / Constants
  */
 
-export const APP_VERSION = "5.3.3";
-export const APP_BUILD = 65;
+export const APP_VERSION = "5.3.4";
+export const APP_BUILD = 66;
 
 // GitHub Repository & Update Manifest URLs
 export const GITHUB_REPO_URL = "https://github.com/SamAkhtarul/Live-TV";
