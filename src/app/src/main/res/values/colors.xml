@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="dark_bg">#FF0E1116</color>
+    <color name="dark_surface">#FF181C24</color>
+    <color name="primary_red">#FFE50914</color>
+    <color name="live_badge_red">#FFFF334B</color>
+    <color name="accent_blue">#FF00A8E8</color>
+</resources>
+

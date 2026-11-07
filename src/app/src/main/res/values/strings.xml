@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Live TV Player</string>
+    <string name="search_hint">Search channels or genres…</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="retry">Retry</string>
+    <string name="add_stream">Add Custom Stream / M3U</string>
+    <string name="error_loading_stream">Failed to play channel. Please verify the stream URL.</string>
+</resources>
+
