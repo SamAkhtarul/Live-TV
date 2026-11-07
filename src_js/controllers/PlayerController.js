@@ -180,7 +180,7 @@ export function startContinuousHealthWatchdog() {
     const cur = state.video.currentTime;
 
     let isStalled = false;
-    if (state.lastPlayhead >= 0 && Math.abs(cur - state.lastPlayhead) < 0.05) {
+    if (state.lastPlayhead >= 0 && Math.abs(cur - state.lastPlayhead) < 0.05 && state.video.readyState < 3) {
       isStalled = true;
     }
 
@@ -188,14 +188,27 @@ export function startContinuousHealthWatchdog() {
       state.freezeCounter++;
       console.warn(`[HealthWatchdog] Playback stall detected (${state.freezeCounter}) at ${cur.toFixed(2)}s`);
 
-      if (state.freezeCounter === 1) {
-        // Quick unfreeze nudge
-        if (state.video.paused) {
-          state.video.play().catch(() => {});
-        } else if (state.video.buffered && state.video.buffered.length > 0) {
-          state.video.currentTime = state.video.currentTime + 0.1;
+      if (state.freezeCounter === 2) {
+        let jumped = false;
+        if (state.video.buffered && state.video.buffered.length > 0) {
+          for (let i = 0; i < state.video.buffered.length; i++) {
+            const bStart = state.video.buffered.start(i);
+            if (cur < bStart && (bStart - cur) <= 2.0) {
+              state.video.currentTime = bStart + 0.1;
+              jumped = true;
+              break;
+            }
+          }
         }
-      } else if (state.freezeCounter === 2) {
+        if (!jumped) {
+          state.video.currentTime = cur + 0.3;
+        }
+
+        if (state.shakaPlayer) {
+          try { state.shakaPlayer.retryStreaming(); } catch (e) {}
+        }
+        state.video.play().catch(() => {});
+      } else if (state.freezeCounter === 3) {
         console.warn("[HealthWatchdog] Resyncing stream to live edge...");
         if (state.shakaPlayer) {
           try {
@@ -204,13 +217,11 @@ export function startContinuousHealthWatchdog() {
               state.video.currentTime = Math.max(range.start, range.end - 1.2);
             }
           } catch (e) {}
-        } else if (state.hls && state.hls.liveSyncPosition) {
-          state.video.currentTime = state.hls.liveSyncPosition;
         } else if (state.video.duration && isFinite(state.video.duration)) {
           state.video.currentTime = Math.max(0, state.video.duration - 1.0);
         }
         state.video.play().catch(() => {});
-      } else if (state.freezeCounter >= 3) {
+      } else if (state.freezeCounter >= 4) {
         state.freezeCounter = 0;
         if (state.availableServers && state.availableServers.length > 1) {
           console.warn("[HealthWatchdog] Primary stream halted. Auto-switching to backup server...");
