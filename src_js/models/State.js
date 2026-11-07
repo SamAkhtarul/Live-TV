@@ -27,7 +27,7 @@ export const state = {
   dvrOffsetSeconds: 0, // 0 = LIVE, negative = seconds behind
   qualityLevels: [],
   currentQualityIndex: -1, // -1 = Auto
-  selectedQualityHeight: -1, // -1 = Auto, or 144 to 2160
+  selectedQualityHeight: 1080, // Default to 1080p FHD for all channels
   playbackSpeed: 1.0,
   sleepTimerTimeout: null,
   sleepMinutes: 0,

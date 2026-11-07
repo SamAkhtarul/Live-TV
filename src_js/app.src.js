@@ -26,8 +26,8 @@
     qualityLevels: [],
     currentQualityIndex: -1,
     // -1 = Auto
-    selectedQualityHeight: -1,
-    // -1 = Auto, or 144 to 2160
+    selectedQualityHeight: 1080,
+    // Default to 1080p FHD for all channels
     playbackSpeed: 1,
     sleepTimerTimeout: null,
     sleepMinutes: 0,
@@ -83,8 +83,8 @@
   };
 
   // src/desktop/web/src_js/models/Constants.js
-  var APP_VERSION = "5.3.4";
-  var APP_BUILD = 66;
+  var APP_VERSION = "5.4.0";
+  var APP_BUILD = 67;
   var GITHUB_RELEASES_URL = "https://github.com/SamAkhtarul/Live-TV/releases";
   var GITHUB_API_LATEST_RELEASE = "https://api.github.com/repos/SamAkhtarul/Live-TV/releases/latest";
   var UPDATE_MANIFEST_URL = "https://raw.githubusercontent.com/SamAkhtarul/Live-TV/main/version.json";
@@ -5532,6 +5532,10 @@
   }
   function setStreamQuality(targetHeight, label) {
     state.selectedQualityHeight = targetHeight;
+    try {
+      localStorage.setItem("livetv_preferred_quality", String(targetHeight));
+    } catch (e) {
+    }
     if (targetHeight === -1) {
       if (state.hls) state.hls.currentLevel = -1;
       if (state.shakaPlayer) state.shakaPlayer.configure({ abr: { enabled: true } });
@@ -6414,7 +6418,8 @@
         levelLoadingTimeOut: 15e3,
         levelLoadingMaxRetry: 4,
         fragLoadingTimeOut: 2e4,
-        fragLoadingMaxRetry: 5
+        fragLoadingMaxRetry: 5,
+        capLevelToPlayerSize: false
       };
       const hls = new Hls(config);
       state.hls = hls;
@@ -6423,6 +6428,25 @@
       hls.on(Hls.Events.MANIFEST_PARSED, (event, data) => {
         console.log("HLS Manifest Parsed! Levels:", data.levels ? data.levels.length : 0);
         state.qualityLevels = data.levels || [];
+        if (state.qualityLevels && state.qualityLevels.length > 0) {
+          const targetHeight = state.selectedQualityHeight && state.selectedQualityHeight > 0 ? state.selectedQualityHeight : 1080;
+          let bestIdx = 0;
+          let minDiff = Infinity;
+          state.qualityLevels.forEach((lvl, idx) => {
+            const h = lvl.height || 720;
+            const diff = Math.abs(h - targetHeight);
+            if (diff < minDiff) {
+              minDiff = diff;
+              bestIdx = idx;
+            }
+          });
+          hls.currentLevel = bestIdx;
+          hls.loadLevel = bestIdx;
+          const level = state.qualityLevels[bestIdx];
+          if (level && level.height && el.playerQualityLabel) {
+            el.playerQualityLabel.textContent = `${level.height}p`;
+          }
+        }
         renderQualityOptions();
         updateAudioAndSubtitleTracks();
         state.video.play().catch((e) => console.log("Auto-play blocked, awaiting user click", e));
@@ -6677,6 +6701,24 @@
           width: t.width,
           bitrate: t.bandwidth
         }));
+        if (tracks && tracks.length > 0) {
+          const targetHeight = state.selectedQualityHeight && state.selectedQualityHeight > 0 ? state.selectedQualityHeight : 1080;
+          let bestTrack = tracks[0];
+          let minDiff = Infinity;
+          tracks.forEach((t) => {
+            const h = t.height || 720;
+            const diff = Math.abs(h - targetHeight);
+            if (diff < minDiff) {
+              minDiff = diff;
+              bestTrack = t;
+            }
+          });
+          player.configure({ abr: { enabled: false } });
+          player.selectVariantTrack(bestTrack, true);
+          if (bestTrack.height && el.playerQualityLabel) {
+            el.playerQualityLabel.textContent = `${bestTrack.height}p`;
+          }
+        }
         renderQualityOptions();
       } catch (err) {
         console.warn("Shaka Player load failed for", cleanUrl, err);
@@ -7260,6 +7302,12 @@
     }
     if (el.sliderBrightness) el.sliderBrightness.value = state.brightness;
     applyBrightness(state.brightness);
+    const savedQuality = localStorage.getItem("livetv_preferred_quality");
+    if (savedQuality !== null) {
+      state.selectedQualityHeight = parseInt(savedQuality, 10);
+    } else {
+      state.selectedQualityHeight = 1080;
+    }
     state.parentalPin = localStorage.getItem("livetv_parental_pin") || "0000";
     state.isKidsModeActive = localStorage.getItem("livetv_kids_mode") === "true";
     if (typeof updateKidsModeHeaderUI === "function") updateKidsModeHeaderUI();

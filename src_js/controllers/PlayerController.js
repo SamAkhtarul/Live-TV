@@ -276,7 +276,8 @@ export function loadHlsStream(cleanUrl) {
       levelLoadingTimeOut: 15000,
       levelLoadingMaxRetry: 4,
       fragLoadingTimeOut: 20000,
-      fragLoadingMaxRetry: 5
+      fragLoadingMaxRetry: 5,
+      capLevelToPlayerSize: false
     };
 
     const hls = new Hls(config);
@@ -288,6 +289,28 @@ export function loadHlsStream(cleanUrl) {
     hls.on(Hls.Events.MANIFEST_PARSED, (event, data) => {
       console.log("HLS Manifest Parsed! Levels:", data.levels ? data.levels.length : 0);
       state.qualityLevels = data.levels || [];
+
+      // Automatically enforce 1080p FHD start quality on every channel
+      if (state.qualityLevels && state.qualityLevels.length > 0) {
+        const targetHeight = (state.selectedQualityHeight && state.selectedQualityHeight > 0) ? state.selectedQualityHeight : 1080;
+        let bestIdx = 0;
+        let minDiff = Infinity;
+        state.qualityLevels.forEach((lvl, idx) => {
+          const h = lvl.height || 720;
+          const diff = Math.abs(h - targetHeight);
+          if (diff < minDiff) {
+            minDiff = diff;
+            bestIdx = idx;
+          }
+        });
+        hls.currentLevel = bestIdx;
+        hls.loadLevel = bestIdx;
+        const level = state.qualityLevels[bestIdx];
+        if (level && level.height && el.playerQualityLabel) {
+          el.playerQualityLabel.textContent = `${level.height}p`;
+        }
+      }
+
       renderQualityOptions();
       updateAudioAndSubtitleTracks();
       state.video.play().catch(e => console.log("Auto-play blocked, awaiting user click", e));
@@ -564,6 +587,27 @@ export async function loadMediaStream(rawUrl) {
         width: t.width,
         bitrate: t.bandwidth
       }));
+
+      // Automatically enforce 1080p FHD start quality on every channel
+      if (tracks && tracks.length > 0) {
+        const targetHeight = (state.selectedQualityHeight && state.selectedQualityHeight > 0) ? state.selectedQualityHeight : 1080;
+        let bestTrack = tracks[0];
+        let minDiff = Infinity;
+        tracks.forEach(t => {
+          const h = t.height || 720;
+          const diff = Math.abs(h - targetHeight);
+          if (diff < minDiff) {
+            minDiff = diff;
+            bestTrack = t;
+          }
+        });
+        player.configure({ abr: { enabled: false } });
+        player.selectVariantTrack(bestTrack, true);
+        if (bestTrack.height && el.playerQualityLabel) {
+          el.playerQualityLabel.textContent = `${bestTrack.height}p`;
+        }
+      }
+
       renderQualityOptions();
     } catch (err) {
       console.warn("Shaka Player load failed for", cleanUrl, err);

@@ -168,7 +168,14 @@ export function loadStoredPreferences() {
   if (el.sliderBrightness) el.sliderBrightness.value = state.brightness;
   applyBrightness(state.brightness);
 
-  // 5. Version 4.0 State (Kids Mode, Parental PIN, Ticker, Scheduled DVR)
+  // 5. Version 4.0 & Quality Preferences
+  const savedQuality = localStorage.getItem("livetv_preferred_quality");
+  if (savedQuality !== null) {
+    state.selectedQualityHeight = parseInt(savedQuality, 10);
+  } else {
+    state.selectedQualityHeight = 1080; // Always start with 1080p by default
+  }
+
   state.parentalPin = localStorage.getItem("livetv_parental_pin") || "0000";
   state.isKidsModeActive = localStorage.getItem("livetv_kids_mode") === "true";
   if (typeof updateKidsModeHeaderUI === "function") updateKidsModeHeaderUI();

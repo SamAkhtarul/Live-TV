@@ -38,8 +38,27 @@ export class StreamEngineService {
       levelLoadingTimeOut: 15000,
       levelLoadingMaxRetry: 4,
       fragLoadingTimeOut: 20000,
-      fragLoadingMaxRetry: 5
+      fragLoadingMaxRetry: 5,
+      capLevelToPlayerSize: false
     };
+  }
+
+  /**
+   * Finds the best matching variant level index for target height (defaults to 1080p FHD)
+   */
+  static selectBestQualityLevel(levels, targetHeight = 1080) {
+    if (!Array.isArray(levels) || levels.length === 0) return -1;
+    let bestIdx = 0;
+    let minDiff = Infinity;
+    levels.forEach((lvl, idx) => {
+      const h = lvl.height || 720;
+      const diff = Math.abs(h - targetHeight);
+      if (diff < minDiff) {
+        minDiff = diff;
+        bestIdx = idx;
+      }
+    });
+    return bestIdx;
   }
 
   /**

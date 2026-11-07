@@ -139,6 +139,9 @@ export function renderQualityOptions() {
 
 export function setStreamQuality(targetHeight, label) {
   state.selectedQualityHeight = targetHeight;
+  try {
+    localStorage.setItem("livetv_preferred_quality", String(targetHeight));
+  } catch (e) {}
 
   if (targetHeight === -1) {
     if (state.hls) state.hls.currentLevel = -1;
