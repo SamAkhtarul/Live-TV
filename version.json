@@ -1,18 +1,21 @@
 {
-  "version": "5.3.3",
-  "build": 65,
-  "release_name": "Live TV v5.3.3 (Build 65) — Enterprise Sports CDN & Multi-Server Resilience",
-  "release_date": "2026-11-06",
+  "version": "5.3.4",
+  "build": 66,
+  "release_name": "Live TV v5.3.4 (Build 66) — 3-Platform Microservices Architecture & High-Resilience CDN",
+  "release_date": "2026-11-07",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
-    "🏎️ Dedicated MotoGP Feeds Restored: Configured authentic Dorna MotoGP Official World Feed FHD, FanCode 1 FHD dedicated motorsport feed, and TNT Sports 2 HD with zero crosstalk",
-    "🏏 Willow Sports Multi-Server Failover: Upgraded Willow Cricket HD to 24/7 enterprise Amazon AIV-CDN streams with dual ClearKey servers and BDIX fallback",
-    "⚽ beIN Sports 1, 2, 3 & XTRA Enterprise Overhaul: Replaced expired and dead links with verified 24/7 Amazon AIV-CDN DASH feeds and Amagi FAST fallbacks",
-    "🏎️ Sky Sports EPL, Racing & Action Restored: Added verified high-resilience streams for Sky Sports Premier League, Sky Sports Racing, and Sky Sports Action",
-    "🛡️ SPOTV 2 HD Multi-Server Architecture: Wired 5-tier failover (World Feed, TNT Sports 2, FanCode, Sky Sports Racing, Eurosport 4K) preventing dead channel blackouts"
+    "🏗️ 3-Platform Microservices Architecture: Complete decoupling of shared Web core, macOS native app, and Android native app into modular microservices with single-responsibility domains.",
+    "🍏 macOS Native Decomposition: Modularized into WindowController, WebViewController, NativeBridgeHandler, AppUpdaterService, and RemoteControlService.",
+    "🤖 Android Native Architecture: Decoupled NativeBridgeService, WindowModeService (PiP / Immersive Sticky), and KeyNavigationService for TV D-pads.",
+    "🌐 Web Core Microservices: Dedicated services for StreamEngine, Catalog, SportsTelemetry, AIUpscaler, AudioDSP, Update, and Storage.",
+    "🏎️ Dedicated MotoGP Feeds: Verified Dorna MotoGP Official World Feed FHD, FanCode 1 FHD dedicated motorsport feed, and TNT Sports 2 HD with zero crosstalk.",
+    "🏏 Willow Sports Multi-Server Failover: Upgraded Willow Cricket HD to 24/7 enterprise Amazon AIV-CDN streams with dual ClearKey servers and BDIX fallback.",
+    "⚽ beIN Sports 1, 2, 3 & XTRA Enterprise Overhaul: Replaced expired links with verified 24/7 Amazon AIV-CDN DASH feeds and Amagi FAST fallbacks.",
+    "🏎️ Sky Sports EPL, Racing & Action Restored: Added verified high-resilience streams for Sky Sports Premier League, Sky Sports Racing, and Sky Sports Action."
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.3.3/LiveTV-v5.3.3.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.3.3/LiveTV-v5.3.3.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.3.4/LiveTV-v5.3.4.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.3.4/LiveTV-v5.3.4.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }
