@@ -83,8 +83,8 @@
   };
 
   // src/desktop/web/src_js/models/Constants.js
-  var APP_VERSION = "5.4.0";
-  var APP_BUILD = 67;
+  var APP_VERSION = "5.5.0";
+  var APP_BUILD = 68;
   var GITHUB_RELEASES_URL = "https://github.com/SamAkhtarul/Live-TV/releases";
   var GITHUB_API_LATEST_RELEASE = "https://api.github.com/repos/SamAkhtarul/Live-TV/releases/latest";
   var UPDATE_MANIFEST_URL = "https://raw.githubusercontent.com/SamAkhtarul/Live-TV/main/version.json";
