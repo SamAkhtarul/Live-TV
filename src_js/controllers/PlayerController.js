@@ -63,9 +63,20 @@ export function playChannel(channel, index) {
   syncRemoteStatus();
 
   // Initialize Server Options for Multi-Feed Channels
-  const chServers = CHANNEL_SERVERS[channel.id] || [
+  let chServers = (CHANNEL_SERVERS[channel.id] || [
     { label: "Server 1", url: channel.streamUrl }
-  ];
+  ]).slice();
+
+  // On HTTPS websites (e.g. GitHub Pages), prioritize HTTPS streams to prevent browser Mixed Content blocking
+  const isHttpsOrigin = typeof window !== "undefined" && window.location && window.location.protocol === "https:";
+  if (isHttpsOrigin) {
+    chServers.sort((a, b) => {
+      const aHttps = (a.url || "").startsWith("https://") ? 1 : 0;
+      const bHttps = (b.url || "").startsWith("https://") ? 1 : 0;
+      return bHttps - aHttps;
+    });
+  }
+
   state.availableServers = chServers;
   state.serverIndex = 0;
   updateServerButton();
@@ -458,6 +469,19 @@ export async function loadMediaStream(rawUrl) {
   state.isLive = true;
   state.dvrOffsetSeconds = 0;
   updateDvrDisplay();
+
+  // Handle HTTP streams on HTTPS origins (GitHub Pages)
+  const isHttpsOrigin = typeof window !== "undefined" && window.location && window.location.protocol === "https:";
+  if (isHttpsOrigin && cleanUrl.startsWith("http://")) {
+    console.warn("[StreamEngine] HTTP stream detected on HTTPS page:", cleanUrl);
+    const httpsServer = (state.availableServers || []).find(s => (s.url || "").startsWith("https://"));
+    if (httpsServer && httpsServer.url !== rawUrl) {
+      showStreamNotice(`Auto-switched to HTTPS mirror (${httpsServer.label})`, 3000);
+      return loadMediaStream(httpsServer.url);
+    } else {
+      showStreamNotice("HTTP stream blocked by browser security. Download macOS / Android app for raw HTTP feeds.", 5000);
+    }
+  }
 
   const isDash = cleanUrl.toLowerCase().includes(".mpd") || hasClearKeys;
 

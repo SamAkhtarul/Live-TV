@@ -229,12 +229,12 @@ export const CHANNEL_SERVERS = {
 
 // Guaranteed Working Live Backups for Automated Failover
 export const MOTOGP_BACKUPS = {
-  "spotv_2_hd_motogp": "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8",
-  "spotv_hd_motogp": "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8",
-  "motogp_official_world_feed": "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8",
-  "fancode_motogp_live": "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8",
-  "tnt_sports_2_hd": "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8",
-  "tnt_sports_1_hd": "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8",
-  "tnt_sports_3_hd": "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8",
-  "tnt_sports_4_hd": "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8"
+  "spotv_2_hd_motogp": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+  "spotv_hd_motogp": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+  "motogp_official_world_feed": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+  "fancode_motogp_live": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+  "tnt_sports_2_hd": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+  "tnt_sports_1_hd": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+  "tnt_sports_3_hd": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+  "tnt_sports_4_hd": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
 };
