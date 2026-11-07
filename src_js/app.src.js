@@ -230,6 +230,25 @@
     "discovery_kids_bangla": [
       { label: "Server 1 (GP CDN Bangladesh)", url: "https://drk6xq0vhn.gpcdn.net/live/discovery_kids_abr/index.m3u8" }
     ],
+    "atp_paris_masters_live_hd": [
+      { label: "Server 1 (Rolex Paris Masters \u2022 Setanta Live)", url: "https://a116.azplay55.me/hls/streama270965/index.m3u8?cst=ef934564a1c5f38e25bf13cd9ea7a7b6" },
+      { label: "Server 2 (Paris Masters Court 2)", url: "https://a116.azplay55.me/hls/streama271413/index.m3u8?cst=a1f9cd95beb9d4331a98dece81c6f6e8" },
+      { label: "Server 3 (Setanta Sports 2 Eurasia 1080p)", url: "http://stream.mcquack.net/235/index.m3u8" },
+      { label: "Server 4 (Setanta Sports 1 Live)", url: "http://178.124.179.122:8080/Setanta1/index.m3u8" },
+      { label: "Server 5 (Tennis Channel HD)", url: "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01444-tennischannelth-tennischnlintl-lggb/playlist.m3u8" }
+    ],
+    "setanta_sports_1_hd": [
+      { label: "Server 1 (Setanta Sports Live \u2022 Paris Masters)", url: "https://a116.azplay55.me/hls/streama270965/index.m3u8?cst=ef934564a1c5f38e25bf13cd9ea7a7b6" },
+      { label: "Server 2 (Setanta Sports 1 Stream)", url: "http://178.124.179.122:8080/Setanta1/index.m3u8" },
+      { label: "Server 3 (Setanta Sports 2 Eurasia 1080p)", url: "http://stream.mcquack.net/235/index.m3u8" },
+      { label: "Server 4 (Tennis Channel HD)", url: "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01444-tennischannelth-tennischnlintl-lggb/playlist.m3u8" }
+    ],
+    "setanta_sports_2_hd": [
+      { label: "Server 1 (Setanta Sports 2 Eurasia 1080p)", url: "http://stream.mcquack.net/235/index.m3u8" },
+      { label: "Server 2 (Paris Masters Court 1 \u2022 Setanta Live)", url: "https://a116.azplay55.me/hls/streama270965/index.m3u8?cst=ef934564a1c5f38e25bf13cd9ea7a7b6" },
+      { label: "Server 3 (Setanta Sports 1 Live)", url: "http://178.124.179.122:8080/Setanta1/index.m3u8" },
+      { label: "Server 4 (Tennis Channel HD)", url: "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01444-tennischannelth-tennischnlintl-lggb/playlist.m3u8" }
+    ],
     "tennis_channel_intl_hd": [
       { label: "Server 1 (Tennis Channel HD)", url: "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01444-tennischannelth-tennischnlintl-lggb/playlist.m3u8" },
       { label: "Server 2 (Tennis Channel T2)", url: "https://mumbai-edge.smartplaytv.in/Tennis2/index.m3u8" },
@@ -2328,6 +2347,9 @@
         if (now.getTime() - evDate.getTime() > 12 * 3600 * 1e3) continue;
         const detail = statusType.detail || statusType.description || "ATP / WTA World Tour";
         const bstTime = formatToBST(ev.date);
+        const isParis = (ev.name || "").toLowerCase().includes("paris") || (g.league?.name || "").toLowerCase().includes("paris") || (g.league?.name || "").toLowerCase().includes("atp");
+        const targetChannelId = isParis ? "atp_paris_masters_live_hd" : "tennis_channel_intl_hd";
+        const targetChannelName = isParis ? "ATP Paris Masters Live HD (Setanta)" : "Tennis Channel HD";
         events.push({
           id: "espn_ten_" + ev.id,
           title: ev.name,
@@ -2338,8 +2360,8 @@
           bstTime,
           scoreOrDetail: detail,
           summary: "",
-          targetChannelName: "Tennis Channel HD",
-          targetChannelId: "tennis_channel_intl_hd",
+          targetChannelName,
+          targetChannelId,
           isLive,
           priority: isLive ? 3 : 22
         });
@@ -2404,12 +2426,12 @@
   function getVerifiedSportsServers(sport, targetChannelId) {
     const sportLower = (sport || "").toLowerCase();
     let backupServers = [];
-    if (sportLower.includes("tennis") || sportLower.includes("badminton")) {
+    if (sportLower.includes("tennis") || sportLower.includes("badminton") || sportLower.includes("paris")) {
       backupServers = [
-        { label: "Server 1 (Tennis Channel HD)", url: "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01444-tennischannelth-tennischnlintl-lggb/playlist.m3u8" },
-        { label: "Server 2 (Tennis Channel T2)", url: "https://mumbai-edge.smartplaytv.in/Tennis2/index.m3u8" },
-        { label: "Server 3 (Tennis Channel Europe)", url: "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01444-tennischannelth-tennischannelnl-samsungnl/playlist.m3u8" },
-        { label: "Server 4 (beIN Sports XTRA)", url: "https://bein-xtra-bein.amagi.tv/playlist.m3u8" }
+        { label: "Server 1 (Rolex Paris Masters \u2022 Setanta Live)", url: "https://a116.azplay55.me/hls/streama270965/index.m3u8?cst=ef934564a1c5f38e25bf13cd9ea7a7b6" },
+        { label: "Server 2 (Paris Masters Court 2)", url: "https://a116.azplay55.me/hls/streama271413/index.m3u8?cst=a1f9cd95beb9d4331a98dece81c6f6e8" },
+        { label: "Server 3 (Setanta Sports 2 Eurasia 1080p)", url: "http://stream.mcquack.net/235/index.m3u8" },
+        { label: "Server 4 (Tennis Channel HD)", url: "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01444-tennischannelth-tennischnlintl-lggb/playlist.m3u8" }
       ];
     } else if (sportLower.includes("cricket")) {
       backupServers = [
