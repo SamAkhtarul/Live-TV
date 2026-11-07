@@ -185,21 +185,24 @@ export const CHANNEL_SERVERS = {
     { label: "Server 1 (GP CDN Bangladesh)", url: "https://drk6xq0vhn.gpcdn.net/live/discovery_kids_abr/index.m3u8" }
   ],
   "atp_paris_masters_live_hd": [
-    { label: "Server 1 (Rolex Paris Masters • Setanta Live)", url: "https://a116.azplay55.me/hls/streama270965/index.m3u8?cst=ef934564a1c5f38e25bf13cd9ea7a7b6" },
-    { label: "Server 2 (Paris Masters Court 2)", url: "https://a116.azplay55.me/hls/streama271413/index.m3u8?cst=a1f9cd95beb9d4331a98dece81c6f6e8" },
-    { label: "Server 3 (Setanta Sports 2 Eurasia 1080p)", url: "http://stream.mcquack.net/235/index.m3u8" },
-    { label: "Server 4 (Setanta Sports 1 Live)", url: "http://178.124.179.122:8080/Setanta1/index.m3u8" },
-    { label: "Server 5 (Tennis Channel HD)", url: "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01444-tennischannelth-tennischnlintl-lggb/playlist.m3u8" }
+    { label: "Server 1 (Tennis Channel 2 Live 1080p • Paris Masters)", url: "https://mumbai-edge.smartplaytv.in/Tennis2/index.m3u8" },
+    { label: "Server 2 (Setanta Sports 2 Eurasia 1080p)", url: "http://stream.mcquack.net/235/index.m3u8" },
+    { label: "Server 3 (Setanta Sports 1 Live)", url: "http://178.124.179.122:8080/Setanta1/index.m3u8" },
+    { label: "Server 4 (Tennis Channel International HD)", url: "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01444-tennischannelth-tennischnlintl-lggb/playlist.m3u8" },
+    { label: "Server 5 (Court 1 Live • Setanta Live Feed)", url: "https://a118.azplay55.me/hls/streama270965/index.m3u8?cst=a555f23b216f6c16da8b13b325fab55b" },
+    { label: "Server 6 (Court 2 Alternate Feed)", url: "https://a78.azplay55.me/hls/streama271413/index.m3u8?cst=d31262c2d03413d05fc26dc25f97e9be" },
+    { label: "Server 7 (Tennis Channel Europe)", url: "https://cdn-ue1-prod.tsv2.amagi.tv/linear/amg01444-tennischannelth-tennischannelnl-samsungnl/playlist.m3u8" }
   ],
   "setanta_sports_1_hd": [
-    { label: "Server 1 (Setanta Sports Live • Paris Masters)", url: "https://a116.azplay55.me/hls/streama270965/index.m3u8?cst=ef934564a1c5f38e25bf13cd9ea7a7b6" },
-    { label: "Server 2 (Setanta Sports 1 Stream)", url: "http://178.124.179.122:8080/Setanta1/index.m3u8" },
-    { label: "Server 3 (Setanta Sports 2 Eurasia 1080p)", url: "http://stream.mcquack.net/235/index.m3u8" },
-    { label: "Server 4 (Tennis Channel HD)", url: "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01444-tennischannelth-tennischnlintl-lggb/playlist.m3u8" }
+    { label: "Server 1 (Setanta Sports 1 Live • ATP Paris)", url: "http://178.124.179.122:8080/Setanta1/index.m3u8" },
+    { label: "Server 2 (Setanta Sports 2 Eurasia 1080p)", url: "http://stream.mcquack.net/235/index.m3u8" },
+    { label: "Server 3 (Tennis Channel 2 Live 1080p)", url: "https://mumbai-edge.smartplaytv.in/Tennis2/index.m3u8" },
+    { label: "Server 4 (Tennis Channel HD)", url: "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01444-tennischannelth-tennischnlintl-lggb/playlist.m3u8" },
+    { label: "Server 5 (Court 1 Live • Setanta Feed)", url: "https://a118.azplay55.me/hls/streama270965/index.m3u8?cst=a555f23b216f6c16da8b13b325fab55b" }
   ],
   "setanta_sports_2_hd": [
     { label: "Server 1 (Setanta Sports 2 Eurasia 1080p)", url: "http://stream.mcquack.net/235/index.m3u8" },
-    { label: "Server 2 (Paris Masters Court 1 • Setanta Live)", url: "https://a116.azplay55.me/hls/streama270965/index.m3u8?cst=ef934564a1c5f38e25bf13cd9ea7a7b6" },
+    { label: "Server 2 (Tennis Channel 2 Live 1080p)", url: "https://mumbai-edge.smartplaytv.in/Tennis2/index.m3u8" },
     { label: "Server 3 (Setanta Sports 1 Live)", url: "http://178.124.179.122:8080/Setanta1/index.m3u8" },
     { label: "Server 4 (Tennis Channel HD)", url: "https://cdn-uw2-prod.tsv2.amagi.tv/linear/amg01444-tennischannelth-tennischnlintl-lggb/playlist.m3u8" }
   ],
