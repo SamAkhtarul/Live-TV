@@ -273,14 +273,14 @@
     ]
   };
   var MOTOGP_BACKUPS = {
-    "spotv_2_hd_motogp": "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8",
-    "spotv_hd_motogp": "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8",
-    "motogp_official_world_feed": "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8",
-    "fancode_motogp_live": "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8",
-    "tnt_sports_2_hd": "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8",
-    "tnt_sports_1_hd": "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8",
-    "tnt_sports_3_hd": "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8",
-    "tnt_sports_4_hd": "http://88.212.15.50/live/esp_4k_atk/playlist.m3u8"
+    "spotv_2_hd_motogp": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+    "spotv_hd_motogp": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+    "motogp_official_world_feed": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+    "fancode_motogp_live": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+    "tnt_sports_2_hd": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+    "tnt_sports_1_hd": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+    "tnt_sports_3_hd": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8",
+    "tnt_sports_4_hd": "https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
   };
 
   // src/desktop/web/src_js/views/Elements.js
@@ -6224,9 +6224,17 @@
     renderQuickSwitchCarousel();
     updateMediaSessionMetadata(channel);
     syncRemoteStatus();
-    const chServers = CHANNEL_SERVERS[channel.id] || [
+    let chServers = (CHANNEL_SERVERS[channel.id] || [
       { label: "Server 1", url: channel.streamUrl }
-    ];
+    ]).slice();
+    const isHttpsOrigin = typeof window !== "undefined" && window.location && window.location.protocol === "https:";
+    if (isHttpsOrigin) {
+      chServers.sort((a, b) => {
+        const aHttps = (a.url || "").startsWith("https://") ? 1 : 0;
+        const bHttps = (b.url || "").startsWith("https://") ? 1 : 0;
+        return bHttps - aHttps;
+      });
+    }
     state.availableServers = chServers;
     state.serverIndex = 0;
     updateServerButton();
@@ -6577,6 +6585,17 @@
     state.isLive = true;
     state.dvrOffsetSeconds = 0;
     updateDvrDisplay();
+    const isHttpsOrigin = typeof window !== "undefined" && window.location && window.location.protocol === "https:";
+    if (isHttpsOrigin && cleanUrl.startsWith("http://")) {
+      console.warn("[StreamEngine] HTTP stream detected on HTTPS page:", cleanUrl);
+      const httpsServer = (state.availableServers || []).find((s) => (s.url || "").startsWith("https://"));
+      if (httpsServer && httpsServer.url !== rawUrl) {
+        showStreamNotice(`Auto-switched to HTTPS mirror (${httpsServer.label})`, 3e3);
+        return loadMediaStream(httpsServer.url);
+      } else {
+        showStreamNotice("HTTP stream blocked by browser security. Download macOS / Android app for raw HTTP feeds.", 5e3);
+      }
+    }
     const isDash = cleanUrl.toLowerCase().includes(".mpd") || hasClearKeys;
     if (isDash && window.shaka && shaka.Player.isBrowserSupported()) {
       console.log("Playing with Shaka Player (DASH/ClearKey):", cleanUrl);
