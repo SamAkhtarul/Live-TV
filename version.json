@@ -1,18 +1,19 @@
 {
-  "version": "5.5.0",
-  "build": 68,
-  "release_name": "Live TV v5.5.0 (Build 68) — Rolex Paris Masters & Setanta Sports Enterprise Update",
-  "release_date": "2026-11-07",
+  "version": "5.6.1",
+  "build": 70,
+  "release_name": "Live TV v5.6.1 (Build 70) — Default Favorites Channel Launch Release",
+  "release_date": "2026-11-13",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
-    "🎾 Rolex Paris Masters Official Coverage: Added dedicated ATP Paris Masters Live HD channel featuring live multi-court center feeds (Court 1 & Court 2) with high-bitrate Setanta Sports live commentary.",
-    "📺 Setanta Sports 1 & 2 HD: Integrated 24/7 dedicated Setanta Sports 1 and Setanta Sports 2 Eurasia channels with 1080p 60fps streaming and zero geo-blocking.",
-    "⚡ Enhanced Cross-Platform HTTPS Priority: High-resilience HTTPS streams with permissive CORS headers prioritized across GitHub Pages web app, native macOS, and Android.",
-    "📺 1080p FHD Default Playback: All 3,011 channels automatically launch in pristine 1080p FHD resolution with adaptive bitrate caps disabled.",
-    "🏗️ Microservices Architecture: Fully decoupled modular architecture across macOS Native, Android Native, and Web Core."
+    "⭐ Default Favorites Channel Launch: The application now automatically opens directly in the Favorites channel section on launch across all 3 platforms (macOS, Android, and Web).",
+    "🪟 Native Multi-Window Experience: Open and watch unlimited independent floating windows simultaneously on macOS via ⌘N, Dock options, or in-app buttons.",
+    "👆 Click-to-Show Smart Player Controls: Moving the mouse cursor over the video no longer shows distracting quick buttons; click the video to toggle controls on/off. Configurable in Playback Settings.",
+    "⭐ Chronological Favorites Ordering: Starred channels are appended to the end of the favorites list so previously added favorite channels show first (#1, #2, ...), plus an Invert Order button in Rank Favorites.",
+    "✨ WebGL AI 4K Super-Resolution: Real-time hardware-accelerated EASU + RCAS upscaler up to native 4K 60fps.",
+    "⚡ Triple-Platform Release Pipeline: Automated build and signing for macOS DMG, Android Universal APK, and Web PWA."
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.5.0/LiveTV-v5.5.0.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.5.0/LiveTV-v5.5.0.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.6.1/LiveTV-v5.6.1.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.6.1/LiveTV-v5.6.1.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }
