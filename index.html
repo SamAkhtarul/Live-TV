@@ -15,7 +15,7 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <link rel="stylesheet" href="css/style.css?v=5.4.0" />
+  <link rel="stylesheet" href="css/style.css?v=5.6.1" />
 </head>
 
 <body>
@@ -29,7 +29,7 @@
           </div>
           <span class="brand-title">Live TV</span>
           <span class="live-badge">LIVE</span>
-          <span class="app-version">v5.4.0</span>
+          <span class="app-version">v5.6.1</span>
           <!-- Prominent Header Update Pill (Always visible on left!) -->
           <button id="btn-header-update-badge" class="header-update-pill" title="Check for Updates & System Status">
             <span class="update-pill-dot">⚡</span>
@@ -105,6 +105,15 @@
         <button id="btn-header-pin" class="header-btn header-icon-btn" title="Toggle Always On Top (T)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
             <path d="M16 9V4l1 0V2H7v2l1 0v5c0 1.66-1.34 3-3 3v2h5.97v7l1 1 1-1v-7H19v-2c-1.66 0-3-1.34-3-3z" />
+          </svg>
+        </button>
+        <button id="btn-header-new-window" class="header-btn header-icon-btn" title="Open New Independent Window (⌘N)" onclick="window.openNewAppWindow && window.openNewAppWindow()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+            <line x1="12" y1="7" x2="12" y2="13"></line>
+            <line x1="9" y1="10" x2="15" y2="10"></line>
           </svg>
         </button>
         <button id="btn-import-m3u" class="header-btn" title="Add Custom M3U Playlist">
@@ -776,6 +785,15 @@
                 </svg>
               </button>
 
+              <!-- Open in New Window Button -->
+              <button id="player-btn-new-window" class="player-icon-btn" title="Open in New Window (⌘N)" onclick="window.openNewAppWindow && window.openNewAppWindow(state.currentChannel ? state.currentChannel.id : null)">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </button>
+
               <!-- Fullscreen Button -->
               <button id="player-btn-fullscreen" class="player-icon-btn" title="Toggle Fullscreen (F)">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -910,6 +928,7 @@
           <!-- List rendered dynamically -->
         </div>
         <div class="modal-footer">
+          <button class="btn-secondary" id="btn-reverse-rank" style="margin-right: auto;" title="Invert order so oldest or newest added shows first">⇄ Invert Order</button>
           <button class="btn-secondary" id="btn-cancel-rank">Cancel</button>
           <button class="btn-primary" id="btn-save-rank">Save Order</button>
         </div>
@@ -1049,6 +1068,16 @@
                   onclick="window.adjustCommentaryDelay(0.5)">+0.5s</button>
               </div>
             </div>
+          </div>
+
+          <!-- Player Controls Behavior -->
+          <div style="font-weight: 700; margin-top: 14px; margin-bottom: 6px; font-size: 12px; color: var(--gold);">PLAYER CONTROLS & QUICK BUTTONS</div>
+          <div class="list-item-row" style="cursor: pointer; display: flex; align-items: center; justify-content: space-between; padding: 10px; border-radius: 8px; background: rgba(255,255,255,0.04); margin-bottom: 16px;" id="row-controls-click-only">
+            <div>
+              <div style="font-size: 12px; font-weight: 600; color: #fff;">Show Quick Buttons on Click Only</div>
+              <div style="font-size: 10.5px; color: var(--text-secondary); margin-top: 2px;">Moving mouse won't pop up buttons — click player to show/hide</div>
+            </div>
+            <input type="checkbox" id="chk-controls-click-only" checked style="cursor: pointer; width: 16px; height: 16px; accent-color: var(--accent-red);" />
           </div>
         </div>
         <div class="modal-footer">
@@ -1418,7 +1447,7 @@
             <div>
               <div class="modal-title">Live TV <span style="font-size: 11px; opacity: 0.7; font-weight: normal;">for
                   macOS</span></div>
-              <div class="modal-subtitle">Version 5.4.0 (Build 67) • Apple Silicon arm64</div>
+              <div class="modal-subtitle">Version 5.6.1 (Build 70) • Apple Silicon arm64</div>
             </div>
           </div>
           <button class="modal-close-btn" id="btn-close-about-modal">✕</button>
@@ -2053,7 +2082,7 @@
   <script src="js/hls.min.js"></script>
   <script src="js/shaka-player.compiled.js"></script>
   <script src="js/cenc_decryptor.js"></script>
-  <script src="js/app.js?v=5.4.0"></script>
+  <script src="js/app.js?v=5.6.1"></script>
 </body>
 
 </html>
