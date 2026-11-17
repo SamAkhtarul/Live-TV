@@ -1,19 +1,18 @@
 {
-  "version": "5.6.1",
-  "build": 70,
-  "release_name": "Live TV v5.6.1 (Build 70) — Default Favorites Channel Launch Release",
-  "release_date": "2026-11-13",
+  "version": "5.6.2",
+  "build": 71,
+  "release_name": "Live TV v5.6.2 (Build 71) — Picture-in-Picture & Floating Window Fix",
+  "release_date": "2026-11-17",
   "min_os_mac": "macOS 11.0 Big Sur or later (Apple Silicon)",
   "min_os_android": "Android 8.0 Oreo or later",
   "changelog": [
-    "⭐ Default Favorites Channel Launch: The application now automatically opens directly in the Favorites channel section on launch across all 3 platforms (macOS, Android, and Web).",
+    "🖼️ Picture-in-Picture (PiP) Fixed Across All Platforms: Clicking the PiP button (or pressing P) on macOS now launches a floating always-on-top 16:9 mini-player with Play/Pause, Next/Prev Channel, Mute, drag-to-move, bottom-right 16:9 drag-to-resize, and one-click restore.",
+    "🌐 Web & Android PiP Parity: Seamless native OS PiP on Android and standard browser/Safari PiP on Web & iOS.",
+    "⭐ Default Favorites Channel Launch: Automatically opens directly in the Favorites channel section on startup across all 3 platforms (macOS, Android, and Web).",
     "🪟 Native Multi-Window Experience: Open and watch unlimited independent floating windows simultaneously on macOS via ⌘N, Dock options, or in-app buttons.",
-    "👆 Click-to-Show Smart Player Controls: Moving the mouse cursor over the video no longer shows distracting quick buttons; click the video to toggle controls on/off. Configurable in Playback Settings.",
-    "⭐ Chronological Favorites Ordering: Starred channels are appended to the end of the favorites list so previously added favorite channels show first (#1, #2, ...), plus an Invert Order button in Rank Favorites.",
-    "✨ WebGL AI 4K Super-Resolution: Real-time hardware-accelerated EASU + RCAS upscaler up to native 4K 60fps.",
-    "⚡ Triple-Platform Release Pipeline: Automated build and signing for macOS DMG, Android Universal APK, and Web PWA."
+    "👆 Click-to-Show Smart Player Controls: Moving the mouse cursor over the video no longer shows distracting quick buttons; click the video to toggle controls on/off."
   ],
-  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.6.1/LiveTV-v5.6.1.dmg",
-  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.6.1/LiveTV-v5.6.1.apk",
+  "download_mac": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.6.2/LiveTV-v5.6.2.dmg",
+  "download_android": "https://github.com/SamAkhtarul/Live-TV/releases/download/v5.6.2/LiveTV-v5.6.2.apk",
   "releases_url": "https://github.com/SamAkhtarul/Live-TV/releases"
 }

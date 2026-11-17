@@ -2911,18 +2911,25 @@ body.player-active .toast-notification {
 /* ==========================================================================
    Picture-in-Picture (PiP) Floating Mini-Player Mode
    ========================================================================== */
+body.pip-mode-active .app-header,
+body.pip-mode-active #browser-view,
 body.pip-mode-active #main-header,
 body.pip-mode-active #sidebar-navigation,
 body.pip-mode-active #content-area,
 body.pip-mode-active #channel-grid-container,
 body.pip-mode-active #mini-player-bar,
 body.pip-mode-active .modal,
+body.pip-mode-active .modal-overlay,
 body.pip-mode-active .sports-hub,
 body.pip-mode-active #sports-drawer,
+body.pip-mode-active #sports-ticker-bar,
+body.pip-mode-active #floating-sports-hud,
 body.pip-mode-active .player-controls,
 body.pip-mode-active #stats-hud,
+body.pip-mode-active #player-stats-hud,
 body.pip-mode-active .player-stream-notice,
-body.pip-mode-active .gesture-hud {
+body.pip-mode-active .gesture-hud,
+body.pip-mode-active #ai-compare-slider-container {
   display: none !important;
 }
 
@@ -2930,6 +2937,7 @@ body.pip-mode-active {
   background: #000 !important;
   overflow: hidden !important;
   user-select: none;
+  cursor: default !important;
 }
 
 body.pip-mode-active #player-overlay {
@@ -2976,7 +2984,12 @@ body.pip-mode-active .pip-controls-overlay {
   display: flex;
 }
 
-body.pip-mode-active #video-container:hover .pip-controls-overlay {
+body.platform-android.pip-mode-active .pip-controls-overlay {
+  display: none !important;
+}
+
+body.pip-mode-active #video-container:hover .pip-controls-overlay,
+body.pip-mode-active .pip-controls-overlay.pip-controls-visible {
   opacity: 1;
   pointer-events: auto;
 }
